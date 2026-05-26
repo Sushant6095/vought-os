@@ -1,0 +1,179 @@
+"vault/99 · Templates/Competitor Template.md"
+  ai_agent 1-51
+prompts/personas/sales-discovery.md
+  ai_agent 1-13
+SETUP.md
+  ai_agent 1-226
+prompts/workflows/component-build-workflow.md
+  ai_agent 1-21
+"vault/10 · Strategy/Trust Architecture.md"
+  ai_agent 1-51
+prompts/README.md
+  ai_agent 1-35
+prompts/personas/first-date.md
+  ai_agent 1-13
+prompts/personas/hard-conversation.md
+  ai_agent 1-17
+"vault/50 · Competitors/Cresta.md"
+  ai_agent 1-62
+"vault/80 · Sessions/2026-05-26-design-system-contrast-fix.md"
+  ai_agent 1-118
+"vault/80 · Sessions/2026-05-26-qa-verifier.md"
+  ai_agent 1-261
+"vault/80 · Sessions/2026-05-26-security.md"
+  ai_agent 1-77
+vault/.obsidian/app.json
+  ai_agent 1-10
+"vault/30 · Architecture/Latency Budget.md"
+  ai_agent 1-50
+"vault/50 · Competitors/Gong.md"
+  ai_agent 1-56
+prompts/research/notebooklm-context.md
+  ai_agent 1-28
+"vault/99 · Templates/Decision Template.md"
+  ai_agent 1-39
+"vault/80 · Sessions/2026-05-26-design-system-architect.md"
+  ai_agent 1-80
+README.md
+  ai_agent 1-123
+"vault/80 · Sessions/2026-05-26-about.md"
+  ai_agent 1-75
+mockups/vought-app.html
+  ai_agent 1-506
+"vault/60 · Research/Legacy · Cyrano architecture.md"
+  ai_agent 1-552
+"vault/80 · Sessions/2026-05-26-echo-engine-engineer.md"
+  ai_agent 1-127
+VOUGHT-DESIGN-BLUEPRINT.md
+  ai_agent 1-1822
+"vault/30 · Architecture/Echo Engine.md"
+  ai_agent 1-120
+prompts/workflows/page-build-workflow.md
+  ai_agent 1-43
+EXECUTION-RUNBOOK.md
+  ai_agent 1-488
+"vault/00 · Index/MOC · Architecture.md"
+  ai_agent 1-54
+prompts/personas/salary-negotiation.md
+  ai_agent 1-18
+"vault/80 · Sessions/2026-05-26-wave-4-summary.md"
+  ai_agent 1-155
+"vault/80 · Sessions/2026-05-26-live-call-builder.md"
+  ai_agent 1-92
+"vault/00 · Index/MOC · Master.md"
+  ai_agent 1-82
+"vault/80 · Sessions/2026-05-26-live-call-a11y-fix.md"
+  ai_agent 1-130
+"vault/40 · Pages/Landing.md"
+  ai_agent 1-158
+"vault/30 · Architecture/Diarization Sidecar.md"
+  ai_agent 1-86
+"vault/80 · Sessions/2026-05-26-customers.md"
+  ai_agent 1-64
+"vault/00 · Index/MOC · Design.md"
+  ai_agent 1-47
+"vault/80 · Sessions/2026-05-26-wave-1-summary.md"
+  ai_agent 1-100
+BLUEPRINT.md
+  ai_agent 1-628
+"vault/00 · Index/MOC · Competition.md"
+  ai_agent 1-57
+"vault/40 · Pages/Live Call Screen.md"
+  ai_agent 1-124
+docs/README.md
+  ai_agent 1-7
+prompts/meta/prompt-template.md
+  ai_agent 1-41
+"vault/99 · Templates/Page Template.md"
+  ai_agent 1-55
+CLAUDE.md
+  ai_agent 1-121
+"vault/30 · Architecture/System Diagram.md"
+  ai_agent 1-82
+"vault/80 · Sessions/2026-05-26-motion-polisher.md"
+  ai_agent 1-121
+mockups/vought-website.html
+  ai_agent 1-621
+"vault/80 · Sessions/2026-05-26-wave-2-summary.md"
+  ai_agent 1-97
+prompts/system/design-critic.md
+  ai_agent 1-18
+prompts/system/master-orchestrator.md
+  ai_agent 1-19
+"vault/10 · Strategy/Three-Act Narrative.md"
+  ai_agent 1-51
+"vault/50 · Competitors/Observe AI.md"
+  ai_agent 1-43
+"vault/80 · Sessions/2026-05-26-wave-4-followup-summary.md"
+  ai_agent 1-105
+"vault/80 · Sessions/2026-05-26-wave-6-design-upgrade-summary.md"
+  ai_agent 1-90
+prompts/personas/sales-objection.md
+  ai_agent 1-13
+"vault/70 · Decisions/ADR-001 · Monorepo style.md"
+  ai_agent 1-69
+"vault/70 · Decisions/ADR-002 · Single accent color.md"
+  ai_agent 1-41
+"vault/80 · Sessions/2026-05-26-voice-clone-touch-targets.md"
+  ai_agent 1-14
+"vault/20 · Design System/Tokens · Color.md"
+  ai_agent 1-56
+"vault/80 · Sessions/2026-05-26-accessibility-auditor.md"
+  ai_agent 1-373
+"vault/80 · Sessions/README.md"
+  ai_agent 1-9
+prompts/personas/job-interview.md
+  ai_agent 1-17
+mockups/vought-architecture-flow.html
+  ai_agent 1-560
+"vault/10 · Strategy/Brand Voice.md"
+  ai_agent 1-78
+"vault/40 · Pages/Voice Clone.md"
+  ai_agent 1-176
+"vault/80 · Sessions/2026-05-26-wave-5-summary.md"
+  ai_agent 1-107
+"vault/99 · Templates/Session Template.md"
+  ai_agent 1-38
+"vault/80 · Sessions/2026-05-26-contact.md"
+  ai_agent 1-65
+"vault/20 · Design System/Motion · Timing Table.md"
+  ai_agent 1-43
+prompts/personas/receptionist-smb.md
+  ai_agent 1-23
+"vault/80 · Sessions/2026-05-26-diarization-engineer.md"
+  ai_agent 1-131
+vault/README.md
+  ai_agent 1-56
+mockups/vought-landing-cinematic.html
+  ai_agent 1-907
+prompts/research/competitor-deep-dive.md
+  ai_agent 1-26
+mockups/vought-dashboard.html
+  ai_agent 1-742
+prompts/system/code-reviewer.md
+  ai_agent 1-19
+"vault/20 · Design System/Tokens · Typography.md"
+  ai_agent 1-41
+"vault/40 · Pages/README.md"
+  ai_agent 1-7
+"vault/80 · Sessions/2026-05-26-landing-page-builder.md"
+  ai_agent 1-178
+"vault/80 · Sessions/2026-05-26-receptionist.md"
+  ai_agent 1-118
+"vault/80 · Sessions/2026-05-26-voice-clone-builder.md"
+  ai_agent 1-174
+"vault/80 · Sessions/2026-05-26-blog.md"
+  ai_agent 1-115
+"vault/70 · Decisions/ADR-003 · diart 0.9 API surface.md"
+  ai_agent 1-77
+"vault/60 · Research/README.md"
+  ai_agent 1-7
+"vault/80 · Sessions/2026-05-26-wave-3-summary.md"
+  ai_agent 1-106
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "44cb39bd0216e23680eef90a5fd208e352679d0d",
+  "prompts": {}
+}
