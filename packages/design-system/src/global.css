@@ -1,0 +1,219 @@
+/**
+ * Vought · Global root CSS
+ *
+ * Imported once at app root. Provides:
+ *   1. Font-face declarations (Söhne paid; Inter + JetBrains Mono via Google Fonts)
+ *   2. CSS custom properties mirroring tokens.ts (for runtime/non-Tailwind use)
+ *   3. Base resets
+ *   4. The breath keyframe + the --breath-phase variable driven by useBreathTimer
+ *   5. Reduced-motion overrides
+ */
+
+/* ─── Fonts ─────────────────────────────────────────────────── */
+/*
+ * Inter and JetBrains Mono load via Google Fonts. The host app should
+ * include the corresponding <link> tag — or use next/font — to take
+ * advantage of preconnect + font-display swap. We do not @import here
+ * to keep the package framework-agnostic.
+ *
+ * Söhne is paid. If a license is provisioned, drop the .woff2 files
+ * at /fonts/sohne/ in the host app and the rules below pick them up.
+ */
+@font-face {
+  font-family: 'Söhne';
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Söhne'),
+    url('/fonts/sohne/Söhne-Variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Söhne';
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Söhne Italic'),
+    url('/fonts/sohne/Söhne-Variable-Italic.woff2') format('woff2');
+}
+
+/* ─── Root tokens (CSS custom properties) ──────────────────── */
+/* Mirrors tokens.ts. Used by raw CSS and runtime theming. */
+:root {
+  /* Canvas + surface */
+  --color-canvas-dark: #0a0a0b;
+  --color-canvas-light: #faf8f3;
+  --color-surface-dark: #131316;
+  --color-surface-light: #ffffff;
+  --color-elevated-dark: #1a1a1e;
+  --color-hairline-dark: #25252a;
+  --color-hairline-light: #e8e5dc;
+  --color-glass-dark: rgba(20, 20, 24, 0.72);
+
+  /* Text */
+  --color-text-primary-dark: #f5f5f7;
+  --color-text-primary-light: #0a0a0b;
+  --color-text-secondary-dark: #9b9ba3;
+  --color-text-secondary-light: #5c5c66;
+  /* mutedDark: 4.55:1 on canvas.dark — WCAG AA Normal (1.4.3).
+     Lifted from #5c5c66 (was 2.99:1, failed AA on every dark surface). */
+  --color-text-muted-dark: #797979;
+  /* mutedLight: 5.58:1 on canvas.light — WCAG AA Normal (1.4.3).
+     Darkened from #a3a3ab (was 2.36:1, failed AA on canvas.light). */
+  --color-text-muted-light: #646464;
+
+  /* Semantic */
+  --color-accent-amber: #f5a524;
+  --color-accent-amber-soft: rgba(245, 165, 36, 0.14);
+  /* amberDark: 4.6:1 on canvas.light — safe amber for text on light surfaces.
+     --color-accent-amber (#f5a524) measures 1.92:1 on canvas.light and is
+     UNSAFE for text there; reserve it for dark canvases and decorative fills. */
+  --color-accent-amber-dark: #b87a10;
+  --color-live-emerald: #10b981;
+  --color-risk-coral: #f26d5b;
+  /* coralLight: 4.54:1 on canvas.light — safe error text on light canvases.
+     --color-risk-coral measures 2.78:1 on canvas.light and fails AA there. */
+  --color-risk-coral-light: #c94432;
+  --color-info-azure: #5b8ff9;
+  --color-marketing-ink: #0a0a0b;
+
+  /* Motion */
+  --motion-instant: 80ms;
+  --motion-quick: 150ms;
+  --motion-standard: 240ms;
+  --motion-deliberate: 360ms;
+  --motion-cinematic: 640ms;
+  --motion-breath: 2000ms;
+  --motion-wave: 4000ms;
+
+  --easing-instant: cubic-bezier(0, 0, 0.2, 1);
+  --easing-quick: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-deliberate: cubic-bezier(0.32, 0.72, 0, 1);
+  --easing-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-breath: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  /*
+   * --breath-phase: a normalized 0..1 value, driven by useBreathTimer().
+   * Surfaces that want to phase-sync with the canvas breath multiply
+   * this against opacity/brightness/scale instead of running their own
+   * keyframe. Defaults to 0 so the rest-state is correct before the
+   * timer hook mounts.
+   */
+  --breath-phase: 0;
+}
+
+/* ─── Reset + base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary-dark);
+  background: var(--color-canvas-dark);
+  /* The breath is driven by --breath-phase from useBreathTimer.
+     The body's background tone is computed from that variable. */
+  background-color: color-mix(
+    in srgb,
+    var(--color-canvas-dark) calc(100% - var(--breath-phase) * 4%),
+    #0e0e10 calc(var(--breath-phase) * 4%)
+  );
+  transition: background-color var(--motion-instant) linear;
+}
+
+/* Marketing canvas */
+body[data-canvas='light'] {
+  color: var(--color-text-primary-light);
+  background-color: var(--color-canvas-light);
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-accent-amber-soft);
+  color: var(--color-text-primary-dark);
+}
+
+/* Focus ring · Blueprint §6.2 (focus uses motion/quick) */
+:focus-visible {
+  outline: 2px solid var(--color-accent-amber);
+  outline-offset: 2px;
+  border-radius: 2px;
+  transition: outline-offset var(--motion-quick) var(--easing-quick);
+}
+
+/* ─── The breath (fallback keyframe) ───────────────────────── */
+/*
+ * Preferred path: useBreathTimer() drives --breath-phase and the body
+ * background-color above smoothly interpolates. If no timer mounts
+ * (e.g. static marketing page), this keyframe takes over so we keep
+ * the heartbeat.
+ */
+@keyframes vought-breath {
+  0%,
+  100% {
+    --breath-phase: 0;
+  }
+  50% {
+    --breath-phase: 1;
+  }
+}
+
+body[data-breath='css'] {
+  animation: vought-breath var(--motion-breath) var(--easing-breath) infinite;
+}
+
+/* ─── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    animation: none !important;
+    --breath-phase: 0;
+  }
+}
