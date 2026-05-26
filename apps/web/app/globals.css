@@ -1,0 +1,249 @@
+/**
+ * apps/web · global styles
+ *
+ * Layered:
+ *   1. `@vought/design-system/global.css` — font-faces, --breath-phase,
+ *      reduced-motion overrides, base resets.
+ *   2. Tailwind layers.
+ *   3. Marketing-only helpers (orbs, hairline grid, reveal initial state,
+ *      typography clamps) — all values still trace back to design tokens.
+ */
+
+@import '@vought/design-system/global.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Marketing canvas defaults ─────────────────────────────── */
+body {
+  overflow-x: hidden;
+}
+
+/* ─── Display typography clamps · Blueprint §7.1 ────────────── */
+/* Tokens lock the upper bound; clamp() drives the responsive curve. */
+.display-3xl {
+  font-size: clamp(56px, 7vw, 88px);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  font-family: var(--font-display, 'Söhne'), 'Inter Display', 'Inter', system-ui, sans-serif;
+}
+.display-2xl {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  font-family: var(--font-display, 'Söhne'), 'Inter Display', 'Inter', system-ui, sans-serif;
+}
+.display-xl {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-family: var(--font-display, 'Söhne'), 'Inter Display', 'Inter', system-ui, sans-serif;
+}
+.display-lg {
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-family: var(--font-display, 'Söhne'), 'Inter Display', 'Inter', system-ui, sans-serif;
+}
+
+.label-tiny {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.label-small {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ─── Ambient orbs · Blueprint §6 ───────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+.orb-amber {
+  background: radial-gradient(
+    circle,
+    rgba(245, 165, 36, 0.16) 0%,
+    transparent 70%
+  );
+}
+
+/* ─── Hairline grid texture ─────────────────────────────────── */
+.grid-texture {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ─── Glass nav surface · Blueprint §6 ──────────────────────── */
+.nav-pill {
+  background: rgba(19, 19, 22, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Reveal-on-scroll initial state ────────────────────────── */
+/* The `.in` class is applied by IntersectionObserver in a client hook. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--motion-deliberate) var(--easing-cinematic),
+    transform var(--motion-deliberate) var(--easing-cinematic);
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Pill CTA press ────────────────────────────────────────── */
+.pill-cta {
+  transition:
+    transform var(--motion-instant) var(--easing-instant),
+    background-color var(--motion-quick) var(--easing-quick),
+    opacity var(--motion-quick) var(--easing-quick);
+}
+.pill-cta:active {
+  transform: scale(0.96);
+}
+
+/* ─── Ambient pulses · used on state pills only ─────────────── */
+@keyframes vought-pulse-emerald {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+  }
+}
+/*
+ * Marketing pulse parity with the live screen.
+ * The live screen Listening pill is allowlisted at 1500ms per Blueprint §5.3.
+ * Marketing surface mirrors the canonical breath cadence (2000ms) so the
+ * landing page stays on the canonical scale; the live-screen exception is
+ * the live screen's alone.
+ */
+.pulse-emerald {
+  animation: vought-pulse-emerald var(--motion-breath) var(--easing-breath) infinite;
+}
+
+@keyframes vought-pulse-amber {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 165, 36, 0);
+  }
+}
+/*
+ * Marketing pulse parity with the live screen Whispering pill.
+ * The live screen is allowlisted at 1800ms per Blueprint §5.3; marketing
+ * surface uses the canonical breath cadence (2000ms) to stay on scale.
+ */
+.pulse-amber {
+  animation: vought-pulse-amber var(--motion-breath) var(--easing-breath) infinite;
+}
+
+/* ─── Waveform bar (idle wave) ──────────────────────────────── */
+@keyframes vought-wave-bar {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+/*
+ * Wave-bar idle pulse uses the canonical breath cadence so all marketing
+ * idle motion shares one heartbeat. Per-bar animation-delay (see Hero.tsx)
+ * provides the perceived "wave" travel; the bars themselves don't need a
+ * shorter individual cycle.
+ */
+.wave-bar {
+  animation: vought-wave-bar var(--motion-breath) var(--easing-breath) infinite;
+  transform-origin: center;
+}
+
+/* ─── Floating dashboard preview ────────────────────────────── */
+@keyframes vought-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+/*
+ * Floating dashboard preview uses the canonical wave cadence (4000ms).
+ * Reduced from 6000ms in Wave-4 motion polish to keep all marketing
+ * surfaces on the seven canonical durations.
+ */
+.float-anim {
+  animation: vought-float var(--motion-wave) var(--easing-breath) infinite;
+}
+
+/* ─── Architecture wire pulse ───────────────────────────────── */
+@keyframes vought-wire-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
+.wire-active {
+  stroke-dasharray: 4 6;
+  animation: vought-wire-flow 2000ms linear infinite;
+}
+
+/* ─── Per-word fade-in (declared via Tailwind keyframes too) ── */
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-in var(--motion-instant) var(--easing-instant) forwards;
+}
+
+/* ─── Reduced-motion overrides for marketing surfaces ────────── */
+@media (prefers-reduced-motion: reduce) {
+  .float-anim,
+  .pulse-emerald,
+  .pulse-amber,
+  .wave-bar,
+  .wire-active,
+  .word {
+    animation: none !important;
+  }
+  .reveal {
+    transition: opacity var(--motion-quick) linear;
+    transform: none !important;
+  }
+  .reveal,
+  .reveal.in {
+    opacity: 1;
+  }
+}
