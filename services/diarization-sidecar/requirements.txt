@@ -1,0 +1,21 @@
+# Vought · Diarization Sidecar — pinned production deps
+#
+# Versions chosen to track the spec:
+#   - fastapi 0.115 / uvicorn 0.32 (websockets transport)
+#   - diart 0.9 (latest streaming API surface — see ADR if it shifts again)
+#   - pyannote.audio 3.3.x for the 3.1 speaker-diarization model
+#   - torch / torchaudio 2.4 LTS — matches diart 0.9 wheels
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+websockets==13.1
+python-dotenv==1.0.1
+
+# Audio + ML
+numpy==1.26.4
+diart==0.9.0
+pyannote.audio==3.3.1
+torch==2.4.1
+torchaudio==2.4.1
+
+# diart streams via RxPy — pin explicitly because diart leaves it open.
+rx==3.2.0
