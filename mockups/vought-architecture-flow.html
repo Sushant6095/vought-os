@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vought · System Architecture Flow</title>
+<meta name="viewport" content="width=1600">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background: #1a1a1a; }
+  /* n8n-style dotted canvas */
+  .canvas-grid {
+    background-color: #1a1a1a;
+    background-image:
+      radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .node {
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.02) inset;
+    transition: all 0.2s;
+    position: absolute;
+    width: 240px;
+  }
+  .node:hover {
+    border-color: #5a5a5a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  }
+  .node-header {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #3a3a3a;
+  }
+  .node-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .node-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f5f5f5;
+    line-height: 1.2;
+  }
+  .node-subtitle {
+    font-size: 10px;
+    color: #888;
+    margin-top: 1px;
+  }
+  .node-body {
+    padding: 10px 14px;
+    font-size: 11px;
+    color: #b5b5b5;
+    line-height: 1.5;
+  }
+  .node-footer {
+    padding: 8px 14px;
+    border-top: 1px solid #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #888;
+  }
+  .latency-pill {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .port {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #444;
+    border: 2px solid #2a2a2a;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .port.in { left: -6px; }
+  .port.out { right: -6px; }
+  .port.active { background: #fbbf24; box-shadow: 0 0 0 3px rgba(251,191,36,0.2); }
+
+  /* Color-coded node types (n8n style) */
+  .node-trigger .node-icon { background: #b91c1c; color: white; }
+  .node-trigger { border-top: 3px solid #b91c1c; }
+  .node-transform .node-icon { background: #2563eb; color: white; }
+  .node-transform { border-top: 3px solid #2563eb; }
+  .node-ai .node-icon { background: #f97316; color: white; }
+  .node-ai { border-top: 3px solid #f97316; }
+  .node-storage .node-icon { background: #16a34a; color: white; }
+  .node-storage { border-top: 3px solid #16a34a; }
+  .node-output .node-icon { background: #c026d3; color: white; }
+  .node-output { border-top: 3px solid #c026d3; }
+  .node-decision .node-icon { background: #fbbf24; color: black; }
+  .node-decision { border-top: 3px solid #fbbf24; }
+
+  /* Flowing pulse on the wires */
+  @keyframes flow {
+    0% { stroke-dashoffset: 100; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .wire-active {
+    stroke-dasharray: 6 8;
+    animation: flow 2s linear infinite;
+  }
+</style>
+</head>
+<body class="text-white">
+
+<!-- ════════════════════════════════════════════════════════════════════
+     HEADER BAR (n8n-style top bar)
+════════════════════════════════════════════════════════════════════ -->
+<div class="bg-[#0f0f0f] border-b border-[#2a2a2a] px-6 py-3 flex items-center justify-between sticky top-0 z-50">
+  <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-md bg-black flex items-center justify-center border border-[#3a3a3a]">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3l5 10 5-10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="text-sm font-bold leading-tight">Vought · Echo Engine</div>
+        <div class="text-[10px] text-neutral-500">workflow.architecture · v0.1</div>
+      </div>
+    </div>
+    <div class="h-6 w-px bg-[#2a2a2a]"></div>
+    <div class="flex items-center gap-2 text-xs text-neutral-400">
+      <span class="text-neutral-500">Workflow ›</span>
+      <span class="text-white font-medium">Voice Loop</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <button class="px-3 py-1.5 text-xs text-neutral-400 hover:text-white">Editor</button>
+    <button class="px-3 py-1.5 text-xs bg-[#2a2a2a] text-white rounded font-semibold">Executions</button>
+    <button class="px-3 py-1.5 text-xs text-neutral-400 hover:text-white">Logs</button>
+    <div class="h-6 w-px bg-[#2a2a2a] mx-1"></div>
+    <div class="flex items-center gap-2 text-xs">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="text-emerald-300 font-medium">Active</span>
+    </div>
+    <button class="ml-2 px-4 py-1.5 text-xs bg-emerald-500 hover:bg-emerald-400 text-black rounded font-bold">▶ Test workflow</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     LEGEND BAR
+════════════════════════════════════════════════════════════════════ -->
+<div class="bg-[#1f1f1f] border-b border-[#2a2a2a] px-6 py-2.5 flex items-center gap-6 text-[10px] text-neutral-400 font-medium">
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#b91c1c]"></span>Trigger</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#2563eb]"></span>Transform</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#fbbf24]"></span>Decision</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#f97316]"></span>AI</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#16a34a]"></span>Storage</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm bg-[#c026d3]"></span>Output</div>
+  <div class="ml-auto text-neutral-500">target end-to-end latency: <span class="text-amber-400 font-bold">&lt; 1000ms</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     CANVAS — FLOW DIAGRAM
+════════════════════════════════════════════════════════════════════ -->
+<div class="canvas-grid relative overflow-auto" style="min-height: 1400px; width: 100%;">
+
+  <!-- ─── SVG layer for wires (curved bezier paths) ─────────────────── -->
+  <svg class="absolute inset-0 pointer-events-none" width="100%" height="1400" style="z-index: 1;">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24" />
+      </marker>
+      <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+      </marker>
+      <marker id="arrow-grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#666" />
+      </marker>
+    </defs>
+
+    <!-- Mic (90,260) → Browser Capture (370,260) -->
+    <path d="M 330 266 C 350 266, 350 266, 370 266" stroke="#fbbf24" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+
+    <!-- Browser Capture (610,260) splits to ElevenLabs STT (890,140) AND Diart Sidecar (890,440) -->
+    <path d="M 610 266 C 700 266, 700 180, 890 180" stroke="#fbbf24" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+    <path d="M 610 266 C 700 266, 700 400, 890 400" stroke="#fbbf24" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+
+    <!-- ElevenLabs STT (1130,140) → Speech Engine Server (1410,260) -->
+    <path d="M 1130 180 C 1230 180, 1310 260, 1410 260" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" class="wire-active"/>
+
+    <!-- Diart (1130,400) → Speech Engine Server (1410,260) -->
+    <path d="M 1130 400 C 1230 400, 1310 280, 1410 280" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" class="wire-active"/>
+
+    <!-- Speech Engine (1650,260) → Speaker Gate (1410,560) — flows down -->
+    <path d="M 1530 380 C 1530 480, 1530 480, 1530 580" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow-grey)"/>
+
+    <!-- Speaker Gate (1410,560) → Memory (130,720), RAG (370,720), Persona (610,720), LLM (1290,720) -->
+    <path d="M 1530 680 C 1530 740, 1390 740, 1290 740" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow-blue)" class="wire-active"/>
+
+    <!-- Memory (250,820) → LLM (1290,720) -->
+    <path d="M 250 820 C 300 920, 800 920, 1290 760" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-grey)"/>
+    <!-- RAG (490,820) → LLM -->
+    <path d="M 490 820 C 540 920, 800 920, 1290 765" stroke="#16a34a" stroke-width="2" fill="none" marker-end="url(#arrow-grey)"/>
+    <!-- Persona (730,820) → LLM -->
+    <path d="M 730 820 C 780 900, 900 800, 1290 750" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow-grey)"/>
+
+    <!-- LLM (1290,720) → ElevenLabs TTS (1290,940) -->
+    <path d="M 1410 820 C 1410 880, 1410 880, 1410 940" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+
+    <!-- ElevenLabs TTS (1170,1080) → Browser audio out (610,1080) -->
+    <path d="M 1290 1080 C 1100 1080, 800 1080, 610 1080" stroke="#fbbf24" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+
+    <!-- Browser audio out (370,1080) → AirPods (90,1080) -->
+    <path d="M 370 1080 C 240 1080, 240 1080, 130 1080" stroke="#fbbf24" stroke-width="2" fill="none" marker-end="url(#arrow)" class="wire-active"/>
+  </svg>
+
+  <!-- ─── NODES ─────────────────────────────────────────────────────── -->
+
+  <!-- Node 1: User mic input (TRIGGER) -->
+  <div class="node node-trigger" style="top: 200px; left: 90px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="6" y="2" width="4" height="8" rx="2" stroke="white" stroke-width="1.5"/><path d="M3 8a5 5 0 0010 0M8 13v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">User microphone</div>
+        <div class="node-subtitle">Phone or laptop · 16kHz mono PCM</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Captures live audio from the user's device. Source for the entire downstream pipeline.
+    </div>
+    <div class="node-footer">
+      <span>Trigger node</span>
+      <span class="latency-pill">0ms</span>
+    </div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 2: Browser audio capture (TRANSFORM) -->
+  <div class="node node-transform" style="top: 200px; left: 370px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="white" stroke-width="1.5"/><circle cx="8" cy="8" r="2" stroke="white" stroke-width="1.5"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Browser capture</div>
+        <div class="node-subtitle">getUserMedia + AudioContext</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Forks the stream: one copy via WebRTC to ElevenLabs, one via WebSocket to the diart sidecar.
+    </div>
+    <div class="node-footer">
+      <span>cyrano-client/app/live</span>
+      <span class="latency-pill">20ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 3: ElevenLabs STT (AI) -->
+  <div class="node node-ai" style="top: 120px; left: 890px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8c0-3 2-5 5-5M14 8c0 3-2 5-5 5M5 8c0-2 1-3 3-3M11 8c0 2-1 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">ElevenLabs STT</div>
+        <div class="node-subtitle">Speech Engine · WebRTC</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Streaming ASR. Transcribes audio and detects end-of-turn. Sends transcript via WebSocket.
+    </div>
+    <div class="node-footer">
+      <span>managed by ElevenLabs</span>
+      <span class="latency-pill">150ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 4: Diart sidecar (AI) -->
+  <div class="node node-ai" style="top: 340px; left: 890px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="6" r="2" stroke="white" stroke-width="1.5"/><circle cx="11" cy="6" r="2" stroke="white" stroke-width="1.5"/><path d="M2 13c0-2 1-3 3-3s3 1 3 3M8 13c0-2 1-3 3-3s3 1 3 3" stroke="white" stroke-width="1.5"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Diart diarization</div>
+        <div class="node-subtitle">Python sidecar · streaming</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Labels each audio chunk as "self" or "other". 5-second enrollment on session start.
+    </div>
+    <div class="node-footer">
+      <span>diarization-sidecar/main.py</span>
+      <span class="latency-pill">300ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 5: Speech Engine Server (TRANSFORM) -->
+  <div class="node node-transform" style="top: 200px; left: 1410px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M5 6h6M5 8h4M5 10h5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Echo Engine</div>
+        <div class="node-subtitle">Node.js · onTranscript handler</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Receives transcripts + diarization labels. Forwards to orchestration. Stateless.
+    </div>
+    <div class="node-footer">
+      <span>echo-engine/src/server.ts</span>
+      <span class="latency-pill">30ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 6: Speaker gate (DECISION) -->
+  <div class="node node-decision" style="top: 580px; left: 1410px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Speaker gate</div>
+        <div class="node-subtitle">if speaker == 'other' → fire LLM</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Checks the most recent diart label. Only fires the LLM when the OTHER person spoke.
+    </div>
+    <div class="node-footer">
+      <span>orchestrator decision</span>
+      <span class="latency-pill">5ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 7: Memory (STORAGE) -->
+  <div class="node node-storage" style="top: 720px; left: 90px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><ellipse cx="8" cy="4" rx="5" ry="2" stroke="white" stroke-width="1.5"/><path d="M3 4v8c0 1 2 2 5 2s5-1 5-2V4" stroke="white" stroke-width="1.5"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Conversation memory</div>
+        <div class="node-subtitle">Redis · last 20 turns</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Sliding window of recent turns. Sessions cleared on close.
+    </div>
+    <div class="node-footer">
+      <span>memory.ts</span>
+      <span class="latency-pill">10ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 8: RAG (STORAGE) -->
+  <div class="node node-storage" style="top: 720px; left: 370px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M5 5h6M5 8h6M5 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Playbook RAG</div>
+        <div class="node-subtitle">Postgres + pgvector</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Top-k similarity search over uploaded playbook chunks. Vought-only — Vought personas skip this.
+    </div>
+    <div class="node-footer">
+      <span>rag.ts</span>
+      <span class="latency-pill">60ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 9: Persona lookup (TRANSFORM) -->
+  <div class="node node-transform" style="top: 720px; left: 650px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" stroke="white" stroke-width="1.5"/><path d="M2 14c0-3 3-5 6-5s6 2 6 5" stroke="white" stroke-width="1.5"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Persona prompt</div>
+        <div class="node-subtitle">11 built-in personas</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Loads the persona's system prompt + tone profile. First Date, Job Interview, Sales Objection, etc.
+    </div>
+    <div class="node-footer">
+      <span>personas/index.ts</span>
+      <span class="latency-pill">1ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 10: LLM (AI) -->
+  <div class="node node-ai" style="top: 720px; left: 1290px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="white" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">LLM streaming</div>
+        <div class="node-subtitle">OpenAI gpt-4o · or Claude Haiku</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Streams response tokens with AbortSignal threaded through for interruption cancellation.
+    </div>
+    <div class="node-footer">
+      <span>orchestrator.ts</span>
+      <span class="latency-pill">300ms TTFT</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 11: ElevenLabs TTS (AI) -->
+  <div class="node node-ai" style="top: 940px; left: 1290px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5v6M5 3v10M7 6v4M9 4v8M11 5v6M13 7v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">ElevenLabs TTS</div>
+        <div class="node-subtitle">Flash v2 · user's cloned voice</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Streams audio chunks in the user's own voice. TTFB ~135ms.
+    </div>
+    <div class="node-footer">
+      <span>managed by ElevenLabs</span>
+      <span class="latency-pill">135ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 12: Browser audio out (TRANSFORM) -->
+  <div class="node node-transform" style="top: 1020px; left: 370px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 6v4l3 1v-6L2 6zM5 5l5-3v12L5 11" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 6c1 .5 1 3.5 0 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">Browser audio out</div>
+        <div class="node-subtitle">WebRTC → AirPods</div>
+      </div>
+    </div>
+    <div class="node-body">
+      Routes audio only to AirPods/earbuds, never to phone speaker. Independent volume.
+    </div>
+    <div class="node-footer">
+      <span>cyrano-client/app/live</span>
+      <span class="latency-pill">50ms</span>
+    </div>
+    <div class="port in active"></div>
+    <div class="port out active"></div>
+  </div>
+
+  <!-- Node 13: AirPods (OUTPUT) -->
+  <div class="node node-output" style="top: 1020px; left: 90px;">
+    <div class="node-header">
+      <div class="node-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><ellipse cx="5" cy="6" rx="2" ry="3" stroke="white" stroke-width="1.5"/><ellipse cx="11" cy="6" rx="2" ry="3" stroke="white" stroke-width="1.5"/><path d="M5 9v4M11 9v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="node-title">User's AirPods</div>
+        <div class="node-subtitle">Output · whisper in your ear</div>
+      </div>
+    </div>
+    <div class="node-body">
+      The user hears their own cloned voice deliver the next line.
+    </div>
+    <div class="node-footer">
+      <span>Output node</span>
+      <span class="latency-pill">total &lt; 1000ms</span>
+    </div>
+    <div class="port in active"></div>
+  </div>
+
+  <!-- ─── EXECUTION SUMMARY CARD (n8n shows this in bottom-right) ─── -->
+  <div class="absolute bottom-8 right-8 bg-[#2a2a2a] border border-[#3a3a3a] rounded-xl p-5 w-80 shadow-2xl" style="z-index: 10;">
+    <div class="flex items-center justify-between mb-3">
+      <div class="text-xs font-bold uppercase tracking-widest text-emerald-400">Last execution</div>
+      <span class="text-[10px] text-neutral-500">2s ago</span>
+    </div>
+    <div class="text-sm font-semibold mb-1">"That's exactly the problem we eliminate."</div>
+    <div class="text-[11px] text-neutral-500 mb-4">Suggestion delivered in user's voice</div>
+    <div class="space-y-2 text-[11px]">
+      <div class="flex justify-between">
+        <span class="text-neutral-400">End-of-turn detection</span>
+        <span class="text-amber-400 font-mono">312ms</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-neutral-400">LLM time-to-first-token</span>
+        <span class="text-amber-400 font-mono">287ms</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-neutral-400">TTS first audio byte</span>
+        <span class="text-amber-400 font-mono">138ms</span>
+      </div>
+      <div class="border-t border-[#3a3a3a] my-2"></div>
+      <div class="flex justify-between font-semibold">
+        <span class="text-white">Total round-trip</span>
+        <span class="text-emerald-400 font-mono">847ms</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── ANNOTATIONS (n8n-style sticky notes on the canvas) ─── -->
+  <div class="absolute bg-amber-400/15 border border-amber-400/30 rounded-lg p-3 max-w-xs text-[11px] text-amber-200" style="top: 120px; left: 1700px;">
+    <div class="font-bold text-amber-300 mb-1 uppercase text-[9px] tracking-widest">Critical path</div>
+    The yellow flowing wires are the live audio path. Latency budget here is everything — every 100ms feels worse on a phone call.
+  </div>
+
+  <div class="absolute bg-blue-500/15 border border-blue-400/30 rounded-lg p-3 max-w-xs text-[11px] text-blue-200" style="top: 600px; left: 1700px;">
+    <div class="font-bold text-blue-300 mb-1 uppercase text-[9px] tracking-widest">The fork</div>
+    Two streams converge: ElevenLabs transcript + diart speaker label. The decision node gates on whose voice we just heard.
+  </div>
+
+  <div class="absolute bg-emerald-500/15 border border-emerald-400/30 rounded-lg p-3 max-w-xs text-[11px] text-emerald-200" style="top: 720px; left: 940px;">
+    <div class="font-bold text-emerald-300 mb-1 uppercase text-[9px] tracking-widest">Context fan-in</div>
+    Memory, RAG, and Persona all feed the LLM prompt in parallel. Each adds &lt;80ms.
+  </div>
+
+</div>
+
+</body>
+</html>

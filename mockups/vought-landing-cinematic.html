@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Vought · Intelligence for live conversations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #0A0A0B;
+    --surface: #131316;
+    --elevated: #1A1A1E;
+    --hairline: #25252A;
+    --text-primary: #F5F5F7;
+    --text-secondary: #9B9BA3;
+    --text-muted: #5C5C66;
+    --accent: #F5A524;
+    --accent-soft: rgba(245, 165, 36, 0.14);
+    --live: #10B981;
+    --risk: #F26D5B;
+    --info: #5B8FF9;
+  }
+
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* ─── SIGNATURE 1 · THE BREATH ───────────────────────────── */
+  /* Ambient canvas pulse — 2000ms cubic, barely perceptible */
+  @keyframes breath {
+    0%, 100% { background-color: #0A0A0B; }
+    50%      { background-color: #0E0E10; }
+  }
+  body { animation: breath 2000ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+
+  /* ─── SIGNATURE 2 · THE WHISPER BLOOM ────────────────────── */
+  @keyframes bloom {
+    0%   { transform: scale(0.96); opacity: 0; }
+    70%  { transform: scale(1.02); opacity: 1; }
+    100% { transform: scale(1);    opacity: 1; }
+  }
+  .bloom { animation: bloom 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+  /* ─── SIGNATURE 3 · WORD STREAM ──────────────────────────── */
+  @keyframes word-in {
+    from { opacity: 0; transform: translateY(2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .word { display: inline-block; opacity: 0; animation: word-in 80ms ease-out forwards; }
+
+  /* ─── SIGNATURE 4 · THINKING DOTS ────────────────────────── */
+  @keyframes dot-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.15); }
+  }
+  .dot-1 { animation: dot-pulse 1200ms ease-in-out infinite; }
+  .dot-2 { animation: dot-pulse 1200ms ease-in-out 140ms infinite; }
+  .dot-3 { animation: dot-pulse 1200ms ease-in-out 280ms infinite; }
+
+  /* ─── DOT PULSE (state pill) ─────────────────────────────── */
+  @keyframes pulse-emerald {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    50%      { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0); }
+  }
+  .pulse-emerald { animation: pulse-emerald 1500ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+
+  @keyframes pulse-amber {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.5); }
+    50%      { box-shadow: 0 0 0 6px rgba(245, 165, 36, 0); }
+  }
+  .pulse-amber { animation: pulse-amber 1800ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+
+  /* ─── WAVEFORM (idle traveling wave) ─────────────────────── */
+  @keyframes wave {
+    0%, 100% { transform: scaleY(0.3); }
+    50%      { transform: scaleY(1); }
+  }
+  .wave-bar { animation: wave 1200ms ease-in-out infinite; transform-origin: center; }
+
+  /* ─── FLOATING DASHBOARD PREVIEW ─────────────────────────── */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(2deg); }
+    50%      { transform: translateY(-12px) rotate(2deg); }
+  }
+  .float-anim { animation: float 6000ms ease-in-out infinite; }
+
+  /* ─── REVEAL ON SCROLL (set by IntersectionObserver) ────── */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 360ms cubic-bezier(0.16, 1, 0.3, 1), transform 360ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ─── ARCHITECTURE WIRE PULSE ────────────────────────────── */
+  @keyframes wire-flow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -20; }
+  }
+  .wire-active { stroke-dasharray: 4 6; animation: wire-flow 2000ms linear infinite; }
+
+  /* ─── ORB / RADIAL GLOW ──────────────────────────────────── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .orb-amber { background: radial-gradient(circle, rgba(245,165,36,0.16) 0%, transparent 70%); }
+
+  /* ─── HAIRLINE GRID (background texture) ─────────────────── */
+  .grid-texture {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* ─── PILL CTA ───────────────────────────────────────────── */
+  .pill-cta {
+    transition: transform 80ms ease-out, background 150ms ease-out;
+  }
+  .pill-cta:active { transform: scale(0.96); }
+
+  /* ─── NAV PILL (sticky compress) ─────────────────────────── */
+  .nav-pill {
+    background: rgba(19, 19, 22, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ─── HAIRLINE ───────────────────────────────────────────── */
+  .hairline { border-color: var(--hairline); }
+
+  /* ─── REDUCED MOTION ─────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    body { animation: none; }
+    .float-anim, .pulse-emerald, .pulse-amber, .dot-1, .dot-2, .dot-3, .wave-bar, .wire-active {
+      animation: none !important;
+    }
+    .reveal { transition: opacity 200ms; transform: none; }
+  }
+
+  /* ─── TYPOGRAPHY HELPERS ─────────────────────────────────── */
+  .display-3xl { font-size: clamp(56px, 7vw, 88px); line-height: 0.95; font-weight: 800; letter-spacing: -0.045em; }
+  .display-2xl { font-size: clamp(40px, 5vw, 64px); line-height: 1.0; font-weight: 800; letter-spacing: -0.04em; }
+  .display-xl  { font-size: clamp(32px, 4vw, 48px); line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; }
+  .display-lg  { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.1; font-weight: 700; letter-spacing: -0.025em; }
+  .label-tiny  { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+  .label-small { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
+</style>
+</head>
+<body class="grid-texture">
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     AMBIENT ORBS
+═══════════════════════════════════════════════════════════════════════ -->
+<div class="orb orb-amber" style="width: 800px; height: 800px; top: -200px; right: -200px;"></div>
+<div class="orb orb-amber" style="width: 600px; height: 600px; top: 600px; left: -200px; opacity: 0.6;"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     TOP UTILITY PILL
+═══════════════════════════════════════════════════════════════════════ -->
+<div class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+  <a href="#" class="inline-flex items-center gap-2 bg-[#F5A524] text-black text-xs font-bold px-5 py-2 rounded-full hover:opacity-90 transition">
+    <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+    <span>New · Vought 2.0 is live</span>
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6M5 3l3 3-3 3" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════════════════════════════════════ -->
+<nav class="fixed top-16 left-1/2 -translate-x-1/2 z-40 w-[min(1180px,calc(100vw-48px))]">
+  <div class="nav-pill rounded-full px-7 py-3 flex items-center justify-between">
+    <!-- Wordmark -->
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-md bg-white flex items-center justify-center">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <path d="M3 3l5 10 5-10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="font-bold text-[15px] tracking-tight text-white">VOUGHT</span>
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-7 text-sm font-medium text-white/70">
+      <a href="#" class="hover:text-white">Copilot</a>
+      <a href="#" class="hover:text-white">Receptionist</a>
+      <a href="#" class="hover:text-white">Platform</a>
+      <a href="#" class="hover:text-white">Customers</a>
+      <a href="#" class="hover:text-white">Pricing</a>
+      <a href="#" class="hover:text-white">Docs</a>
+    </div>
+
+    <!-- CTA -->
+    <a href="#" class="pill-cta inline-flex items-center gap-2 bg-white text-black text-sm font-semibold px-5 py-2 rounded-full">
+      Get a demo
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h7M5 3l3 3-3 3" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 1 · HERO
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="relative pt-44 pb-32 px-6">
+  <div class="max-w-[1180px] mx-auto grid grid-cols-12 gap-8 items-center">
+    <!-- Left column -->
+    <div class="col-span-12 lg:col-span-7">
+      <div class="reveal inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] pulse-emerald"></span>
+        <span class="text-xs font-medium text-white/70">Live in your AirPods · sub-second latency</span>
+      </div>
+
+      <h1 class="reveal display-3xl text-white mb-7" style="transition-delay: 80ms;">
+        Intelligence<br/>for live<br/>conversations.
+      </h1>
+
+      <p class="reveal text-xl text-white/60 max-w-xl leading-relaxed mb-10" style="transition-delay: 160ms;">
+        Vought listens to your live conversations and privately whispers what to say next — in your own cloned voice. Built on ElevenLabs Speech Engine. Sub-second latency.
+      </p>
+
+      <div class="reveal flex items-center gap-4 mb-12" style="transition-delay: 240ms;">
+        <a href="#" class="pill-cta inline-flex items-center gap-2 bg-[#F5A524] text-black text-sm font-bold px-7 py-4 rounded-full hover:opacity-90">
+          Book your demo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="text-sm font-semibold text-white/80 hover:text-white inline-flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="white"><path d="M3 2l5 3-5 3z"/></svg>
+          </span>
+          Watch the 90-second tour
+        </a>
+      </div>
+
+      <div class="reveal flex items-center gap-10 text-xs text-white/40" style="transition-delay: 320ms;">
+        <div>
+          <div class="mono text-3xl font-medium text-white mb-1" data-count="2.3" data-suffix="B" data-prefix="$">$0B</div>
+          <div>revenue influenced</div>
+        </div>
+        <div class="w-px h-12 bg-white/10"></div>
+        <div>
+          <div class="mono text-3xl font-medium text-white mb-1" data-count="412" data-suffix="ms">0ms</div>
+          <div>whisper latency</div>
+        </div>
+        <div class="w-px h-12 bg-white/10"></div>
+        <div>
+          <div class="mono text-3xl font-medium text-white mb-1" data-count="73" data-suffix="%">0%</div>
+          <div>suggestion accept</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column · floating dashboard preview -->
+    <div class="col-span-12 lg:col-span-5 relative">
+      <div class="float-anim relative" style="transform-origin: center;">
+        <!-- Outer card (state pill above) -->
+        <div class="absolute -top-5 -left-3 z-20">
+          <div class="inline-flex items-center gap-2 bg-[#F5A524] text-black px-4 py-1.5 rounded-full pulse-amber">
+            <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase">Whispering</span>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-[#131316] border border-white/8 rounded-2xl p-5 shadow-2xl" style="box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset;">
+          <!-- Top row -->
+          <div class="flex items-center justify-between mb-4">
+            <div class="label-tiny text-white/40">Live · 14:22</div>
+            <span class="mono text-[10px] text-[#F5A524]">· 412ms</span>
+          </div>
+
+          <!-- Their utterance -->
+          <div class="label-tiny text-white/40 mb-1.5">They just said</div>
+          <p class="text-xs text-white/50 italic mb-4 leading-relaxed">"...we already pay for Salesforce, not sure we need another system in the stack."</p>
+
+          <!-- Suggestion card -->
+          <div class="bloom bg-[#F5A524] rounded-xl p-4 mb-4">
+            <div class="label-tiny text-black/60 mb-2">Say next</div>
+            <p class="text-base font-semibold text-black leading-snug mb-2">"Totally hear you on stack fatigue. What's the thing your reps spend most of their day actually doing in Salesforce?"</p>
+            <p class="text-[10px] text-black/50">→ then: ask about logging</p>
+          </div>
+
+          <!-- Source attribution -->
+          <div class="flex items-center justify-between text-[10px] text-white/40 mb-3">
+            <span>Playbook · Salesforce objection v3</span>
+            <span class="text-[#10B981]">2.3× close</span>
+          </div>
+
+          <!-- Waveform -->
+          <div class="flex items-end gap-0.5 h-5">
+            <div class="wave-bar w-1 bg-[#F5A524]/60 rounded" style="height:30%; animation-delay:0ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/80 rounded" style="height:60%; animation-delay:80ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524] rounded"     style="height:90%; animation-delay:160ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524] rounded"     style="height:70%; animation-delay:240ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524] rounded"     style="height:100%; animation-delay:320ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524] rounded"     style="height:60%; animation-delay:400ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/80 rounded" style="height:80%; animation-delay:480ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/60 rounded" style="height:50%; animation-delay:560ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/40 rounded" style="height:40%; animation-delay:640ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/30 rounded" style="height:30%; animation-delay:720ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/50 rounded" style="height:55%; animation-delay:800ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/70 rounded" style="height:75%; animation-delay:880ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524] rounded"     style="height:90%; animation-delay:960ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/80 rounded" style="height:65%; animation-delay:1040ms"></div>
+            <div class="wave-bar w-1 bg-[#F5A524]/60 rounded" style="height:45%; animation-delay:1120ms"></div>
+          </div>
+        </div>
+
+        <!-- Secondary floating card (deal context preview) -->
+        <div class="absolute -bottom-8 -right-6 bg-[#1A1A1E] border border-white/8 rounded-xl p-3 w-44 shadow-xl" style="transform: rotate(-2deg);">
+          <div class="label-tiny text-white/40 mb-1">Buying signal</div>
+          <div class="text-xs text-white font-semibold mb-1">↑ 3 mentions of "logging"</div>
+          <div class="text-[10px] text-white/40">Strong pain point</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 2 · CUSTOMER LOGOS
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-16 border-y border-white/5">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="reveal label-small text-white/40 text-center mb-10">
+      Trusted by the revenue teams scaling fastest
+    </div>
+    <div class="reveal grid grid-cols-2 md:grid-cols-6 gap-8 items-center" style="transition-delay: 100ms;">
+      <div class="text-2xl font-black text-white/30 tracking-tight text-center">acme/</div>
+      <div class="text-2xl font-light text-white/30 tracking-[0.2em] text-center">PARALLEL</div>
+      <div class="text-2xl font-black italic text-white/30 text-center">Cobalt.</div>
+      <div class="text-xl font-bold text-white/30 text-center">▲ Northwind</div>
+      <div class="text-xl mono text-white/30 text-center">{tripleByte}</div>
+      <div class="text-xl font-extrabold text-white/30 tracking-[-0.05em] text-center">runway</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 3 · THE PROMISE
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="reveal label-small text-[#F5A524] mb-5">One platform · three surfaces</div>
+    <h2 class="reveal display-2xl text-white mb-7" style="transition-delay: 100ms;">
+      Every conversation,<br/>guided by Vought.
+    </h2>
+    <p class="reveal text-xl text-white/60 leading-relaxed" style="transition-delay: 200ms;">
+      From the first inbound call to the closed deal, Vought sits beside every operator —
+      listening, coaching, learning. All powered by the same Echo Engine.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 4 · THREE PILLARS
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-12 px-6 mb-24">
+  <div class="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- Card 1 · Receptionist -->
+    <article class="reveal group bg-[#131316] border border-white/8 rounded-2xl p-8 hover:border-white/20 transition" style="transition-delay: 0ms;">
+      <div class="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#5B8FF9]/20 transition">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7" r="3.5" stroke="white" stroke-width="1.8"/><path d="M3 19c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-3">Vought Receptionist</h3>
+      <p class="text-sm text-white/60 leading-relaxed mb-7">Cut costs, not quality, with autonomous AI agents handling inbound calls 24/7. Books appointments, qualifies leads, escalates urgents.</p>
+      <ul class="space-y-2 text-sm text-white/70 mb-8">
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Always on, never sleeps
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Calendar + CRM native
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sub-second latency
+        </li>
+      </ul>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-white group-hover:gap-2.5 transition-all">
+        Explore Receptionist
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <!-- Card 2 · Copilot · FLAGSHIP -->
+    <article class="reveal group bg-gradient-to-b from-[#1F1A0F] to-[#131316] border border-[#F5A524]/30 rounded-2xl p-8 relative overflow-hidden transition hover:border-[#F5A524]/60" style="transition-delay: 100ms;">
+      <div class="absolute top-4 right-4 inline-flex items-center gap-1 bg-[#F5A524] text-black px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider">
+        Flagship
+      </div>
+      <div class="w-11 h-11 rounded-xl bg-[#F5A524] flex items-center justify-center mb-6">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M5 10c0-3 2.5-5.5 5.5-5.5S16 7 16 10" stroke="black" stroke-width="2" stroke-linecap="round"/><ellipse cx="5" cy="13" rx="2" ry="3" fill="black"/><ellipse cx="17" cy="13" rx="2" ry="3" fill="black"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-3">Vought Copilot</h3>
+      <p class="text-sm text-white/70 leading-relaxed mb-7">Real-time whisper coaching for every operator, in their own cloned voice. Acknowledge → reframe → ask. The Cyrano of revenue.</p>
+      <ul class="space-y-2 text-sm text-white/80 mb-8">
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Whispers in your own voice
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Playbook-aware RAG
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          AirPods or desktop
+        </li>
+      </ul>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-[#F5A524] group-hover:gap-2.5 transition-all">
+        Explore Copilot
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <!-- Card 3 · Insights -->
+    <article class="reveal group bg-[#131316] border border-white/8 rounded-2xl p-8 hover:border-white/20 transition" style="transition-delay: 200ms;">
+      <div class="w-11 h-11 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-[#5B8FF9]/20 transition">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M4 18V11M9 18V5M14 18v-8M19 18v-4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-3">Vought Insights</h3>
+      <p class="text-sm text-white/60 leading-relaxed mb-7">Discover and act on the true drivers of exceptional revenue. Every objection, every deal, every coaching opportunity surfaced.</p>
+      <ul class="space-y-2 text-sm text-white/70 mb-8">
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Auto-summaries per call
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Natural-language AI Analyst™
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Manager coaching workflows
+        </li>
+      </ul>
+      <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-white group-hover:gap-2.5 transition-all">
+        Explore Insights
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 5 · THE LIVE DEMO BLOCK
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6 relative">
+  <div class="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5 reveal">
+      <div class="label-small text-[#F5A524] mb-5">Watch it work · live</div>
+      <h2 class="display-xl text-white mb-7">
+        This actually happens<br/>in <span class="text-[#F5A524]">412 milliseconds</span>.
+      </h2>
+      <p class="text-lg text-white/60 leading-relaxed mb-10">
+        Vought hears what they say. Separates their voice from yours. Finds the line your top closer would have said. Whispers it in your voice, in your ear. All under one second.
+      </p>
+      <a href="#" class="pill-cta inline-flex items-center gap-2 bg-white text-black text-sm font-bold px-7 py-4 rounded-full hover:opacity-90">
+        Open the live demo
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Simulator -->
+    <div class="lg:col-span-7 reveal" style="transition-delay: 100ms;">
+      <div class="bg-[#131316] border border-white/8 rounded-2xl p-6 shadow-2xl">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between mb-5">
+          <div class="inline-flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] pulse-emerald"></span>
+            <span class="label-tiny text-white/60">Listening · live</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="white"><rect x="2" y="1" width="1.5" height="6"/><rect x="4.5" y="1" width="1.5" height="6"/></svg>
+            </button>
+            <span class="mono text-[10px] text-white/40">00:14 / 01:30</span>
+          </div>
+        </div>
+
+        <!-- Transcript -->
+        <div class="space-y-4 mb-5">
+          <div>
+            <div class="label-tiny text-white/40 mb-1">06:12 · Jenna</div>
+            <div class="text-sm text-white/70">
+              <span class="word" style="animation-delay: 0ms">"...we </span>
+              <span class="word" style="animation-delay: 80ms">already </span>
+              <span class="word" style="animation-delay: 160ms">pay </span>
+              <span class="word" style="animation-delay: 240ms">for </span>
+              <span class="word" style="animation-delay: 320ms">Salesforce, </span>
+              <span class="word" style="animation-delay: 400ms">not </span>
+              <span class="word" style="animation-delay: 480ms">sure </span>
+              <span class="word" style="animation-delay: 560ms">we </span>
+              <span class="word" style="animation-delay: 640ms">need </span>
+              <span class="word" style="animation-delay: 720ms">another </span>
+              <span class="word" style="animation-delay: 800ms">system."</span>
+            </div>
+          </div>
+
+          <!-- Thinking state -->
+          <div class="flex items-center gap-2 py-1">
+            <span class="label-tiny text-[#F5A524]">Thinking</span>
+            <span class="w-1 h-1 rounded-full bg-[#F5A524] dot-1"></span>
+            <span class="w-1 h-1 rounded-full bg-[#F5A524] dot-2"></span>
+            <span class="w-1 h-1 rounded-full bg-[#F5A524] dot-3"></span>
+          </div>
+
+          <!-- Suggestion -->
+          <div class="bloom bg-[#F5A524] rounded-xl p-5" style="animation-delay: 1400ms;">
+            <div class="label-tiny text-black/60 mb-2">Say next · in your voice</div>
+            <p class="text-base font-semibold text-black leading-snug">"Totally hear you on stack fatigue. What's the thing your reps spend most of their day actually doing in Salesforce?"</p>
+            <div class="flex items-center justify-between mt-4 text-[10px] text-black/50">
+              <span>Playbook · Salesforce objection v3</span>
+              <span class="font-bold">· 412ms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speaker timeline -->
+        <div class="pt-4 border-t border-white/5">
+          <div class="label-tiny text-white/40 mb-2">Speaker timeline · last 60s</div>
+          <div class="flex items-end gap-px h-7 rounded-md overflow-hidden">
+            <!-- You (amber) -->
+            <div class="bg-[#F5A524]/50 h-full" style="width: 20%"></div>
+            <!-- gap -->
+            <div class="bg-transparent h-full" style="width: 2%"></div>
+            <!-- Them (azure) -->
+            <div class="bg-[#5B8FF9]/50 h-full" style="width: 35%"></div>
+            <div class="bg-transparent h-full" style="width: 2%"></div>
+            <div class="bg-[#F5A524]/50 h-full" style="width: 12%"></div>
+            <div class="bg-transparent h-full" style="width: 2%"></div>
+            <div class="bg-[#5B8FF9]/50 h-full" style="width: 27%"></div>
+          </div>
+          <div class="flex justify-between mt-2 text-[10px] text-white/30 mono">
+            <span>−60s</span>
+            <span>−30s</span>
+            <span>now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 6 · ARCHITECTURE
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6 border-y border-white/5 bg-[#0C0C0E]">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="reveal label-small text-[#F5A524] mb-5">Under the hood</div>
+      <h2 class="reveal display-xl text-white mb-5" style="transition-delay: 100ms;">
+        Vought is the brain.<br/>
+        ElevenLabs is the voice.
+      </h2>
+      <p class="reveal text-lg text-white/60" style="transition-delay: 200ms;">
+        Six components. One sub-second loop. Built on ElevenLabs Speech Engine for real-time audio.
+      </p>
+    </div>
+
+    <!-- Architecture diagram -->
+    <div class="reveal relative bg-[#131316] border border-white/8 rounded-2xl p-8 mb-12" style="transition-delay: 300ms;">
+      <div class="grid grid-cols-1 md:grid-cols-6 gap-2 items-center">
+
+        <!-- Node 1 -->
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="7" y="3" width="6" height="10" rx="3" stroke="white" stroke-width="1.5"/><path d="M4 10a6 6 0 0012 0M10 16v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="text-[10px] text-white/60 font-medium text-center">Mic</div>
+        </div>
+
+        <!-- Wire -->
+        <svg class="hidden md:block" height="2" viewBox="0 0 60 2"><line x1="0" y1="1" x2="60" y2="1" stroke="#F5A524" stroke-width="1.5" class="wire-active"/></svg>
+
+        <!-- Node 2 -->
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-xl bg-[#F5A524]/15 border border-[#F5A524]/30 flex items-center justify-center mb-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10c0-4 3-7 7-7s7 3 7 7" stroke="#F5A524" stroke-width="1.5"/><path d="M5 13l2-2 3 3 5-5" stroke="#F5A524" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="text-[10px] text-white/60 font-medium text-center">ElevenLabs STT</div>
+        </div>
+
+        <svg class="hidden md:block" height="2" viewBox="0 0 60 2"><line x1="0" y1="1" x2="60" y2="1" stroke="#F5A524" stroke-width="1.5" class="wire-active" style="animation-delay: 200ms"/></svg>
+
+        <!-- Node 3 -->
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="6" stroke="white" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="white"/></svg>
+          </div>
+          <div class="text-[10px] text-white/60 font-medium text-center">Echo Engine</div>
+        </div>
+
+        <svg class="hidden md:block" height="2" viewBox="0 0 60 2"><line x1="0" y1="1" x2="60" y2="1" stroke="#F5A524" stroke-width="1.5" class="wire-active" style="animation-delay: 400ms"/></svg>
+
+        <!-- Node 4 -->
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-xl bg-[#F5A524]/15 border border-[#F5A524]/30 flex items-center justify-center mb-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8h10M5 12h7" stroke="#F5A524" stroke-width="1.5" stroke-linecap="round"/><rect x="3" y="4" width="14" height="12" rx="2" stroke="#F5A524" stroke-width="1.5"/></svg>
+          </div>
+          <div class="text-[10px] text-white/60 font-medium text-center">LLM</div>
+        </div>
+
+        <svg class="hidden md:block" height="2" viewBox="0 0 60 2"><line x1="0" y1="1" x2="60" y2="1" stroke="#F5A524" stroke-width="1.5" class="wire-active" style="animation-delay: 600ms"/></svg>
+
+        <!-- Node 5 -->
+        <div class="flex flex-col items-center">
+          <div class="w-14 h-14 rounded-xl bg-[#F5A524]/15 border border-[#F5A524]/30 flex items-center justify-center mb-2">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 7v6M7 5v10M10 8v4M13 5v10M16 7v6" stroke="#F5A524" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="text-[10px] text-white/60 font-medium text-center">ElevenLabs TTS</div>
+        </div>
+      </div>
+
+      <!-- Latency stages -->
+      <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/5">
+        <div>
+          <div class="label-tiny text-white/40 mb-1">End-of-turn detection</div>
+          <div class="mono text-2xl text-[#F5A524]">· 312ms</div>
+          <div class="text-xs text-white/50 mt-1">Diart + VAD confirm</div>
+        </div>
+        <div>
+          <div class="label-tiny text-white/40 mb-1">LLM time-to-first-token</div>
+          <div class="mono text-2xl text-[#F5A524]">· 287ms</div>
+          <div class="text-xs text-white/50 mt-1">gpt-4o-mini streaming</div>
+        </div>
+        <div>
+          <div class="label-tiny text-white/40 mb-1">TTS first audio byte</div>
+          <div class="mono text-2xl text-[#F5A524]">· 138ms</div>
+          <div class="text-xs text-white/50 mt-1">Flash v2 · cloned voice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 7 · CUSTOMER STORY
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="reveal label-small text-[#F5A524] text-center mb-5">Customer story</div>
+    <h2 class="reveal display-xl text-white text-center mb-20" style="transition-delay: 100ms;">How TripleByte closed $1.4M more last quarter.</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- Quote -->
+      <div class="lg:col-span-7 reveal" style="transition-delay: 200ms;">
+        <div class="bg-[#131316] border border-white/8 rounded-3xl p-10">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="mono text-2xl text-white/40">{tripleByte}</div>
+            <div class="h-6 w-px bg-white/10"></div>
+            <div class="text-xs text-white/40">Series C · 240 employees · NYC</div>
+          </div>
+          <blockquote class="text-2xl font-medium text-white leading-snug mb-8 tracking-tight">
+            "We tried Cresta two years ago. Reps hated the desktop overlay — they were glued to a screen instead of the customer. Vought puts the same intelligence in their AirPods, in their own voice. Acceptance rate tripled."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-white/10"></div>
+            <div>
+              <div class="font-bold text-sm text-white">Jenna Cole</div>
+              <div class="text-xs text-white/50">VP RevOps · TripleByte</div>
+            </div>
+            <a href="#" class="ml-auto inline-flex items-center gap-1.5 text-sm font-bold text-[#F5A524]">
+              Read the story
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="lg:col-span-5 space-y-5 reveal" style="transition-delay: 300ms;">
+        <div class="bg-[#131316] border border-white/8 rounded-2xl p-6">
+          <div class="mono text-4xl font-bold text-white mb-1">$1.4M</div>
+          <div class="text-xs text-white/50">incremental revenue, Q1 vs Q4</div>
+        </div>
+        <div class="bg-[#131316] border border-white/8 rounded-2xl p-6">
+          <div class="mono text-4xl font-bold text-white mb-1">3×</div>
+          <div class="text-xs text-white/50">suggestion acceptance vs prior tool</div>
+        </div>
+        <div class="bg-[#131316] border border-white/8 rounded-2xl p-6">
+          <div class="mono text-4xl font-bold text-white mb-1">12<span class="text-2xl text-white/60"> days</span></div>
+          <div class="text-xs text-white/50">from onboarding to first ROI-positive month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 9 · TRUST + SECURITY
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6 border-y border-white/5">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <div class="label-small text-[#F5A524] mb-5">Trust architecture</div>
+      <h2 class="display-xl text-white mb-5">Built for the conversations<br/>that can't leak.</h2>
+      <p class="text-lg text-white/60">Vought processes ephemerally by default. No audio is stored unless you turn it on.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="reveal bg-[#131316] border border-white/8 rounded-xl p-6">
+        <div class="label-tiny text-white/40 mb-3">Certification</div>
+        <div class="text-xl font-bold text-white mb-2">SOC 2 Type II</div>
+        <div class="text-xs text-white/50">Independent audit · annual</div>
+      </div>
+      <div class="reveal bg-[#131316] border border-white/8 rounded-xl p-6" style="transition-delay: 80ms;">
+        <div class="label-tiny text-white/40 mb-3">Compliance</div>
+        <div class="text-xl font-bold text-white mb-2">HIPAA</div>
+        <div class="text-xs text-white/50">For healthcare conversations</div>
+      </div>
+      <div class="reveal bg-[#131316] border border-white/8 rounded-xl p-6" style="transition-delay: 160ms;">
+        <div class="label-tiny text-white/40 mb-3">Privacy</div>
+        <div class="text-xl font-bold text-white mb-2">GDPR</div>
+        <div class="text-xs text-white/50">EU data residency available</div>
+      </div>
+      <div class="reveal bg-[#131316] border border-white/8 rounded-xl p-6" style="transition-delay: 240ms;">
+        <div class="label-tiny text-white/40 mb-3">Default</div>
+        <div class="text-xl font-bold text-white mb-2">Zero retention</div>
+        <div class="text-xs text-white/50">Audio discarded on session close</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 10 · PRICING TEASE
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="reveal text-center max-w-2xl mx-auto mb-16">
+      <div class="label-small text-[#F5A524] mb-5">Pricing</div>
+      <h2 class="display-xl text-white mb-5">Transparent pricing.<br/>No conversation rationing.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="reveal bg-[#131316] border border-white/8 rounded-2xl p-8">
+        <div class="text-xs text-white/40 mb-2">For individuals</div>
+        <div class="text-xl font-bold text-white mb-3">Vought Personal</div>
+        <div class="mono text-5xl text-white mb-2">$19<span class="text-base text-white/40">/mo</span></div>
+        <div class="text-sm text-white/50 mb-6">All consumer personas · 30 hours / month · Voice clone</div>
+        <a href="#" class="pill-cta block text-center bg-white text-black text-sm font-bold py-3 rounded-full hover:opacity-90">Start trial</a>
+      </div>
+      <div class="reveal bg-gradient-to-b from-[#1F1A0F] to-[#131316] border border-[#F5A524]/30 rounded-2xl p-8 relative" style="transition-delay: 100ms;">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F5A524] text-black px-3 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider">Most popular</div>
+        <div class="text-xs text-white/40 mb-2">For revenue teams</div>
+        <div class="text-xl font-bold text-white mb-3">Vought for Teams</div>
+        <div class="mono text-5xl text-white mb-2">$99<span class="text-base text-white/40">/seat/mo</span></div>
+        <div class="text-sm text-white/50 mb-6">Copilot + Insights · playbook RAG · manager dashboard · integrations</div>
+        <a href="#" class="pill-cta block text-center bg-[#F5A524] text-black text-sm font-bold py-3 rounded-full hover:opacity-90">Book a demo</a>
+      </div>
+      <div class="reveal bg-[#131316] border border-white/8 rounded-2xl p-8" style="transition-delay: 200ms;">
+        <div class="text-xs text-white/40 mb-2">50+ seats</div>
+        <div class="text-xl font-bold text-white mb-3">Enterprise</div>
+        <div class="mono text-5xl text-white mb-2">Custom</div>
+        <div class="text-sm text-white/50 mb-6">SOC 2 · SCIM · on-prem LLM · data residency · custom voice workflows</div>
+        <a href="#" class="pill-cta block text-center bg-white/5 border border-white/15 text-white text-sm font-bold py-3 rounded-full hover:bg-white/10">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCENE 11 · CTA STRIP
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="py-32 px-6 relative overflow-hidden">
+  <div class="orb orb-amber" style="width: 700px; height: 700px; bottom: -300px; left: 50%; transform: translateX(-50%); opacity: 0.3;"></div>
+  <div class="max-w-[1180px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 reveal">
+        <h2 class="display-2xl text-white mb-4 leading-tight">See Vought<br/>in your own voice.</h2>
+        <p class="text-lg text-white/60 max-w-lg">20-minute demo. We'll clone your voice on the call and coach you live.</p>
+      </div>
+      <div class="lg:col-span-5 flex justify-start lg:justify-end gap-3 reveal" style="transition-delay: 100ms;">
+        <a href="#" class="pill-cta bg-[#F5A524] hover:opacity-90 text-black text-sm font-bold px-7 py-4 rounded-full inline-flex items-center gap-2">
+          Book your demo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="border border-white/15 hover:border-white/30 text-white text-sm font-semibold px-7 py-4 rounded-full">
+          Talk to sales
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════════════ -->
+<footer class="bg-[#0C0C0E] py-16 border-t border-white/5 px-6">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-8 mb-12">
+      <div class="col-span-2 md:col-span-4">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-7 h-7 rounded-md bg-white flex items-center justify-center">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 3l5 10 5-10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="font-bold text-[15px] tracking-tight text-white">VOUGHT</span>
+        </div>
+        <p class="text-sm text-white/50 max-w-xs leading-relaxed mb-6">Intelligence for live conversations. Made by Vought Inc. in San Francisco.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="white" opacity="0.7"><path d="M11 1H13L8.5 6L14 13H10L7 9L3.5 13H1.5L6.5 7.5L1 1H5L7.5 4.5L11 1Z"/></svg></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="white" opacity="0.7"><rect x="1" y="4" width="2" height="9"/><rect x="1" y="1" width="2" height="2"/><path d="M5 4h2v1.3c.5-.8 1.5-1.3 2.5-1.3 1.9 0 3.5 1.6 3.5 3.5V13h-2V7.5C11 6.7 10.3 6 9.5 6S8 6.7 8 7.5V13H6V4z"/></svg></a>
+        </div>
+      </div>
+      <div class="col-span-1 md:col-span-2">
+        <div class="label-tiny text-white/30 mb-4">Products</div>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="#" class="hover:text-white">Copilot</a></li>
+          <li><a href="#" class="hover:text-white">Receptionist</a></li>
+          <li><a href="#" class="hover:text-white">Insights</a></li>
+          <li><a href="#" class="hover:text-white">Platform</a></li>
+        </ul>
+      </div>
+      <div class="col-span-1 md:col-span-2">
+        <div class="label-tiny text-white/30 mb-4">Solutions</div>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="#" class="hover:text-white">Sales</a></li>
+          <li><a href="#" class="hover:text-white">Support</a></li>
+          <li><a href="#" class="hover:text-white">SMB</a></li>
+          <li><a href="#" class="hover:text-white">Healthcare</a></li>
+        </ul>
+      </div>
+      <div class="col-span-1 md:col-span-2">
+        <div class="label-tiny text-white/30 mb-4">Company</div>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="#" class="hover:text-white">About</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+          <li><a href="#" class="hover:text-white">Customers</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-span-1 md:col-span-2">
+        <div class="label-tiny text-white/30 mb-4">Resources</div>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="#" class="hover:text-white">Docs</a></li>
+          <li><a href="#" class="hover:text-white">Changelog</a></li>
+          <li><a href="#" class="hover:text-white">Blog</a></li>
+          <li><a href="#" class="hover:text-white">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-white/40">
+      <div>© 2026 Vought Inc. · All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Trust</a>
+        <a href="#" class="hover:text-white">DPA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SCROLL REVEAL + COUNT-UP SCRIPT
+═══════════════════════════════════════════════════════════════════════ -->
+<script>
+  // Reveal-on-scroll
+  const reveal = (entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      }
+    });
+  };
+  const observer = new IntersectionObserver(reveal, { threshold: 0.2 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Count-up for hero metrics
+  const countup = (entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      const duration = 1400;
+      const start = performance.now();
+      const animate = (t) => {
+        const elapsed = t - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = target * eased;
+        el.textContent = prefix + (Number.isInteger(target) ? Math.floor(value) : value.toFixed(1)) + suffix;
+        if (progress < 1) requestAnimationFrame(animate);
+        else el.textContent = prefix + (Number.isInteger(target) ? target : target.toFixed(1)) + suffix;
+      };
+      requestAnimationFrame(animate);
+      countObserver.unobserve(el);
+    });
+  };
+  const countObserver = new IntersectionObserver(countup, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+</script>
+
+</body>
+</html>

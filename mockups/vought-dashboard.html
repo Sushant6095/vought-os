@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Vought · Enterprise Dashboard Mockups</title>
+<meta name="viewport" content="width=1600" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .grain { background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px); background-size: 3px 3px; }
+  .frame {
+    width: 100%; border-radius: 16px;
+    background: white; border: 1px solid #e5e5e5;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+    overflow: hidden;
+  }
+  .browser-bar { background: #f5f5f5; padding: 12px 16px; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; gap: 8px; }
+  .dot { width: 12px; height: 12px; border-radius: 100%; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+  .label-tiny { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #737373; font-weight: 600; }
+  @keyframes wave { 0%,100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
+  .wave-bar { animation: wave 1.2s ease-in-out infinite; transform-origin: center; }
+</style>
+</head>
+<body class="bg-[#f8f6f1] grain">
+
+<div class="max-w-[1600px] mx-auto px-12 py-16">
+
+  <header class="mb-16">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l4 8 4-8" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="text-xs tracking-[0.2em] uppercase text-neutral-500 font-semibold">Vought · Enterprise Dashboard · v0.1 mockups</div>
+    </div>
+    <h1 class="text-5xl font-bold text-neutral-900 tracking-tight">The voice intelligence platform for revenue teams.</h1>
+    <p class="text-neutral-600 mt-3 max-w-2xl">AI Receptionist · Agent Assist · Conversation Intelligence. Same engine as Cyrano, with playbooks, CRM integration, and manager dashboards.</p>
+  </header>
+
+  <!-- ============== SCREEN 1: MANAGER DASHBOARD ============== -->
+  <div class="mb-24">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">01 · Manager Dashboard · Team Overview</div>
+    <div class="frame">
+      <div class="browser-bar">
+        <div class="dot bg-red-400"></div>
+        <div class="dot bg-amber-400"></div>
+        <div class="dot bg-green-400"></div>
+        <div class="ml-4 flex-1 max-w-sm bg-white border border-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-500">vox.app/team/acme-revenue</div>
+      </div>
+      <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-56 bg-neutral-50 border-r border-neutral-200 p-5">
+          <div class="flex items-center gap-2 mb-8">
+            <div class="w-7 h-7 rounded-md bg-indigo-600 flex items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l4 8 4-8" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="font-bold">Vought</span>
+          </div>
+          <div class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold mb-3">Acme Revenue Team</div>
+          <nav class="space-y-1 text-sm">
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg bg-indigo-600 text-white font-medium">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="4" height="4" rx="0.5" fill="white"/><rect x="8" y="2" width="4" height="4" rx="0.5" fill="white" opacity="0.5"/><rect x="2" y="8" width="4" height="4" rx="0.5" fill="white" opacity="0.5"/><rect x="8" y="8" width="4" height="4" rx="0.5" fill="white" opacity="0.5"/></svg>
+              Dashboard
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700 hover:bg-neutral-100">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M2 12c0-2.5 2.2-4 5-4s5 1.5 5 4" stroke="currentColor" stroke-width="1.5"/></svg>
+              Team · 8 reps
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3v8h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 8l2-2 2 2 2-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Analytics
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="3" y="2" width="8" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M5 5h4M5 7h4M5 9h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Playbooks · 14
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3l2 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Coaching
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Quality
+            </a>
+            <div class="border-t border-neutral-200 my-3"></div>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 1v2M7 11v2M1 7h2M11 7h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Integrations
+            </a>
+            <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-neutral-700">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
+              Settings
+            </a>
+          </nav>
+          <div class="mt-8 rounded-xl p-3 bg-amber-50 border border-amber-200">
+            <div class="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-1">Trial · 12 days left</div>
+            <div class="text-xs text-amber-900">Add 14 more seats and upgrade by Apr 1.</div>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="flex-1 p-8 bg-white">
+          <div class="flex items-start justify-between mb-8">
+            <div>
+              <div class="label-tiny mb-1">Today · Tuesday, Mar 15</div>
+              <h2 class="text-2xl font-bold text-neutral-900">Good morning, Anjali</h2>
+              <p class="text-sm text-neutral-500 mt-1">3 reps need coaching attention · 2 new objections detected this week</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="px-3 py-2 text-sm border border-neutral-200 rounded-lg text-neutral-700">Last 7 days</button>
+              <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg font-medium">+ New playbook</button>
+            </div>
+          </div>
+
+          <!-- Metric cards -->
+          <div class="grid grid-cols-4 gap-4 mb-8">
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <div class="label-tiny mb-2">Calls this week</div>
+              <div class="text-3xl font-bold text-neutral-900">412</div>
+              <div class="text-xs text-emerald-600 mt-1">↑ 18% vs last week</div>
+            </div>
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <div class="label-tiny mb-2">Suggestion accept rate</div>
+              <div class="text-3xl font-bold text-neutral-900">73%</div>
+              <div class="text-xs text-emerald-600 mt-1">↑ 4 pts</div>
+            </div>
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <div class="label-tiny mb-2">Avg talk ratio</div>
+              <div class="text-3xl font-bold text-neutral-900">42 : 58</div>
+              <div class="text-xs text-amber-600 mt-1">target 35:65</div>
+            </div>
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <div class="label-tiny mb-2">Deals closed</div>
+              <div class="text-3xl font-bold text-neutral-900">$284k</div>
+              <div class="text-xs text-emerald-600 mt-1">↑ $51k</div>
+            </div>
+          </div>
+
+          <!-- Team table -->
+          <div class="rounded-xl border border-neutral-200 overflow-hidden mb-6">
+            <div class="px-5 py-4 border-b border-neutral-200 flex items-center justify-between">
+              <h3 class="font-semibold text-neutral-900">Team performance</h3>
+              <div class="flex items-center gap-2 text-xs text-neutral-500">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>4 reps live now</span>
+              </div>
+            </div>
+            <table class="w-full text-sm">
+              <thead class="bg-neutral-50">
+                <tr class="text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
+                  <th class="text-left px-5 py-3">Rep</th>
+                  <th class="text-left px-5 py-3">Status</th>
+                  <th class="text-right px-5 py-3">Calls</th>
+                  <th class="text-right px-5 py-3">Acceptance</th>
+                  <th class="text-right px-5 py-3">Win rate</th>
+                  <th class="text-right px-5 py-3">Coaching</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-t border-neutral-100">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-semibold">PR</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Priya R.</div>
+                        <div class="text-xs text-neutral-500">Senior AE</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>On call · 12 min</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">68</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">81%</td>
+                  <td class="px-5 py-4 text-right text-emerald-600 font-medium">34%</td>
+                  <td class="px-5 py-4 text-right text-neutral-400">on track</td>
+                </tr>
+                <tr class="border-t border-neutral-100">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-semibold">MK</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Marcus K.</div>
+                        <div class="text-xs text-neutral-500">Senior AE</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>On call · 3 min</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">54</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">76%</td>
+                  <td class="px-5 py-4 text-right text-emerald-600 font-medium">28%</td>
+                  <td class="px-5 py-4 text-right text-neutral-400">on track</td>
+                </tr>
+                <tr class="border-t border-neutral-100 bg-amber-50/40">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs font-semibold">JC</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Jordan C.</div>
+                        <div class="text-xs text-neutral-500">AE</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-neutral-100 text-neutral-700">Available</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">41</td>
+                  <td class="px-5 py-4 text-right text-amber-600 font-medium">52%</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">19%</td>
+                  <td class="px-5 py-4 text-right">
+                    <button class="text-xs text-amber-700 font-semibold">Coach now →</button>
+                  </td>
+                </tr>
+                <tr class="border-t border-neutral-100">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-xs font-semibold">DK</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Diana K.</div>
+                        <div class="text-xs text-neutral-500">AE</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>On call · 22 min</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">47</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">79%</td>
+                  <td class="px-5 py-4 text-right text-emerald-600 font-medium">31%</td>
+                  <td class="px-5 py-4 text-right text-neutral-400">on track</td>
+                </tr>
+                <tr class="border-t border-neutral-100">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs font-semibold">AS</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Amir S.</div>
+                        <div class="text-xs text-neutral-500">SDR</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-neutral-100 text-neutral-700">Away</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">82</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">68%</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">14%</td>
+                  <td class="px-5 py-4 text-right text-neutral-400">drills assigned</td>
+                </tr>
+                <tr class="border-t border-neutral-100 bg-rose-50/40">
+                  <td class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-semibold">RM</div>
+                      <div>
+                        <div class="font-medium text-neutral-900">Rachel M.</div>
+                        <div class="text-xs text-neutral-500">SDR</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-5 py-4">
+                    <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>On call · 8 min</span>
+                  </td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">38</td>
+                  <td class="px-5 py-4 text-right text-rose-600 font-medium">44%</td>
+                  <td class="px-5 py-4 text-right text-neutral-900 font-medium">11%</td>
+                  <td class="px-5 py-4 text-right">
+                    <button class="text-xs text-rose-700 font-semibold">Listen in →</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Two columns: Top objections + Recent wins -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-neutral-900">Top objections this week</h3>
+                <button class="text-xs text-indigo-600">View all</button>
+              </div>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm text-neutral-700">"We already use Salesforce"</span>
+                    <span class="text-xs text-neutral-500">38 calls</span>
+                  </div>
+                  <div class="h-1.5 bg-neutral-100 rounded-full overflow-hidden"><div class="h-full bg-indigo-500" style="width: 76%"></div></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm text-neutral-700">"Price seems steep"</span>
+                    <span class="text-xs text-neutral-500">29 calls</span>
+                  </div>
+                  <div class="h-1.5 bg-neutral-100 rounded-full overflow-hidden"><div class="h-full bg-indigo-500" style="width: 58%"></div></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm text-neutral-700">"Need to think about it"</span>
+                    <span class="text-xs text-neutral-500">22 calls</span>
+                  </div>
+                  <div class="h-1.5 bg-neutral-100 rounded-full overflow-hidden"><div class="h-full bg-indigo-500" style="width: 44%"></div></div>
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-sm text-neutral-700">"Not the right time"</span>
+                    <span class="text-xs text-neutral-500">18 calls</span>
+                  </div>
+                  <div class="h-1.5 bg-neutral-100 rounded-full overflow-hidden"><div class="h-full bg-indigo-500" style="width: 36%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-neutral-200 p-5">
+              <h3 class="font-semibold text-neutral-900 mb-4">AI Analyst</h3>
+              <div class="bg-indigo-50 rounded-lg p-4 mb-3">
+                <div class="text-xs text-indigo-700 font-semibold mb-2">Pattern detected</div>
+                <p class="text-sm text-neutral-800 leading-relaxed">Reps who acknowledge the Salesforce objection before pivoting close <strong>2.3×</strong> more often than reps who immediately counter-pitch. Want me to push this into the objection playbook?</p>
+                <div class="flex gap-2 mt-3">
+                  <button class="bg-indigo-600 text-white text-xs px-3 py-1.5 rounded-md font-medium">Update playbook</button>
+                  <button class="text-indigo-700 text-xs px-3 py-1.5">Dismiss</button>
+                </div>
+              </div>
+              <input type="text" placeholder="Ask anything about your calls..." class="w-full border border-neutral-200 rounded-lg px-4 py-3 text-sm" />
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== SCREEN 2: LIVE CALL COACHING VIEW ============== -->
+  <div class="mb-24">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">02 · Live Call · Rep View</div>
+    <div class="frame">
+      <div class="browser-bar">
+        <div class="dot bg-red-400"></div>
+        <div class="dot bg-amber-400"></div>
+        <div class="dot bg-green-400"></div>
+        <div class="ml-4 flex-1 max-w-sm bg-white border border-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-500">vox.app/live</div>
+      </div>
+      <div class="bg-neutral-950 text-white p-8 grid grid-cols-12 gap-6 min-h-[640px]">
+        <!-- Left: Live transcript -->
+        <div class="col-span-5">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Call · 14:22 elapsed</div>
+              <div class="text-lg font-semibold">Jenna Cole · TripleByte VP RevOps</div>
+              <div class="text-xs text-white/50">Discovery · Salesforce/HubSpot mid-market</div>
+            </div>
+            <div class="pill bg-emerald-500/15 text-emerald-300"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Live · recording</div>
+          </div>
+          <div class="space-y-4 text-sm overflow-y-auto max-h-[480px]">
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">14:18 · Jenna</div>
+              <div class="text-white/80">"Look, the thing is we already pay for Salesforce. I'm not sure we need another system in the stack."</div>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold mb-1">14:20 · You</div>
+              <div class="text-white">"Totally hear you on stack fatigue. Mind if I ask — what's the thing your reps spend most of their day actually doing in Salesforce?"</div>
+              <div class="text-[10px] text-emerald-400 mt-1">✓ followed Vought suggestion</div>
+            </div>
+            <div>
+              <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">14:21 · Jenna</div>
+              <div class="text-white/80">"Honestly? Logging calls. We pay them six figures and they spend 40% of their time typing notes after every call instead of selling."</div>
+            </div>
+            <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3">
+              <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold mb-1">Now · Vought suggestion</div>
+              <div class="text-white font-medium">"That's exactly the problem we eliminate. Vought sits on every call your reps take, generates the summary, logs it to Salesforce — they never type a note again."</div>
+              <div class="text-xs text-white/50 mt-2">→ then: <span class="text-amber-300">"Want to see a 30-second demo of that flow?"</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: Big suggestion -->
+        <div class="col-span-4 border-l border-white/10 pl-6">
+          <div class="text-[10px] uppercase tracking-widest text-amber-300 font-bold mb-3">Say next · in your voice</div>
+          <p class="text-[26px] leading-[1.2] font-semibold mb-6">"That's exactly the problem we eliminate."</p>
+          <p class="text-white/70 text-sm leading-relaxed mb-8">Vought sits on every call your reps take, generates the summary, logs it to Salesforce — they never type a note again.</p>
+          <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-2">Source · Playbook</div>
+          <div class="rounded-lg p-3 bg-white/5 border border-white/10 mb-4">
+            <div class="text-xs font-semibold mb-1">"Salesforce already" objection · v3</div>
+            <div class="text-[11px] text-white/50">Updated by Anjali · 4 days ago · 2.3× higher close when used</div>
+          </div>
+          <div class="flex gap-2">
+            <button class="flex-1 bg-amber-400 text-black text-sm font-semibold py-3 rounded-lg">✓ Used</button>
+            <button class="px-4 bg-white/5 border border-white/10 rounded-lg text-sm">Skip</button>
+            <button class="px-4 bg-white/5 border border-white/10 rounded-lg text-sm">↺</button>
+          </div>
+        </div>
+
+        <!-- Right: Context cards -->
+        <div class="col-span-3 border-l border-white/10 pl-6">
+          <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-3">Deal context</div>
+          <div class="space-y-3 mb-6">
+            <div class="rounded-lg p-3 bg-white/5 border border-white/10">
+              <div class="text-[10px] text-white/40 mb-1">Company</div>
+              <div class="text-sm font-semibold">TripleByte</div>
+              <div class="text-[11px] text-white/50">240 employees · Series C</div>
+            </div>
+            <div class="rounded-lg p-3 bg-white/5 border border-white/10">
+              <div class="text-[10px] text-white/40 mb-1">Last touch</div>
+              <div class="text-sm">Email · 3 days ago</div>
+              <div class="text-[11px] text-white/50">Subject: Re: Calendar?</div>
+            </div>
+            <div class="rounded-lg p-3 bg-emerald-500/10 border border-emerald-500/20">
+              <div class="text-[10px] text-emerald-300 mb-1">Buying signal</div>
+              <div class="text-sm">3 mentions of "logging notes"</div>
+              <div class="text-[11px] text-white/50">Strong pain point</div>
+            </div>
+          </div>
+          <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-3">This call</div>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-white/60">Talk ratio</span>
+              <span class="font-semibold">38 : 62</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-white/60">Suggestions used</span>
+              <span class="font-semibold">4 / 5</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-white/60">Sentiment</span>
+              <span class="text-emerald-400 font-semibold">↑ warming</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== SCREEN 3: PLAYBOOK LIBRARY ============== -->
+  <div class="mb-24">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">03 · Playbook Library</div>
+    <div class="frame">
+      <div class="browser-bar">
+        <div class="dot bg-red-400"></div>
+        <div class="dot bg-amber-400"></div>
+        <div class="dot bg-green-400"></div>
+        <div class="ml-4 flex-1 max-w-sm bg-white border border-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-500">vox.app/playbooks</div>
+      </div>
+      <div class="p-8 bg-white">
+        <div class="flex items-start justify-between mb-8">
+          <div>
+            <div class="label-tiny mb-1">Playbook library</div>
+            <h2 class="text-2xl font-bold text-neutral-900">14 playbooks · used in 412 calls this week</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="text" placeholder="Search playbooks..." class="border border-neutral-200 rounded-lg px-3 py-2 text-sm w-64" />
+            <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg font-medium">+ Upload</button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <div class="rounded-xl border border-neutral-200 p-5 hover:border-indigo-300 cursor-pointer">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l5 10 5-10" stroke="rgb(79,70,229)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="pill bg-emerald-50 text-emerald-700">2.3× close</span>
+            </div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Salesforce already objection</h3>
+            <p class="text-xs text-neutral-500 mb-4">v3 · 38 chunks · used in 142 calls</p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-neutral-500">Updated 4d ago</span>
+              <span class="text-neutral-500">by Anjali</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1" stroke="rgb(217,119,6)" stroke-width="1.5"/><path d="M6 7h6M6 9h4" stroke="rgb(217,119,6)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <span class="pill bg-amber-50 text-amber-700">A/B testing</span>
+            </div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Pricing pushback handler</h3>
+            <p class="text-xs text-neutral-500 mb-4">v2.1 · 24 chunks · used in 96 calls</p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-neutral-500">Updated 1w ago</span>
+              <span class="text-neutral-500">by Marcus</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-rose-100 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="rgb(225,29,72)" stroke-width="1.5"/><path d="M9 6v3l2 1" stroke="rgb(225,29,72)" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <span class="pill bg-neutral-100 text-neutral-700">Default</span>
+            </div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Discovery question bank</h3>
+            <p class="text-xs text-neutral-500 mb-4">v5 · 84 chunks · used in 311 calls</p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-neutral-500">Updated 2d ago</span>
+              <span class="text-neutral-500">by Anjali</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 14l4-8 4 5 4-7" stroke="rgb(13,148,136)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="pill bg-neutral-100 text-neutral-700">Enterprise</span>
+            </div>
+            <h3 class="font-semibold text-neutral-900 mb-1">ROI calculator script</h3>
+            <p class="text-xs text-neutral-500 mb-4">v1 · 12 chunks · used in 28 calls</p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-neutral-500">Updated 3w ago</span>
+              <span class="text-neutral-500">by Marcus</span>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5" stroke="rgb(147,51,234)" stroke-width="1.5"/><circle cx="9" cy="9" r="1.5" fill="rgb(147,51,234)"/></svg>
+              </div>
+              <span class="pill bg-neutral-100 text-neutral-700">SMB</span>
+            </div>
+            <h3 class="font-semibold text-neutral-900 mb-1">Close & next steps</h3>
+            <p class="text-xs text-neutral-500 mb-4">v4 · 18 chunks · used in 187 calls</p>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-neutral-500">Updated 5d ago</span>
+              <span class="text-neutral-500">by Priya</span>
+            </div>
+          </div>
+          <div class="rounded-xl border-2 border-dashed border-neutral-300 p-5 flex flex-col items-center justify-center text-center">
+            <div class="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center mb-3">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 5v10M5 10h10" stroke="rgb(115,115,115)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="text-sm font-semibold text-neutral-700">Upload playbook</div>
+            <div class="text-xs text-neutral-500 mt-1">PDF, DOCX, Notion export</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== SCREEN 4: CONVERSATION INTELLIGENCE - SINGLE CALL ============== -->
+  <div class="mb-24">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">04 · Conversation Intelligence · Single Call Review</div>
+    <div class="frame">
+      <div class="browser-bar">
+        <div class="dot bg-red-400"></div>
+        <div class="dot bg-amber-400"></div>
+        <div class="dot bg-green-400"></div>
+        <div class="ml-4 flex-1 max-w-sm bg-white border border-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-500">vox.app/calls/call_8x3kz</div>
+      </div>
+      <div class="p-8 bg-white">
+        <div class="flex items-start justify-between mb-6">
+          <div>
+            <button class="text-xs text-neutral-500 mb-2">← All calls</button>
+            <h2 class="text-2xl font-bold text-neutral-900">Priya R. · TripleByte · Demo follow-up</h2>
+            <div class="flex items-center gap-3 text-sm text-neutral-500 mt-1">
+              <span>Mar 14 · 42 min</span>
+              <span>·</span>
+              <span class="text-emerald-600 font-medium">Deal advanced to proposal</span>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <button class="px-3 py-2 text-sm border border-neutral-200 rounded-lg text-neutral-700">Share</button>
+            <button class="px-3 py-2 text-sm border border-neutral-200 rounded-lg text-neutral-700">Export</button>
+          </div>
+        </div>
+
+        <!-- Score cards -->
+        <div class="grid grid-cols-5 gap-3 mb-6">
+          <div class="rounded-lg border border-neutral-200 p-3">
+            <div class="label-tiny mb-1">Talk ratio</div>
+            <div class="text-xl font-bold text-neutral-900">36 : 64</div>
+            <div class="text-xs text-emerald-600 mt-0.5">Ideal range</div>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-3">
+            <div class="label-tiny mb-1">Suggestions used</div>
+            <div class="text-xl font-bold text-neutral-900">12 / 14</div>
+            <div class="text-xs text-emerald-600 mt-0.5">86%</div>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-3">
+            <div class="label-tiny mb-1">Sentiment</div>
+            <div class="text-xl font-bold text-emerald-600">Warm ↑</div>
+            <div class="text-xs text-neutral-500 mt-0.5">+0.4 trend</div>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-3">
+            <div class="label-tiny mb-1">Objections</div>
+            <div class="text-xl font-bold text-neutral-900">3</div>
+            <div class="text-xs text-emerald-600 mt-0.5">All handled</div>
+          </div>
+          <div class="rounded-lg border border-neutral-200 p-3">
+            <div class="label-tiny mb-1">Next step</div>
+            <div class="text-xl font-bold text-neutral-900">Set</div>
+            <div class="text-xs text-neutral-500 mt-0.5">Proposal Mar 21</div>
+          </div>
+        </div>
+
+        <!-- Two column transcript + insights -->
+        <div class="grid grid-cols-3 gap-6">
+          <div class="col-span-2 rounded-xl border border-neutral-200 p-5">
+            <h3 class="font-semibold text-neutral-900 mb-4">Transcript with annotations</h3>
+            <div class="space-y-4 text-sm">
+              <div>
+                <div class="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-1">06:14 · Jenna (TripleByte)</div>
+                <div class="text-neutral-800">"...the thing is we already pay for Salesforce. I'm not sure we need another system in the stack."</div>
+              </div>
+              <div class="pl-4 border-l-2 border-amber-400">
+                <div class="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-1">06:16 · Priya</div>
+                <div class="text-neutral-900 font-medium">"Totally hear you on stack fatigue. Mind if I ask — what's the thing your reps spend most of their day actually doing in Salesforce?"</div>
+                <div class="text-[10px] text-emerald-600 mt-1 italic">✓ Used "Salesforce already objection" playbook · v3</div>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-1">06:21 · Jenna</div>
+                <div class="text-neutral-800">"Honestly? Logging calls. We pay them six figures and they spend 40% of their time typing notes..."</div>
+                <div class="text-[10px] text-indigo-600 mt-1 italic">→ Vought detected: pain point + buying signal (3 mentions of "logging")</div>
+              </div>
+              <div class="pl-4 border-l-2 border-amber-400">
+                <div class="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-1">06:24 · Priya</div>
+                <div class="text-neutral-900 font-medium">"That's exactly the problem we eliminate. Vought sits on every call your reps take, generates the summary..."</div>
+                <div class="text-[10px] text-emerald-600 mt-1 italic">✓ Strong pivot to value prop</div>
+              </div>
+              <div class="opacity-60">
+                <div class="text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-1">07:02 · Jenna</div>
+                <div class="text-neutral-800">"How fast does it ingest? Our top reps do 40 calls a day..."</div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="rounded-xl border border-emerald-200 bg-emerald-50/50 p-4">
+              <div class="text-[10px] uppercase tracking-widest text-emerald-700 font-bold mb-2">Best moment</div>
+              <p class="text-sm text-neutral-800">Priya's pivot from "stack fatigue" to discovery question. Got Jenna to volunteer the pain point.</p>
+            </div>
+            <div class="rounded-xl border border-amber-200 bg-amber-50/50 p-4">
+              <div class="text-[10px] uppercase tracking-widest text-amber-700 font-bold mb-2">Missed opportunity</div>
+              <p class="text-sm text-neutral-800">At 22:14 Jenna mentioned competitor pricing — opportunity to ask "what would have to be true" wasn't taken.</p>
+            </div>
+            <div class="rounded-xl border border-indigo-200 bg-indigo-50/50 p-4">
+              <div class="text-[10px] uppercase tracking-widest text-indigo-700 font-bold mb-2">Practice next</div>
+              <p class="text-sm text-neutral-800">"What would have to be true" framing in pricing handler. Assign drill: 5 reps.</p>
+              <button class="text-xs text-indigo-700 font-semibold mt-2">Assign coaching →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== SCREEN 5: INTEGRATIONS ============== -->
+  <div class="mb-12">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">05 · Integrations · Connected Stack</div>
+    <div class="frame">
+      <div class="browser-bar">
+        <div class="dot bg-red-400"></div>
+        <div class="dot bg-amber-400"></div>
+        <div class="dot bg-green-400"></div>
+        <div class="ml-4 flex-1 max-w-sm bg-white border border-neutral-200 rounded-md px-3 py-1 text-xs text-neutral-500">vox.app/integrations</div>
+      </div>
+      <div class="p-8 bg-white">
+        <h2 class="text-2xl font-bold text-neutral-900 mb-2">Integrations</h2>
+        <p class="text-neutral-500 text-sm mb-8">Connect the stack your team already uses. Vought pulls context before calls, logs outcomes after.</p>
+        <div class="space-y-3">
+          <div class="rounded-xl border border-neutral-200 p-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">sf</div>
+              <div>
+                <div class="font-semibold text-neutral-900">Salesforce</div>
+                <div class="text-xs text-neutral-500">Lead context + auto-log activities</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Connected</span>
+              <button class="text-xs text-neutral-500">Configure</button>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center text-white font-bold">hs</div>
+              <div>
+                <div class="font-semibold text-neutral-900">HubSpot</div>
+                <div class="text-xs text-neutral-500">Deal stages + email sequences</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Connected</span>
+              <button class="text-xs text-neutral-500">Configure</button>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-cyan-500 flex items-center justify-center text-white font-bold">zm</div>
+              <div>
+                <div class="font-semibold text-neutral-900">Zoom Phone</div>
+                <div class="text-xs text-neutral-500">Audio bridge for calls</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="pill bg-emerald-50 text-emerald-700"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Connected</span>
+              <button class="text-xs text-neutral-500">Configure</button>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-purple-500 flex items-center justify-center text-white font-bold">sl</div>
+              <div>
+                <div class="font-semibold text-neutral-900">Slack</div>
+                <div class="text-xs text-neutral-500">In-call alerts + post-call summaries</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg font-medium">Connect</button>
+            </div>
+          </div>
+          <div class="rounded-xl border border-neutral-200 p-5 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center text-white font-bold">G</div>
+              <div>
+                <div class="font-semibold text-neutral-900">Google Calendar</div>
+                <div class="text-xs text-neutral-500">Pre-call brief from attendees</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg font-medium">Connect</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design notes -->
+  <div class="mt-32 max-w-3xl">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">Design notes</div>
+    <h3 class="text-2xl font-semibold text-neutral-900 mb-6">Brand direction · Linear meets Cresta</h3>
+    <div class="space-y-4 text-neutral-700 text-sm leading-relaxed">
+      <p><strong class="text-neutral-900">Light SaaS aesthetic, dark when it matters.</strong> Dashboard is clean white-on-white, dense but breathable. The live call view flips to near-black to match the urgency and intimacy of the rep's actual moment — that's the contrast that sells.</p>
+      <p><strong class="text-neutral-900">Color system.</strong> Indigo as primary brand color (signals enterprise SaaS). Amber accent reserved for live AI suggestions — same accent as Cyrano, signaling the shared engine. Emerald for positive metrics, rose for concerning ones. No more than four colors visible at once on any screen.</p>
+      <p><strong class="text-neutral-900">Density.</strong> Vought is for managers who live in dashboards. We err on the side of more numbers, more rows, more density. Dense ≠ ugly. Tables not cards for the team performance grid.</p>
+      <p><strong class="text-neutral-900">The "Now · Vought suggestion" card.</strong> The hero element of the live call screen. Amber background, large suggestion text, source attribution to the playbook below. Same visual language as Cyrano's whisper card — that's the moment that ties the two products together for investors.</p>
+      <p><strong class="text-neutral-900">AI Analyst.</strong> A natural-language box at the bottom of the dashboard ("Ask anything about your calls"). Cresta-killer feature, easy to demo, sells the platform.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

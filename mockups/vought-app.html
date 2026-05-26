@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Vought · Mobile App Mockups</title>
+<meta name="viewport" content="width=1600" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .grain { background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 3px 3px; }
+  .phone {
+    width: 380px; height: 800px; border-radius: 48px;
+    background: #0a0a0a; border: 8px solid #1a1a1a;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    position: relative; overflow: hidden;
+  }
+  .phone::before {
+    content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 32px; background: #000; border-radius: 20px; z-index: 50;
+  }
+  .screen { position: absolute; inset: 0; padding: 56px 24px 24px; color: white; overflow: hidden; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; letter-spacing: 0.02em; }
+  @keyframes pulse-ring { 0%,100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.4); opacity: 0; } }
+  .pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+  @keyframes wave { 0%,100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
+  .wave-bar { animation: wave 1.2s ease-in-out infinite; transform-origin: center; }
+  .glass {
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: rgba(20,20,20,0.6); border: 1px solid rgba(255,255,255,0.08);
+  }
+  .accent { color: #fbbf24; }
+  .accent-bg { background: #fbbf24; color: #0a0a0a; }
+  .label-tiny { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 600; }
+</style>
+</head>
+<body class="bg-[#f8f6f1] grain">
+
+<div class="max-w-[1600px] mx-auto px-12 py-16">
+
+  <!-- Header -->
+  <header class="mb-16">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8c0-2.8 2.2-5 5-5s5 2.2 5 5-2.2 5-5 5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="1.5" fill="white"/></svg>
+      </div>
+      <div class="text-xs tracking-[0.2em] uppercase text-neutral-500 font-semibold">Vought · Mobile App · v0.1 mockups</div>
+    </div>
+    <h1 class="text-5xl font-bold text-neutral-900 tracking-tight">The conversations that matter.</h1>
+    <p class="text-neutral-600 mt-3 max-w-2xl">AI coach in your AirPods. Speaks in your own voice. For dates, interviews, hard conversations, salary negotiations, doctor visits.</p>
+  </header>
+
+  <!-- Artboard grid -->
+  <div class="grid grid-cols-3 gap-x-12 gap-y-20">
+
+    <!-- ============== SCREEN 1: ONBOARDING / WELCOME ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">01 · Welcome</div>
+      <div class="phone">
+        <div class="screen flex flex-col">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-12">
+            <span>9:41</span>
+            <div class="flex gap-1">
+              <span>●●●●</span>
+              <span class="ml-2">●●</span>
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col">
+            <div class="w-12 h-12 rounded-2xl border border-white/20 flex items-center justify-center mb-8">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#fbbf24" stroke-width="1.5"/><circle cx="10" cy="10" r="2" fill="#fbbf24"/></svg>
+            </div>
+            <h2 class="text-4xl font-bold leading-[1.1] mb-4">An AI<br/>that knows<br/>what to say.</h2>
+            <p class="text-white/60 text-sm leading-relaxed mb-auto">Vought listens to your conversation and whispers the right line in your AirPods — in your own voice.</p>
+            <div class="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-semibold">What you'll use it for</div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="pill bg-white/5 text-white/70">First dates</span>
+              <span class="pill bg-white/5 text-white/70">Interviews</span>
+              <span class="pill bg-white/5 text-white/70">Hard talks</span>
+              <span class="pill bg-white/5 text-white/70">Negotiations</span>
+            </div>
+            <button class="accent-bg font-semibold text-sm py-4 rounded-2xl">Begin</button>
+            <button class="text-white/40 text-xs mt-3">I already have an account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 2: VOICE CLONING ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">02 · Voice Clone Onboarding</div>
+      <div class="phone">
+        <div class="screen flex flex-col">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-2">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <button class="text-white/40 text-xs flex items-center gap-1 mb-8 w-fit">← Back</button>
+          <div class="label-tiny mb-2">Step 1 of 2</div>
+          <h2 class="text-3xl font-bold leading-tight mb-2">Read this aloud,<br/>for 30 seconds.</h2>
+          <p class="text-white/50 text-xs mb-8">We'll create a private AI copy of your voice so Vought can speak as you.</p>
+          <div class="glass rounded-2xl p-5 mb-8 text-sm leading-relaxed text-white/80">
+            "I've always believed that the best conversations happen when you're a little uncomfortable. The questions you're afraid to ask are the ones worth asking. The truths you'd rather not say are usually the ones that need to be said."
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="relative">
+              <div class="absolute inset-0 rounded-full bg-amber-400 pulse-ring"></div>
+              <button class="relative w-28 h-28 rounded-full accent-bg flex items-center justify-center shadow-2xl">
+                <div class="w-7 h-7 rounded bg-black/80"></div>
+              </button>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-white/70">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <span>00:18 / 00:30</span>
+            </div>
+            <div class="mt-3 w-full max-w-[200px] h-1 bg-white/10 rounded-full overflow-hidden">
+              <div class="h-full accent-bg" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 3: PERSONA PICKER ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">03 · Persona Picker</div>
+      <div class="phone">
+        <div class="screen flex flex-col">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex justify-between items-start mb-8">
+            <div>
+              <div class="label-tiny mb-1">Good evening, Sushant</div>
+              <h2 class="text-2xl font-bold">What kind of<br/>conversation?</h2>
+            </div>
+            <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/><circle cx="8" cy="8" r="1.5" fill="white"/></svg>
+            </button>
+          </div>
+          <div class="space-y-3 flex-1 overflow-hidden">
+            <!-- Persona card 1 (selected) -->
+            <div class="rounded-2xl p-4 bg-amber-400 text-black">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="text-[10px] uppercase tracking-widest font-bold opacity-60">Tonight at 7pm</div>
+                  <div class="text-lg font-bold mt-1">First Date</div>
+                  <div class="text-xs opacity-70 mt-0.5">Warm, curious, playful</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="black"/><path d="M6 10l3 3 5-6" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+            <!-- Persona card 2 -->
+            <div class="rounded-2xl p-4 glass">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Tomorrow 11am</div>
+                  <div class="text-lg font-semibold mt-1">Job Interview</div>
+                  <div class="text-xs text-white/50 mt-0.5">Confident, structured, succinct</div>
+                </div>
+              </div>
+            </div>
+            <!-- Persona card 3 -->
+            <div class="rounded-2xl p-4 glass">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Anytime</div>
+                  <div class="text-lg font-semibold mt-1">Hard Conversation</div>
+                  <div class="text-xs text-white/50 mt-0.5">Steady, empathetic, calm</div>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl p-4 glass">
+              <div class="flex items-start justify-between">
+                <div>
+                  <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold">When ready</div>
+                  <div class="text-lg font-semibold mt-1">Salary Negotiation</div>
+                  <div class="text-xs text-white/50 mt-0.5">Firm, anchored, friendly</div>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl p-4 glass opacity-60">
+              <div class="text-lg font-semibold">Medical Visit</div>
+            </div>
+          </div>
+          <button class="accent-bg font-semibold text-sm py-4 rounded-2xl mt-4">Begin First Date</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 4: LIVE MODE - LISTENING ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">04 · Live · Listening</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#1a0f00]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex items-center justify-between mb-12">
+            <div class="pill bg-white/5 text-white/70">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Listening · First Date
+            </div>
+            <span class="text-[10px] text-white/30">00:14:22</span>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="flex items-end gap-1.5 h-24 mb-12">
+              <div class="wave-bar w-1.5 bg-amber-400/60 rounded-full" style="height: 30px; animation-delay: 0s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400/80 rounded-full" style="height: 50px; animation-delay: 0.1s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400 rounded-full" style="height: 80px; animation-delay: 0.2s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400 rounded-full" style="height: 65px; animation-delay: 0.3s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400 rounded-full" style="height: 90px; animation-delay: 0.4s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400 rounded-full" style="height: 50px; animation-delay: 0.5s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400/80 rounded-full" style="height: 70px; animation-delay: 0.6s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400/60 rounded-full" style="height: 40px; animation-delay: 0.7s;"></div>
+              <div class="wave-bar w-1.5 bg-amber-400/40 rounded-full" style="height: 30px; animation-delay: 0.8s;"></div>
+            </div>
+            <div class="text-center max-w-[280px]">
+              <div class="label-tiny mb-2">They're speaking</div>
+              <p class="text-white/40 text-sm italic">"So tell me — what made you reach out? Your profile said you're into something niche..."</p>
+            </div>
+          </div>
+          <div class="text-center text-white/30 text-xs mb-2">No audio recorded</div>
+          <button class="bg-white/5 border border-white/10 text-white/60 text-xs py-3 rounded-2xl">End session</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 5: LIVE MODE - WHISPERING ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">05 · Live · Whispering</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-gradient-to-b from-[#1a0f00] to-[#0a0a0a]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex items-center justify-between mb-8">
+            <div class="pill accent-bg">
+              <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+              Whispering in your ear
+            </div>
+            <span class="text-[10px] text-white/30">00:14:23</span>
+          </div>
+          <div class="label-tiny mb-2">They just said</div>
+          <p class="text-white/50 text-xs italic mb-8 leading-relaxed">"So tell me — what made you reach out? Your profile said you're into something niche..."</p>
+          <div class="label-tiny mb-3">Say next</div>
+          <p class="text-white text-[28px] leading-[1.15] font-semibold mb-3">"Honestly? Your photo with the espresso machine. I have a complicated relationship with caffeine."</p>
+          <p class="text-white/40 text-sm leading-relaxed mb-auto">→ then ask: <span class="text-amber-300">"Are you a real coffee person or just performative?"</span></p>
+          <div class="grid grid-cols-3 gap-2 mt-6">
+            <button class="bg-white/5 border border-white/10 rounded-2xl py-3 text-xs text-white/70">
+              <div class="text-[18px] mb-1">↺</div>
+              Different
+            </button>
+            <button class="bg-white/5 border border-white/10 rounded-2xl py-3 text-xs text-white/70">
+              <div class="text-[18px] mb-1">⌄</div>
+              Warmer
+            </button>
+            <button class="bg-white/5 border border-white/10 rounded-2xl py-3 text-xs text-white/70">
+              <div class="text-[18px] mb-1">−</div>
+              Shorter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 6: REVIEW MODE ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">06 · Review · Post-Session</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-[#0a0a0a]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex items-center justify-between mb-6">
+            <button class="text-white/40 text-xs">← Done</button>
+            <span class="text-[10px] text-white/30">Saved by you</span>
+          </div>
+          <div class="label-tiny mb-2">First Date · Yesterday · 42 minutes</div>
+          <h2 class="text-2xl font-bold leading-tight mb-6">How it went</h2>
+          <div class="grid grid-cols-3 gap-2 mb-6">
+            <div class="rounded-xl p-3 bg-emerald-500/10 border border-emerald-500/20">
+              <div class="text-[9px] uppercase tracking-widest text-emerald-300 font-bold mb-1">Best Beat</div>
+              <div class="text-xs text-white/80 leading-tight">Espresso opener landed.</div>
+            </div>
+            <div class="rounded-xl p-3 bg-amber-500/10 border border-amber-500/20">
+              <div class="text-[9px] uppercase tracking-widest text-amber-300 font-bold mb-1">Missed</div>
+              <div class="text-xs text-white/80 leading-tight">Sister bit. Pivot too fast.</div>
+            </div>
+            <div class="rounded-xl p-3 bg-blue-500/10 border border-blue-500/20">
+              <div class="text-[9px] uppercase tracking-widest text-blue-300 font-bold mb-1">Practice</div>
+              <div class="text-xs text-white/80 leading-tight">Follow-ups on emotion.</div>
+            </div>
+          </div>
+          <div class="label-tiny mb-3">Transcript</div>
+          <div class="space-y-3 flex-1 overflow-hidden">
+            <div class="text-xs text-white/40">06:12 · Maya</div>
+            <div class="text-sm text-white/80">"...what made you reach out?"</div>
+            <div class="text-xs text-amber-300/80">06:14 · You</div>
+            <div class="text-sm text-white">"Your photo with the espresso machine..."</div>
+            <div class="text-[10px] text-white/30 italic border-l-2 border-amber-500/40 pl-3 -ml-1">Vought: nice landing on the prop, you got a real laugh — note her body opened up.</div>
+            <div class="text-xs text-white/40">06:48 · Maya</div>
+            <div class="text-sm text-white/80">"My sister was the same..."</div>
+          </div>
+          <button class="bg-white/5 border border-white/10 text-white/70 text-xs py-3 rounded-2xl mt-3">Ask Vought about this conversation</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============== ROW 2: MORE SCREENS ============== -->
+  <div class="grid grid-cols-3 gap-x-12 gap-y-20 mt-20">
+
+    <!-- ============== SCREEN 7: SETTINGS ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">07 · Settings · Privacy</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-[#0a0a0a]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex items-center gap-3 mb-8">
+            <button class="text-white/40 text-xs">← Back</button>
+            <h2 class="text-lg font-semibold">Settings</h2>
+          </div>
+          <div class="label-tiny mb-3">Voice</div>
+          <div class="rounded-2xl p-4 glass mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <div class="text-sm font-semibold">Your cloned voice</div>
+                <div class="text-xs text-white/50 mt-0.5">Created Mar 12 · 30s sample</div>
+              </div>
+              <button class="text-xs text-amber-300">Re-record</button>
+            </div>
+            <div class="flex items-end gap-0.5 h-6">
+              <div class="w-1 bg-amber-400/30 rounded" style="height: 30%"></div>
+              <div class="w-1 bg-amber-400/50 rounded" style="height: 60%"></div>
+              <div class="w-1 bg-amber-400/70 rounded" style="height: 80%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height: 100%"></div>
+              <div class="w-1 bg-amber-400/70 rounded" style="height: 70%"></div>
+              <div class="w-1 bg-amber-400/50 rounded" style="height: 50%"></div>
+              <div class="w-1 bg-amber-400/30 rounded" style="height: 30%"></div>
+              <div class="w-1 bg-amber-400/50 rounded" style="height: 50%"></div>
+              <div class="w-1 bg-amber-400/70 rounded" style="height: 70%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height: 90%"></div>
+              <div class="w-1 bg-amber-400/80 rounded" style="height: 80%"></div>
+              <div class="w-1 bg-amber-400/50 rounded" style="height: 50%"></div>
+              <div class="w-1 bg-amber-400/30 rounded" style="height: 30%"></div>
+            </div>
+          </div>
+          <div class="label-tiny mb-3">Privacy</div>
+          <div class="space-y-3 mb-auto">
+            <div class="rounded-2xl p-4 glass">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold">Record audio</div>
+                  <div class="text-xs text-white/50 mt-0.5">Off · we never store audio</div>
+                </div>
+                <div class="w-10 h-6 rounded-full bg-white/10 flex items-center px-0.5">
+                  <div class="w-5 h-5 rounded-full bg-white/40"></div>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-2xl p-4 glass">
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-semibold">Save transcripts</div>
+                  <div class="text-xs text-white/50 mt-0.5">On · for review mode</div>
+                </div>
+                <div class="w-10 h-6 rounded-full accent-bg flex items-center px-0.5 justify-end">
+                  <div class="w-5 h-5 rounded-full bg-black"></div>
+                </div>
+              </div>
+            </div>
+            <button class="w-full text-left rounded-2xl p-4 glass">
+              <div class="text-sm font-semibold text-red-400">Delete all memory</div>
+              <div class="text-xs text-white/50 mt-0.5">Cannot be undone</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 8: HOME / DASHBOARD ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">08 · Home</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-[#0a0a0a]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8c0-2.8 2.2-5 5-5" stroke="black" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="1.5" fill="black"/></svg>
+              </div>
+              <span class="font-semibold">Vought</span>
+            </div>
+            <button class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center text-xs">SJ</button>
+          </div>
+          <div class="rounded-3xl p-5 bg-amber-400 text-black mb-6">
+            <div class="text-[10px] uppercase tracking-widest font-bold opacity-60 mb-2">Up next · in 4 hours</div>
+            <div class="text-2xl font-bold leading-tight mb-1">First date with Maya</div>
+            <div class="text-xs opacity-80">7pm · Caffe Vita on Pike</div>
+            <button class="mt-4 bg-black text-white text-xs font-semibold py-3 px-5 rounded-full">Prepare with Vought</button>
+          </div>
+          <div class="label-tiny mb-3">Recent sessions</div>
+          <div class="space-y-2 mb-auto">
+            <div class="rounded-2xl p-3 glass flex items-center justify-between">
+              <div>
+                <div class="text-sm font-semibold">Salary Negotiation</div>
+                <div class="text-xs text-white/40">Mar 14 · 28 min</div>
+              </div>
+              <div class="text-emerald-400 text-xs">↑ won</div>
+            </div>
+            <div class="rounded-2xl p-3 glass flex items-center justify-between">
+              <div>
+                <div class="text-sm font-semibold">Hard Conversation</div>
+                <div class="text-xs text-white/40">Mar 11 · 14 min</div>
+              </div>
+              <div class="text-white/40 text-xs">resolved</div>
+            </div>
+            <div class="rounded-2xl p-3 glass flex items-center justify-between">
+              <div>
+                <div class="text-sm font-semibold">Job Interview · TripleByte</div>
+                <div class="text-xs text-white/40">Mar 09 · 48 min</div>
+              </div>
+              <div class="text-emerald-400 text-xs">↑ got role</div>
+            </div>
+          </div>
+          <div class="flex gap-3 pt-4 border-t border-white/5">
+            <button class="flex-1 accent-bg text-xs font-semibold py-3.5 rounded-2xl">+ New session</button>
+            <button class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6" stroke="white" stroke-opacity="0.6" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== SCREEN 9: AIRPODS PAIRING ============== -->
+    <div>
+      <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">09 · Ready State · AirPods</div>
+      <div class="phone">
+        <div class="screen flex flex-col bg-gradient-to-b from-[#0a0a0a] to-[#1a0f00]">
+          <div class="flex justify-between items-center text-xs text-white/40 mb-6">
+            <span>9:41</span>
+            <span>●●●● ●●</span>
+          </div>
+          <button class="text-white/40 text-xs flex items-center gap-1 mb-8 w-fit">← Cancel</button>
+          <div class="label-tiny mb-2">Persona</div>
+          <div class="text-xl font-bold mb-8">First Date</div>
+          <div class="flex-1 flex flex-col items-center justify-center -mt-8">
+            <div class="relative w-48 h-48 mb-8">
+              <div class="absolute inset-0 rounded-full bg-amber-400/10"></div>
+              <div class="absolute inset-4 rounded-full bg-amber-400/15"></div>
+              <div class="absolute inset-8 rounded-full bg-amber-400/20"></div>
+              <div class="absolute inset-12 rounded-full accent-bg flex items-center justify-center">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <ellipse cx="14" cy="14" rx="5" ry="7" fill="black"/>
+                  <ellipse cx="26" cy="14" rx="5" ry="7" fill="black"/>
+                  <path d="M14 21 L14 32" stroke="black" stroke-width="3" stroke-linecap="round"/>
+                  <path d="M26 21 L26 32" stroke="black" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="text-lg font-semibold mb-2">AirPods Pro · Connected</div>
+            <div class="text-white/50 text-xs mb-1">Audio routed to earbuds only</div>
+            <div class="text-white/50 text-xs">Volume independent · 60%</div>
+          </div>
+          <div class="rounded-2xl p-3 bg-white/5 border border-white/10 mb-3">
+            <div class="flex items-center gap-2 text-[11px] text-white/60">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v4M6 9v1" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/></svg>
+              <span>Live coaching · no audio recorded</span>
+            </div>
+          </div>
+          <button class="accent-bg font-semibold text-sm py-4 rounded-2xl">Start listening</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Annotations -->
+  <div class="mt-32 max-w-3xl">
+    <div class="text-xs uppercase tracking-widest text-neutral-500 mb-3 font-semibold">Design notes</div>
+    <h3 class="text-2xl font-semibold text-neutral-900 mb-6">Brand direction · Raycast meets Pi</h3>
+    <div class="space-y-4 text-neutral-700 text-sm leading-relaxed">
+      <p><strong class="text-neutral-900">Canvas.</strong> Near-black backgrounds for the live mode (intimacy, focus), warm off-white app shell for the brand site. One saturated accent color: <span class="inline-block w-3 h-3 rounded-full bg-amber-400 align-middle"></span> amber, reserved for the "speaking" state and primary CTAs. No emoji. Generous whitespace.</p>
+      <p><strong class="text-neutral-900">Typography.</strong> Inter at all sizes. Hero suggestion text is 28pt, semibold. Body is 14pt. Tiny labels are 10pt uppercase tracked 0.08em. Live mode uses high contrast (white on near-black) so glanceable in 0.4 seconds.</p>
+      <p><strong class="text-neutral-900">The translucent overlay.</strong> Inspired by Apple Live Captions and Cluely. Backdrop-filter blur, low opacity, draggable, content-protection enabled (uncapturable by screen recording when in V2 desktop mode).</p>
+      <p><strong class="text-neutral-900">The accent moment.</strong> The single most important UI element is the "Whispering in your ear" pill — that's the one frame people screenshot. It uses the amber background, black text, with a slight pulse. Earned, not constant.</p>
+      <p><strong class="text-neutral-900">Privacy as design.</strong> Every screen shows the privacy state. "No audio recorded" appears in the live mode as a tiny footer. The settings screen makes "Delete all memory" prominent and red. Trust is the brand.</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

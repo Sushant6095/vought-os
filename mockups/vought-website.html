@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vought · The voice intelligence platform for revenue teams</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .nav-pill {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+  }
+  .mega-menu {
+    background: white;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .pill-cta { background: #2155CD; color: white; transition: all 0.2s; }
+  .pill-cta:hover { background: #1a44b0; }
+  .gradient-orb {
+    background: radial-gradient(circle, rgba(255,200,150,0.5) 0%, rgba(255,180,210,0.3) 40%, transparent 70%);
+    filter: blur(40px);
+  }
+  .hero-bg {
+    background: linear-gradient(180deg, #faf8f3 0%, #f3ede2 100%);
+  }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .float-anim { animation: float 6s ease-in-out infinite; }
+  .glow { box-shadow: 0 30px 80px rgba(33, 85, 205, 0.12); }
+</style>
+</head>
+<body class="bg-[#faf8f3]">
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     TOP UTILITY BAR (the dark blue pill banner at top, like Cresta)
+═══════════════════════════════════════════════════════════════════════ -->
+<div class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+  <a href="#" class="inline-flex items-center gap-2 bg-[#2155CD] text-white text-xs font-semibold px-5 py-2 rounded-full hover:bg-[#1a44b0] transition">
+    <span>Explore Voice Intelligence</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════════════════════════════════════════ -->
+<nav class="fixed top-16 left-1/2 -translate-x-1/2 z-40 w-[min(1180px,calc(100vw-48px))]">
+  <div class="nav-pill rounded-full px-7 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-md bg-black flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+          <path d="M3 3l5 10 5-10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="font-bold text-[15px] tracking-tight">VOUGHT</span>
+    </a>
+
+    <!-- Center nav -->
+    <div class="flex items-center gap-7 text-sm font-medium text-neutral-700">
+      <button class="flex items-center gap-1 text-[#2155CD]">
+        Products
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 7l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="flex items-center gap-1">
+        Solutions
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="flex items-center gap-1">
+        Customers
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="flex items-center gap-1">
+        Resources
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="flex items-center gap-1">
+        Company
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <!-- CTA -->
+    <a href="#" class="pill-cta inline-flex items-center gap-2 text-sm font-semibold px-5 py-2 rounded-full">
+      Get a demo
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h7M5 3l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <!-- ───── MEGA MENU (Products dropdown) ────────────────────────────── -->
+  <div class="mega-menu rounded-3xl mt-2 p-8 grid grid-cols-12 gap-8 max-w-[1180px]">
+    <!-- Platform column -->
+    <div class="col-span-3 border-r border-neutral-100 pr-6">
+      <div class="text-[10px] uppercase tracking-[0.15em] text-neutral-400 font-bold mb-4">Platform</div>
+      <div class="bg-gradient-to-br from-orange-50 via-pink-50 to-blue-50 rounded-2xl p-5 mb-5 relative overflow-hidden">
+        <div class="relative z-10">
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-white rounded-lg p-2 shadow-sm">
+              <div class="w-full h-1.5 bg-neutral-200 rounded-full mb-1"></div>
+              <div class="w-2/3 h-1.5 bg-neutral-200 rounded-full"></div>
+            </div>
+            <div class="bg-white rounded-lg p-2 shadow-sm">
+              <div class="text-[8px] font-bold text-neutral-400 mb-1">83%</div>
+              <div class="flex items-end gap-0.5 h-4">
+                <div class="w-1 bg-blue-300 rounded-t" style="height:30%"></div>
+                <div class="w-1 bg-blue-400 rounded-t" style="height:55%"></div>
+                <div class="w-1 bg-blue-500 rounded-t" style="height:80%"></div>
+                <div class="w-1 bg-blue-600 rounded-t" style="height:100%"></div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg p-2 shadow-sm col-span-2">
+              <div class="flex items-end gap-0.5 h-6">
+                <div class="w-1.5 bg-indigo-300 rounded-t" style="height:40%"></div>
+                <div class="w-1.5 bg-indigo-400 rounded-t" style="height:60%"></div>
+                <div class="w-1.5 bg-indigo-500 rounded-t" style="height:70%"></div>
+                <div class="w-1.5 bg-indigo-500 rounded-t" style="height:90%"></div>
+                <div class="w-1.5 bg-indigo-600 rounded-t" style="height:100%"></div>
+                <div class="w-1.5 bg-indigo-500 rounded-t" style="height:75%"></div>
+                <div class="w-1.5 bg-indigo-400 rounded-t" style="height:55%"></div>
+                <div class="w-1.5 bg-indigo-300 rounded-t" style="height:35%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="font-bold text-base mb-1.5">Platform Overview</h3>
+      <p class="text-xs text-neutral-600 leading-relaxed mb-5">Integrate, build, and scale with trust in the voice intelligence platform built for revenue teams.</p>
+      <div class="space-y-1.5">
+        <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Echo Engine</a>
+        <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Integrations</a>
+        <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Responsible AI</a>
+      </div>
+    </div>
+
+    <!-- Products columns -->
+    <div class="col-span-9">
+      <div class="text-[10px] uppercase tracking-[0.15em] text-neutral-400 font-bold mb-4">Products</div>
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Column 1: Vought Receptionist -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-100 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3" stroke="black" stroke-width="1.5"/><path d="M3 15c0-3.3 2.7-5 6-5s6 1.7 6 5" stroke="black" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="font-bold text-base">Vought Receptionist</h3>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed mb-4">Cut costs, not quality, with autonomous AI agents handling inbound calls 24/7.</p>
+          <div class="space-y-2">
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Discover</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Build</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Test & Deploy</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Optimize</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Omnichannel</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Operations Center</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">SMB Receptionist</a>
+          </div>
+        </div>
+
+        <!-- Column 2: Vought Copilot -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-100 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="5" r="2.5" stroke="black" stroke-width="1.5"/><path d="M4 16c0-3 2-5 5-5s5 2 5 5" stroke="black" stroke-width="1.5"/><circle cx="14" cy="8" r="2" fill="#fbbf24" stroke="black" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="font-bold text-base">Vought Copilot</h3>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed mb-4">Harness real-time AI to empower reps with whisper coaching in their own voice.</p>
+          <div class="space-y-2">
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Playbook Agent</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">AI Summaries</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Behavioral Guidance</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Voice Coaching</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Real-Time Translation</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Vought Insights -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-neutral-100 flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 15V8M8 15V3M13 15v-5" stroke="black" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-bold text-base">Vought Insights</h3>
+          </div>
+          <p class="text-xs text-neutral-600 leading-relaxed mb-4">Discover and act on the true drivers of exceptional customer outcomes.</p>
+          <div class="space-y-2">
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Insights</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Coach</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Quality Management</a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium flex items-center gap-1">
+              AI Analyst <span class="text-[10px] text-neutral-400">™</span>
+            </a>
+            <a href="#" class="block text-sm text-neutral-900 hover:text-[#2155CD] font-medium">Automation Discovery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="hero-bg pt-64 pb-32 relative overflow-hidden">
+  <!-- Background orbs -->
+  <div class="absolute -top-20 -right-32 w-[600px] h-[600px] gradient-orb"></div>
+  <div class="absolute -bottom-20 -left-40 w-[500px] h-[500px] gradient-orb opacity-60"></div>
+
+  <div class="max-w-[1180px] mx-auto px-6 relative">
+    <div class="grid grid-cols-12 gap-12 items-center">
+      <div class="col-span-7">
+        <div class="inline-flex items-center gap-2 bg-white border border-neutral-200 rounded-full px-4 py-1.5 mb-7 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-xs font-semibold text-neutral-700">Vought 2.0 · Voice coaching in your own voice. Live.</span>
+        </div>
+        <h1 class="text-[80px] leading-[0.95] font-black tracking-[-0.03em] text-neutral-950 mb-7">
+          The voice<br/>that closes<br/>the deal.
+        </h1>
+        <p class="text-xl text-neutral-700 leading-relaxed mb-10 max-w-xl font-medium">
+          Vought listens to every customer call in real time and whispers the right line in your rep's ear — in their own cloned voice. Built on ElevenLabs Speech Engine. Sub-second latency.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="pill-cta inline-flex items-center gap-2 text-sm font-semibold px-7 py-4 rounded-full">
+            Get a demo
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="text-sm font-semibold text-neutral-900 hover:text-[#2155CD] inline-flex items-center gap-2 px-3 py-4">
+            Watch the 90-second tour
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 4.5l3.5 2.5-3.5 2.5z" fill="currentColor"/></svg>
+          </a>
+        </div>
+        <div class="mt-12 flex items-center gap-8 text-xs text-neutral-500">
+          <div>
+            <div class="text-2xl font-bold text-neutral-900">$2.3B</div>
+            <div>in revenue influenced</div>
+          </div>
+          <div class="w-px h-10 bg-neutral-300"></div>
+          <div>
+            <div class="text-2xl font-bold text-neutral-900">412ms</div>
+            <div>avg whisper latency</div>
+          </div>
+          <div class="w-px h-10 bg-neutral-300"></div>
+          <div>
+            <div class="text-2xl font-bold text-neutral-900">73%</div>
+            <div>suggestion accept rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-5 relative">
+        <!-- Floating dashboard preview -->
+        <div class="relative float-anim">
+          <div class="absolute -top-6 -left-6 w-72 bg-white rounded-2xl glow border border-neutral-100 p-4 z-10">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs font-bold">PR</div>
+              <div>
+                <div class="text-xs font-semibold">Priya R. · live</div>
+                <div class="text-[10px] text-neutral-500">TripleByte · 12m</div>
+              </div>
+              <span class="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <div class="bg-amber-400 rounded-lg p-3 mb-2">
+              <div class="text-[9px] uppercase tracking-widest text-black/60 font-bold mb-1">Say next</div>
+              <p class="text-sm font-semibold text-black leading-snug">"That's exactly the problem we eliminate."</p>
+            </div>
+            <div class="text-[10px] text-neutral-500">Playbook · Salesforce objection v3</div>
+          </div>
+          <div class="bg-neutral-950 rounded-2xl glow p-5 mt-16 ml-12 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Live · 14:22</div>
+              <span class="text-[10px] inline-flex items-center gap-1 bg-amber-400 text-black px-2 py-0.5 rounded-full font-bold">
+                <span class="w-1 h-1 rounded-full bg-black"></span>
+                WHISPERING
+              </span>
+            </div>
+            <div class="space-y-3 text-xs">
+              <div>
+                <div class="text-white/40 text-[9px] uppercase tracking-widest font-bold mb-1">14:18 · Jenna</div>
+                <div class="text-white/70">"...we already pay for Salesforce. Not sure we need another system."</div>
+              </div>
+              <div>
+                <div class="text-amber-300 text-[9px] uppercase tracking-widest font-bold mb-1">14:20 · You</div>
+                <div class="text-white">"Totally hear you on stack fatigue. What's the thing your reps spend most of their day doing in Salesforce?"</div>
+              </div>
+              <div>
+                <div class="text-white/40 text-[9px] uppercase tracking-widest font-bold mb-1">14:21 · Jenna</div>
+                <div class="text-white/70">"Honestly? Logging calls. 40% of their day…"</div>
+              </div>
+            </div>
+            <div class="mt-4 flex items-end gap-0.5 h-5">
+              <div class="w-1 bg-amber-400/60 rounded" style="height:30%"></div>
+              <div class="w-1 bg-amber-400/80 rounded" style="height:50%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height:80%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height:60%"></div>
+              <div class="w-1 bg-amber-400/80 rounded" style="height:90%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height:50%"></div>
+              <div class="w-1 bg-amber-400/60 rounded" style="height:70%"></div>
+              <div class="w-1 bg-amber-400/40 rounded" style="height:40%"></div>
+              <div class="w-1 bg-amber-400/30 rounded" style="height:30%"></div>
+              <div class="w-1 bg-amber-400/50 rounded" style="height:55%"></div>
+              <div class="w-1 bg-amber-400/70 rounded" style="height:65%"></div>
+              <div class="w-1 bg-amber-400 rounded" style="height:85%"></div>
+              <div class="w-1 bg-amber-400/80 rounded" style="height:70%"></div>
+              <div class="w-1 bg-amber-400/60 rounded" style="height:45%"></div>
+              <div class="w-1 bg-amber-400/40 rounded" style="height:30%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     CUSTOMER LOGOS
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="bg-white py-16 border-y border-neutral-100">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="text-center mb-10">
+      <div class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 font-bold">Trusted by the revenue teams scaling fastest</div>
+    </div>
+    <div class="grid grid-cols-6 gap-8 items-center">
+      <div class="text-2xl font-black text-neutral-300 tracking-tight text-center">acme/</div>
+      <div class="text-2xl font-light text-neutral-300 tracking-[0.2em] text-center">PARALLEL</div>
+      <div class="text-2xl font-black italic text-neutral-300 text-center">Cobalt.</div>
+      <div class="text-xl font-bold text-neutral-300 text-center">▲ Northwind</div>
+      <div class="text-2xl font-mono text-neutral-300 text-center">{tripleByte}</div>
+      <div class="text-xl font-extrabold text-neutral-300 tracking-[-0.05em] text-center">runway</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     THREE PILLARS
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="bg-[#faf8f3] py-28">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="text-center mb-20 max-w-3xl mx-auto">
+      <div class="text-[11px] uppercase tracking-[0.2em] text-[#2155CD] font-bold mb-4">One platform · three products</div>
+      <h2 class="text-5xl font-black tracking-tight text-neutral-950 mb-6 leading-tight">
+        Every conversation,<br/>guided by Vought.
+      </h2>
+      <p class="text-lg text-neutral-600 leading-relaxed">
+        From the first inbound call to the closed deal, Vought sits beside every rep — listening, coaching, learning. All powered by the same Echo Engine.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-3 gap-5">
+      <!-- Pillar 1 -->
+      <article class="bg-white rounded-3xl p-8 border border-neutral-100 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-xl bg-neutral-950 flex items-center justify-center mb-6 group-hover:bg-[#2155CD] transition">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7" r="3.5" stroke="white" stroke-width="1.8"/><path d="M3 19c0-4 3.5-6.5 8-6.5s8 2.5 8 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Vought Receptionist</h3>
+        <p class="text-sm text-neutral-600 leading-relaxed mb-6">Cut costs, not quality, with autonomous AI agents you can trust. Answers inbound calls 24/7, books appointments, escalates to humans only when needed.</p>
+        <ul class="space-y-2 text-sm text-neutral-700 mb-8">
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Always on, never sleeps
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Calendar + CRM native
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Sub-second latency
+          </li>
+        </ul>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-[#2155CD] group-hover:gap-2.5 transition-all">
+          Explore Receptionist
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <!-- Pillar 2 -->
+      <article class="bg-neutral-950 text-white rounded-3xl p-8 hover:shadow-2xl transition group relative overflow-hidden">
+        <div class="absolute top-3 right-3 inline-flex items-center gap-1 bg-amber-400 text-black px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider">
+          Flagship
+        </div>
+        <div class="w-12 h-12 rounded-xl bg-amber-400 flex items-center justify-center mb-6">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 10c0-3 2.5-5.5 5.5-5.5S16 7 16 10" stroke="black" stroke-width="2" stroke-linecap="round"/><ellipse cx="5" cy="13" rx="2" ry="3" fill="black"/><ellipse cx="17" cy="13" rx="2" ry="3" fill="black"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Vought Copilot</h3>
+        <p class="text-sm text-white/70 leading-relaxed mb-6">Real-time whisper coaching for every rep, in their own cloned voice. Acknowledge → reframe → ask. The Vought of revenue.</p>
+        <ul class="space-y-2 text-sm text-white/80 mb-8">
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Whispers in your own voice
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Playbook-aware RAG
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            AirPods or desktop
+          </li>
+        </ul>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-amber-400 group-hover:gap-2.5 transition-all">
+          Explore Copilot
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <!-- Pillar 3 -->
+      <article class="bg-white rounded-3xl p-8 border border-neutral-100 hover:shadow-xl transition group">
+        <div class="w-12 h-12 rounded-xl bg-neutral-950 flex items-center justify-center mb-6 group-hover:bg-[#2155CD] transition">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18V11M9 18V5M14 18v-8M19 18v-4" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Vought Insights</h3>
+        <p class="text-sm text-neutral-600 leading-relaxed mb-6">Discover and act on the true drivers of exceptional revenue. Every objection, every deal, every coaching opportunity surfaced.</p>
+        <ul class="space-y-2 text-sm text-neutral-700 mb-8">
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Auto-summaries per call
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Natural-language AI Analyst™
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#2155CD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Manager coaching workflows
+          </li>
+        </ul>
+        <a href="#" class="inline-flex items-center gap-1.5 text-sm font-bold text-[#2155CD] group-hover:gap-2.5 transition-all">
+          Explore Insights
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     METRICS / RESULTS SECTION
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="bg-white py-28">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="grid grid-cols-12 gap-12 items-center mb-16">
+      <div class="col-span-5">
+        <div class="text-[11px] uppercase tracking-[0.2em] text-[#2155CD] font-bold mb-4">The numbers</div>
+        <h2 class="text-5xl font-black tracking-tight text-neutral-950 leading-tight">
+          Revenue teams see results in the first 30 days.
+        </h2>
+      </div>
+      <div class="col-span-7 text-neutral-600 leading-relaxed text-lg">
+        Vought doesn't promise to make your team better someday. It does it on call one.
+        Every rep who turns it on closes more, faster — because they're hearing their own voice
+        deliver the line a top performer would.
+      </div>
+    </div>
+    <div class="grid grid-cols-4 gap-6">
+      <div class="border-t border-neutral-200 pt-6">
+        <div class="text-6xl font-black text-neutral-950 tracking-tight mb-2">2.3×</div>
+        <div class="text-sm text-neutral-600 leading-relaxed">higher close rate when reps follow Vought suggestions on the Salesforce objection</div>
+      </div>
+      <div class="border-t border-neutral-200 pt-6">
+        <div class="text-6xl font-black text-neutral-950 tracking-tight mb-2">+18%</div>
+        <div class="text-sm text-neutral-600 leading-relaxed">week-over-week calls handled per rep after voice coaching enabled</div>
+      </div>
+      <div class="border-t border-neutral-200 pt-6">
+        <div class="text-6xl font-black text-neutral-950 tracking-tight mb-2">412<span class="text-3xl">ms</span></div>
+        <div class="text-sm text-neutral-600 leading-relaxed">average whisper latency from objection to suggestion in rep's ear</div>
+      </div>
+      <div class="border-t border-neutral-200 pt-6">
+        <div class="text-6xl font-black text-neutral-950 tracking-tight mb-2">73%</div>
+        <div class="text-sm text-neutral-600 leading-relaxed">suggestion acceptance — reps follow Vought's line because it's their own</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     CASE STUDY
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="bg-[#faf8f3] py-28">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="text-[11px] uppercase tracking-[0.2em] text-[#2155CD] font-bold mb-4 text-center">Customer story</div>
+    <h2 class="text-4xl font-black tracking-tight text-neutral-950 text-center mb-20">How TripleByte closed $1.4M more in Q1.</h2>
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-7">
+        <div class="bg-white rounded-3xl p-10 border border-neutral-100">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="text-2xl font-mono text-neutral-300">{tripleByte}</div>
+            <div class="h-6 w-px bg-neutral-200"></div>
+            <div class="text-xs text-neutral-500">Series C · 240 employees · NYC</div>
+          </div>
+          <blockquote class="text-2xl font-medium text-neutral-900 leading-snug mb-8 tracking-tight">
+            "We tried Cresta two years ago. Reps hated the desktop overlay — they were glued to a screen instead of the customer. Vought puts the same intelligence in their AirPods, in their own voice. Acceptance rate tripled."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-neutral-200"></div>
+            <div>
+              <div class="font-bold text-sm">Jenna Cole</div>
+              <div class="text-xs text-neutral-500">VP RevOps · TripleByte</div>
+            </div>
+            <a href="#" class="ml-auto inline-flex items-center gap-1.5 text-sm font-bold text-[#2155CD]">
+              Read the story
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-5 space-y-5">
+        <div class="bg-white rounded-2xl p-6 border border-neutral-100">
+          <div class="text-4xl font-black text-neutral-950 tracking-tight mb-1">$1.4M</div>
+          <div class="text-xs text-neutral-600">incremental revenue, Q1 vs Q4 of prior year</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-neutral-100">
+          <div class="text-4xl font-black text-neutral-950 tracking-tight mb-1">3×</div>
+          <div class="text-xs text-neutral-600">suggestion acceptance vs. their prior tool</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-neutral-100">
+          <div class="text-4xl font-black text-neutral-950 tracking-tight mb-1">12 days</div>
+          <div class="text-xs text-neutral-600">from onboarding to first ROI-positive month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     CTA STRIP
+═══════════════════════════════════════════════════════════════════════ -->
+<section class="bg-neutral-950 py-24 text-white">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="grid grid-cols-12 gap-8 items-center">
+      <div class="col-span-7">
+        <h2 class="text-5xl font-black tracking-tight leading-tight mb-4">
+          See Vought in your<br/>own voice.
+        </h2>
+        <p class="text-white/60 text-lg max-w-lg">Book a 20-minute demo. We'll clone your voice on the call and coach you live.</p>
+      </div>
+      <div class="col-span-5 flex justify-end gap-3">
+        <a href="#" class="bg-amber-400 hover:bg-amber-300 text-black text-sm font-bold px-7 py-4 rounded-full inline-flex items-center gap-2">
+          Book your demo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7 3l4 4-4 4" stroke="black" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="border border-white/20 hover:border-white/40 text-white text-sm font-semibold px-7 py-4 rounded-full">
+          Talk to sales
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════════════ -->
+<footer class="bg-white py-16 border-t border-neutral-100">
+  <div class="max-w-[1180px] mx-auto px-6">
+    <div class="grid grid-cols-12 gap-8 mb-12">
+      <div class="col-span-4">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-7 h-7 rounded-md bg-black flex items-center justify-center">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3l5 10 5-10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="font-bold text-[15px] tracking-tight">VOUGHT</span>
+        </div>
+        <p class="text-sm text-neutral-600 max-w-xs leading-relaxed">The voice intelligence platform for revenue teams. Made by Vought Inc. in San Francisco.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-neutral-200">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M11 1H13L8.5 6L14 13H10L7 9L3.5 13H1.5L6.5 7.5L1 1H5L7.5 4.5L11 1Z"/></svg>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-neutral-100 flex items-center justify-center hover:bg-neutral-200">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><rect x="1" y="4" width="2" height="9"/><rect x="1" y="1" width="2" height="2"/><path d="M5 4h2v1.3c.5-.8 1.5-1.3 2.5-1.3 1.9 0 3.5 1.6 3.5 3.5V13h-2V7.5C11 6.7 10.3 6 9.5 6S8 6.7 8 7.5V13H6V4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="text-xs uppercase tracking-widest text-neutral-400 font-bold mb-4">Products</div>
+        <ul class="space-y-2 text-sm text-neutral-700">
+          <li><a href="#">Vought Receptionist</a></li>
+          <li><a href="#">Vought Copilot</a></li>
+          <li><a href="#">Vought Insights</a></li>
+          <li><a href="#">Echo Engine</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <div class="text-xs uppercase tracking-widest text-neutral-400 font-bold mb-4">Solutions</div>
+        <ul class="space-y-2 text-sm text-neutral-700">
+          <li><a href="#">Sales teams</a></li>
+          <li><a href="#">Customer success</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">SMB receptionist</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <div class="text-xs uppercase tracking-widest text-neutral-400 font-bold mb-4">Company</div>
+        <ul class="space-y-2 text-sm text-neutral-700">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2">
+        <div class="text-xs uppercase tracking-widest text-neutral-400 font-bold mb-4">Resources</div>
+        <ul class="space-y-2 text-sm text-neutral-700">
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Changelog</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-neutral-100 pt-6 flex items-center justify-between text-xs text-neutral-500">
+      <div>© 2026 Vought Inc. · All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Trust</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
