@@ -1,0 +1,19 @@
+.gitignore
+  s_7f249c6cf2a0e8::t_712b73c8e109e5 84-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "8d1083836d22a6337ad38823ab2eb4a1099cf425",
+  "prompts": {},
+  "sessions": {
+    "s_7f249c6cf2a0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16451edd-8a33-4627-a3f7-d6bbe4734cd1",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    }
+  }
+}
