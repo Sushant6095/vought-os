@@ -1,0 +1,86 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+
+# Production / build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Env / secrets — NEVER commit
+.env
+.env.local
+.env.production
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*credentials*
+*secrets*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+
+# OS
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Turbo
+.turbo/
+
+# Vercel
+.vercel/
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Cache
+.eslintcache
+.cache/
+.parcel-cache/
+
+# Obsidian — keep workspace + app config, ignore user-specific
+vault/.obsidian/workspace.json
+vault/.obsidian/workspaces.json
+vault/.obsidian/graph.json
+vault/.trash/
+
+# Session logs — agent traces, can be large
+vault/80 · Sessions/*-trace.md
+
+# Claude Code local config
+.claude/local-config.json
+
+# Playwright MCP scratch artifacts (screenshots, console logs)
+.playwright-mcp/

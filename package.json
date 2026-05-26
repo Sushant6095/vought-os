@@ -1,0 +1,34 @@
+{
+  "name": "vought",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Intelligence for live conversations. Real-time voice AI platform.",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/echo-engine"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=web",
+    "dev:app": "turbo dev --filter=app",
+    "dev:engine": "turbo dev --filter=echo-engine",
+    "dev:diart": "cd services/diarization-sidecar && uvicorn main:app --port 8000 --reload",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "test": "turbo test",
+    "clean": "turbo clean && rm -rf node_modules .turbo",
+    "vault:open": "open vault/",
+    "bootstrap": "bash scripts/bootstrap.sh"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.6.3",
+    "prettier": "^3.4.0"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

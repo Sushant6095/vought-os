@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "build/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "type-check": {
+      "dependsOn": ["^type-check"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
+    },
+    "clean": {
+      "cache": false
+    }
+  },
+  "globalEnv": [
+    "NODE_ENV",
+    "ELEVENLABS_API_KEY",
+    "SPEECH_ENGINE_ID",
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "DATABASE_URL",
+    "REDIS_URL",
+    "DIARIZATION_WS_URL",
+    "PUBLIC_WS_URL"
+  ]
+}
