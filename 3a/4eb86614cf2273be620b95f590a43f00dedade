@@ -1,0 +1,77 @@
+apps/web/postcss.config.mjs
+  ai_agent 1-6
+apps/web/components/marketing/Footer.tsx
+  ai_agent 1-147
+apps/web/components/ui/Icon.tsx
+  ai_agent 1-328
+apps/web/components/nav/MegaMenu.tsx
+  ai_agent 1-171
+apps/web/components/marketing/ArchitectureDiagram.tsx
+  ai_agent 1-161
+apps/web/components/marketing/PillarCards.tsx
+  ai_agent 1-155
+apps/web/components/marketing/LiveDemoBlock.tsx
+  ai_agent 1-193
+apps/web/lib/use-count-up.ts
+  ai_agent 1-90
+apps/web/components/marketing/CustomerStory.tsx
+  ai_agent 1-125
+apps/web/components/nav/NavPill.tsx
+  ai_agent 1-105
+apps/web/app/security/page.tsx
+  ai_agent 1-926
+apps/web/lib/use-reveal.ts
+  ai_agent 1-48
+apps/web/app/copilot/page.tsx
+  ai_agent 1-1235
+apps/web/README.md
+  ai_agent 1-25
+apps/web/components/marketing/CustomerLogos.tsx
+  ai_agent 1-54
+apps/web/app/blog/page.tsx
+  ai_agent 1-555
+apps/web/app/customers/page.tsx
+  ai_agent 1-478
+apps/web/app/about/page.tsx
+  ai_agent 1-676
+apps/web/components/marketing/PromiseSection.tsx
+  ai_agent 1-40
+apps/web/components/marketing/TrustGrid.tsx
+  ai_agent 1-81
+apps/web/app/page.tsx
+  ai_agent 1-54
+apps/web/app/receptionist/page.tsx
+  ai_agent 1-1384
+apps/web/components/marketing/CTAStrip.tsx
+  ai_agent 1-122
+apps/web/components/ui/CountUp.tsx
+  ai_agent 1-21
+apps/web/app/globals.css
+  ai_agent 1-249
+apps/web/components/ui/MarketingRoot.tsx
+  ai_agent 1-25
+apps/web/app/contact/page.tsx
+  ai_agent 1-261
+apps/web/package.json
+  ai_agent 1-30
+apps/web/tailwind.config.ts
+  ai_agent 1-26
+apps/web/.gitignore
+  ai_agent 1-5
+apps/web/tsconfig.json
+  ai_agent 1-23
+apps/web/app/layout.tsx
+  ai_agent 1-98
+apps/web/components/marketing/PricingTease.tsx
+  ai_agent 1-127
+apps/web/components/marketing/Hero.tsx
+  ai_agent 1-212
+apps/web/next.config.mjs
+  ai_agent 1-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "3a4eb86614cf2273be620b95f590a43f00dedade",
+  "prompts": {}
+}
