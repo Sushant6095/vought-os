@@ -1,0 +1,47 @@
+/**
+ * apps/app · global stylesheet
+ *
+ * Pulls the design-system globals (tokens, fonts, breath wiring,
+ * reduced-motion) and layers Tailwind on top.
+ */
+
+@import '@vought/design-system/global.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Bloom keyframe — Signature 2 per Blueprint §6.4.
+ *
+ * Source of truth is `@vought/motion` (BLOOM_DURATION_MS = 320ms). The
+ * keyframe is declared here so app-shell elements can use the `.bloom`
+ * utility without each consumer injecting `<style>{bloomCss}</style>`.
+ * The 320ms literal mirrors the package constant; do not bump to
+ * --motion-deliberate (360ms) — the signature is intentionally crisper
+ * than the deliberate token.
+ */
+@keyframes vought-bloom {
+  0%   { transform: scale(0.96); opacity: 0; }
+  70%  { transform: scale(1.02); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+.bloom {
+  animation: vought-bloom 320ms var(--easing-cinematic, cubic-bezier(0.16, 1, 0.3, 1))
+    forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bloom {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Waveform — bar height pulse per Blueprint §5.3.5.
+   Driven via inline `--bar-amp` custom property at 60fps from JS. */
+@keyframes vought-wave-idle {
+  0%, 100% { transform: scaleY(0.18); }
+  50%      { transform: scaleY(0.42); }
+}
