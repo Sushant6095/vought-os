@@ -1,0 +1,77 @@
+apps/app/app/live/[sessionId]/_components/SuggestionCard.tsx
+  ai_agent 1-204
+apps/app/app/live/[sessionId]/layout.tsx
+  ai_agent 1-58
+apps/app/app/live/[sessionId]/page.tsx
+  ai_agent 1-746
+apps/app/app/live/[sessionId]/_components/WordStreamTranscript.tsx
+  ai_agent 1-54
+apps/app/app/api/voice-clone/sample/route.ts
+  ai_agent 1-90
+apps/app/app/live/[sessionId]/_components/DealContextPanel.tsx
+  ai_agent 1-158
+apps/app/app/onboarding/voice/_components/RecordButton.tsx
+  ai_agent 1-146
+apps/app/app/onboarding/voice/page.tsx
+  ai_agent 1-450
+apps/app/app/live/[sessionId]/_components/StatePill.tsx
+  ai_agent 1-134
+apps/app/app/globals.css
+  ai_agent 1-47
+apps/app/app/live/[sessionId]/_components/ConfidenceIndicator.tsx
+  ai_agent 1-53
+apps/app/app/live/[sessionId]/_components/DisclosureFooter.tsx
+  ai_agent 1-59
+apps/app/app/onboarding/voice/_components/ConsentDisclosure.tsx
+  ai_agent 1-76
+apps/app/app/live/page.tsx
+  ai_agent 1-26
+apps/app/.env.local.example
+  ai_agent 1-6
+apps/app/app/live/[sessionId]/_hooks/useRealtimeSession.ts
+  ai_agent 1-283
+apps/app/app/onboarding/voice/_components/ProcessingState.tsx
+  ai_agent 1-37
+apps/app/app/live/[sessionId]/_components/SpeakerTimeline.tsx
+  ai_agent 1-130
+apps/app/app/settings/voice/_components/DeleteVoiceDialog.tsx
+  ai_agent 1-199
+apps/app/app/onboarding/voice/_components/CountdownTimer.tsx
+  ai_agent 1-65
+apps/app/app/settings/voice/_components/ReRecordButton.tsx
+  ai_agent 1-30
+apps/app/app/onboarding/voice/_components/WaveformVisualizer.tsx
+  ai_agent 1-97
+apps/app/app/page.tsx
+  ai_agent 1-65
+apps/app/app/api/voice-clone/route.ts
+  ai_agent 1-209
+apps/app/next.config.mjs
+  ai_agent 1-33
+apps/app/app/live/[sessionId]/_components/SourceAttributionPanel.tsx
+  ai_agent 1-117
+apps/app/tailwind.config.ts
+  ai_agent 1-26
+apps/app/app/settings/voice/_components/VoiceSample.tsx
+  ai_agent 1-113
+apps/app/app/layout.tsx
+  ai_agent 1-36
+apps/app/app/settings/voice/page.tsx
+  ai_agent 1-167
+apps/app/app/onboarding/voice/_hooks/useMicCapture.ts
+  ai_agent 1-269
+apps/app/package.json
+  ai_agent 1-36
+apps/app/tsconfig.json
+  ai_agent 1-23
+apps/app/app/api/token/route.ts
+  ai_agent 1-70
+apps/app/postcss.config.mjs
+  ai_agent 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "66a4221cf0c876b41b57332bf87d31cb9fd28c58",
+  "prompts": {}
+}
