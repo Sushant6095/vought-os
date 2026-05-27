@@ -1,0 +1,19 @@
+apps/web/app/demo/page.tsx
+  s_7f249c6cf2a0e8::t_25576972353c2b 21-26,28-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "1a4a38cf833bf16c0a1f90ff35eb885201f0bafb",
+  "prompts": {},
+  "sessions": {
+    "s_7f249c6cf2a0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16451edd-8a33-4627-a3f7-d6bbe4734cd1",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    }
+  }
+}
