@@ -1,0 +1,882 @@
+.agents/skills/imagegen-frontend-mobile/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-1465
+.agents/skills/cad/references/render-review.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-75
+.agents/skills/render/scripts/viewer/lib/assembly/meshData.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-448
+.agents/skills/cad/scripts/render/browser/render.html
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-31
+.agents/skills/render/scripts/moveit2_server/setup.sh
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-17
+.agents/skills/cad/scripts/common/tests/cad_test_roots.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-43
+.agents/skills/cad/scripts/inspect/inspect_refs/tests/test_refs_inspect.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-752
+scripts/video/text/numbers.txt
+  s_77acb618031a06::t_7ac635d46b62f5 1
+.agents/skills/render/scripts/viewer/components/explorer/hooks/useExplorerPicking.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1103
+.agents/skills/render/scripts/viewer/components/explorer/renderState.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+.agents/skills/render/scripts/viewer/lib/dxf/buildPreviewMesh.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1160
+.agents/skills/render/scripts/viewer/scripts/ensure-dev.test.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-330
+.agents/skills/cad/references/dxf.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-65
+.agents/skills/render/scripts/viewer/components/ui/sheet.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-144
+.agents/skills/render/scripts/viewer/lib/step/stepTree.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-194
+.agents/skills/render/scripts/viewer/components/ui/popover.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-40
+.agents/skills/render/scripts/viewer/components/ui/badge.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-38
+.agents/skills/render/scripts/viewer/lib/urdf/jointAnimation.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-127
+.agents/skills/render/scripts/viewer/components/workbench/ToolbarButton.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-70
+.agents/skills/urdf/scripts/urdf/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-250
+.agents/skills/cad/scripts/common/reporting.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-137
+.agents/skills/urdf/scripts/urdf/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-227
+.agents/skills/render/scripts/viewer/lib/async/concurrency.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-34
+.agents/skills/sdf/scripts/sdf/tests/test_builder.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+.agents/skills/render/scripts/moveit2_server/moveit2_server/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/cad/scripts/common/catalog.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-546
+.agents/skills/render/scripts/moveit2_server/pyproject.toml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-22
+apps/app/app/live/[sessionId]/_components/VoiceWaveform.tsx
+  s_f5e75d90735734::t_eba474e21e35b5 45-47
+.agents/skills/cad/scripts/inspect/inspect_refs/inspect.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-830
+.agents/skills/render/scripts/viewer/components/explorer/renderState.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-19
+.agents/skills/render/scripts/viewer/lib/clipboard.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-261
+.agents/skills/render/scripts/viewer/common/topologyDisplayEdges.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-93
+.agents/skills/cad/scripts/inspect/inspect_refs/lookup.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-243
+.agents/skills/render/scripts/viewer/lib/workbench/breakpoints.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+.agents/skills/srdf/references/implementation-notes.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-37
+.claude/agents/readme-architect.md
+  ai_agent 1-183
+.agents/skills/cad/scripts/common/tests/test_assembly_spec.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-120
+.agents/skills/render/scripts/viewer/lib/step/stepModule.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-255
+.agents/skills/gpt-taste/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-74
+.agents/skills/sendcutsend/LICENSE
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/sdf/references/generator-contract.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-151
+.agents/skills/render/scripts/viewer/components/workbench/ExplorerAlertDialog.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-53
+.agents/skills/render/scripts/viewer/components/explorer/hooks/useExplorerPicking.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-53
+.agents/skills/urdf/references/urdf-workflow.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-126
+.agents/skills/redesign-existing-projects/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-178
+.agents/skills/cad/scripts/common/tests/test_step_scene.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-44
+.agents/skills/render/scripts/viewer/lib/render/stlMeshWorkerClient.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-94
+.agents/skills/render/scripts/moveit2_server/tests/test_context.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-277
+.agents/skills/render/scripts/viewer/lib/render/stlMeshWorker.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-71
+.agents/skills/cad/scripts/dxf/tests/test_render_payload.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-33
+.agents/skills/render/scripts/viewer/lib/render/stlMeshData.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-41
+CLAUDE.md
+  ai_agent 122-138
+.agents/skills/sdf/scripts/sdf/external.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-55
+.agents/skills/render/scripts/viewer/common/renderMeshScene.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1231
+.agents/skills/brandkit/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-798
+.agents/skills/cad/scripts/dxf/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/cad/references/inspection-and-validation.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-158
+.claude/skills/imagegen-frontend-web
+  ai_agent 1
+.agents/skills/minimalist-ui/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-85
+.agents/skills/render/scripts/viewer/scripts/ensure-dev.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-502
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadAssets.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-727
+.agents/skills/high-end-visual-design/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-98
+.agents/skills/render/scripts/viewer/lib/explorerServerRegistry.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-115
+.agents/skills/render/scripts/viewer/components/workbench/MeshFileSheet.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-27
+.agents/skills/render/scripts/viewer/components/workbench/StepFileSheet.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-681
+.agents/skills/render/scripts/viewer/common/stepModuleEffects.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-323
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadWorkspaceShortcuts.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-116
+.agents/skills/sendcutsend/scripts/download_sources.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-264
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadWorkspaceLayout.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-318
+.claude/skills/imagegen-frontend-mobile
+  ai_agent 1
+.agents/skills/render/scripts/viewer/lib/explorer/clipPlane.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-89
+.agents/skills/render/scripts/viewer/components/workbench/CadRenderPane.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-334
+.agents/skills/render/scripts/viewer/lib/explorer/pickingThresholds.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+scripts/checks/link-integrity/report.json
+  s_7f249c6cf2a0e8::t_8faf9e38111317 10-12,14-151,153-334,336-461,463-592,594-866,868-1009,1011-1141,1143-1280,1282-1432,1434-1563,1565-1698,1700-1833,1835-1968,1970-2238,2240-2370,2384,2386-2526,2528-2678,2680-2830,2832-2982,2984-3146
+  s_7f249c6cf2a0e8::t_edf30705407772 1,3-9,2375-2383,3147-3149,3151-3157,3162-3171,3173-3175,3177-3179
+  s_7f249c6cf2a0e8::t_a07a5530d46989 335,1010,2371-2374,2385,3150,3158-3160,3172,3176
+  s_7f249c6cf2a0e8::t_7d3c5ea54eef41 2,13,152,593,867,1281,1564,1969,2239,2527,2679,2831,2983
+  s_7f249c6cf2a0e8::t_8a351018d403a9 462,1142,1433,1699,1834,3161
+.claude/agents/link-integrity-verifier.md
+  s_f5e75d90735734::t_c4a355dded1df0 1-179
+.claude/skills/step-parts
+  ai_agent 1
+.agents/skills/render/scripts/viewer/components/CadExplorer.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-6529
+.agents/skills/cad/references/repair-loop.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-206
+.agents/skills/render/scripts/viewer/lib/clipboard.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-179
+.claude/settings.json.backup
+  s_77acb618031a06::t_ff7fd253d5f259 1-48
+.agents/skills/cad/assets/design-brief-template.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-22
+.agents/skills/cad/scripts/render/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-2996
+scripts/video/capture.mjs
+  s_77acb618031a06::t_6374e4feda57ea 1-177
+scripts/video/README.md
+  s_77acb618031a06::t_3212c20cb21621 1-71
+.claude/skills/minimalist-ui
+  ai_agent 1
+.agents/skills/render/scripts/viewer/lib/workbench/fileSessionState.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-269
+.agents/skills/render/scripts/viewer/lib/explorer/sceneScale.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-61
+scripts/video/captions.srt
+  s_77acb618031a06::t_0055c62834e482 1-30
+.agents/skills/render/scripts/snapshot/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/lib/cadDirectoryScanner.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-579
+.agents/skills/render/scripts/viewer/components/ui/alert-dialog.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-142
+scripts/video/text/tagline.txt
+  s_77acb618031a06::t_da4f1f31de81ef 1
+.agents/skills/render/scripts/viewer/lib/explorerConfig.test.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-28
+.agents/skills/cad/scripts/step/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+scripts/video/shotlist.md
+  s_77acb618031a06::t_2ce427a30fc9c2 1-41
+.agents/skills/render/scripts/viewer/components/ui/accordion.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-63
+.agents/skills/render/scripts/viewer/components/workbench/ThemeSettingsPopover.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1262
+.agents/skills/render/scripts/viewer/lib/async/concurrency.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-20
+.agents/skills/render/scripts/moveit2_server/moveit2_server/joint_state_seed.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-61
+.agents/skills/sdf/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/render/scripts/viewer/components/workbench/ToolbarShell.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/render/scripts/moveit2_server/check-moveit2-server.sh
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-15
+.agents/skills/cad/LICENSE
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/step-parts/scripts/download_step_part.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-207
+.agents/skills/render/scripts/viewer/lib/render/threeMfMeshData.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-577
+.agents/skills/render/scripts/viewer/components/ui/alert.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-62
+.agents/skills/cad/scripts/inspect/inspect_refs/analysis.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-683
+.agents/skills/render/scripts/viewer/components/ui/toast.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-52
+.agents/skills/industrial-brutalist-ui/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-92
+.agents/skills/render/scripts/viewer/components/ui/scroll-area.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-62
+.agents/skills/render/scripts/viewer/common/themeSettings.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1728
+.agents/skills/render/scripts/moveit2_server/tests/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/package.json
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-31
+.agents/skills/render/scripts/viewer/components/workbench/DxfFileSheet.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-248
+.agents/skills/sdf/references/implementation-notes.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-56
+.agents/skills/render/scripts/viewer/components/CadWorkspace.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-5469
+.agents/skills/render/scripts/viewer/common/stepModuleParams.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-173
+.agents/skills/render/scripts/viewer/common/renderOptions.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-518
+.agents/skills/render/scripts/viewer/lib/urdf/parseUrdf.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-116
+.agents/skills/render/scripts/viewer/lib/themeSettings.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-662
+.agents/skills/cad/scripts/common/assembly_spec.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-450
+.claude/settings.local.json.example
+  s_77acb618031a06::t_ff7fd253d5f259 1-12
+.claude/skills/full-output-enforcement
+  ai_agent 1
+.agents/skills/step-parts/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/cad/scripts/common/metadata.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-410
+.agents/skills/render/scripts/viewer/components/workbench/FileSheet.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-70
+.agents/skills/srdf/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-73
+.agents/skills/sdf/scripts/sdf/builder.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-405
+.agents/skills/srdf/scripts/srdf/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-637
+.agents/skills/render/scripts/viewer/lib/urdf/parseSrdf.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-464
+.agents/skills/render/references/moveit2-server.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-116
+.agents/skills/render/scripts/viewer/components/workbench/ExplorerLoadingOverlay.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-272
+.agents/skills/cad/scripts/step/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/lib/workbench/fileSessionState.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-507
+.agents/skills/cad/scripts/common/step_targets.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-317
+.agents/skills/render/scripts/viewer/lib/dxf/parseDxf.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-74
+.agents/skills/render/scripts/viewer/lib/explorer/webglSupport.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-33
+.agents/skills/render/scripts/viewer/lib/pathUtils.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+.agents/skills/srdf/scripts/srdf/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/cad/scripts/common/tests/test_stl.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-58
+.agents/skills/sdf/scripts/sdf/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/cad/scripts/common/step_export.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-161
+.agents/skills/render/scripts/moveit2_server/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-3
+.agents/skills/sdf/references/validation.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-154
+.agents/skills/cad/scripts/common/render.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-85
+.agents/skills/render/scripts/viewer/components/ui/button.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-61
+.agents/skills/render/scripts/viewer/lib/dxf/parseDxf.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-462
+.agents/skills/render/scripts/viewer/vite.config.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-393
+.agents/skills/sdf/references/interoperability.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-76
+.agents/skills/render/scripts/viewer/components/workbench/StatusToast.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-31
+.agents/skills/render/scripts/viewer/components/workbench/DrawingToolbar.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-81
+.agents/skills/render/scripts/viewer/components/workbench/FloatingToolBar.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-164
+.agents/skills/urdf/scripts/urdf/tests/test_source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-593
+.agents/skills/cad/scripts/common/tests/test_assembly_composition.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-984
+"vault/80 · Sessions/2026-05-27-performance-seo-engineer.md"
+  s_2b4ab8a08c3509::t_b1054c628f05e7 1-202
+.agents/skills/render/scripts/viewer/package-lock.json
+  ai_agent 1-4359
+.agents/skills/render/scripts/viewer/lib/urdf/kinematics.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-526
+.agents/skills/srdf/scripts/srdf/tests/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/lib/cadRefs.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-180
+.agents/skills/cad/scripts/step/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-126
+.agents/skills/render/scripts/viewer/lib/utils.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-6
+.agents/skills/render/scripts/viewer/snapshot/index.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1196
+.claude/skills/redesign-existing-projects
+  ai_agent 1
+.agents/skills/srdf/references/validation.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-118
+scripts/video/text/line2.txt
+  s_77acb618031a06::t_2a14e31fc1e274 1
+.agents/skills/sdf/scripts/sdf/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/jsconfig.json
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-8
+.agents/skills/srdf/references/planning-ledger.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-102
+.agents/skills/render/scripts/viewer/lib/urdf/jointAnimation.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-112
+.agents/skills/render/scripts/viewer/lib/renderAssetClient.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-401
+.agents/skills/render/scripts/viewer/lib/cadManifestStore.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-98
+.agents/skills/render/scripts/viewer/lib/explorerServerInfo.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-56
+.agents/skills/render/scripts/viewer/lib/cn.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/cad/references/natural-language-specs.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-114
+.agents/skills/sdf/scripts/sdf/tests/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/main.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-65
+.agents/skills/render/scripts/viewer/lib/themes.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.claude/skills/ai-image-generation
+  ai_agent 1
+.agents/skills/imagegen-frontend-web/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-987
+.agents/skills/render/scripts/viewer/lib/render/glbMeshData.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-313
+.agents/skills/render/scripts/viewer/components/ui/separator.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-25
+.agents/skills/render/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/render/scripts/viewer/lib/explorer/clipPlane.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-120
+.agents/skills/ai-image-generation/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-171
+.agents/skills/render/scripts/viewer/lib/explorerServerInfo.test.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-44
+.agents/skills/render/scripts/viewer/hooks/use-mobile.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-24
+"vault/80 · Sessions/2026-05-26-video-director.md"
+  s_77acb618031a06::t_5284c063988a98 1-104
+scripts/video/lib/plan.mjs
+  s_77acb618031a06::t_f515f935bbba2b 1-150
+.agents/skills/full-output-enforcement/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-49
+.agents/skills/urdf/references/validation.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-156
+.agents/skills/urdf/scripts/urdf/source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-698
+.agents/skills/render/scripts/viewer/lib/render/glbMeshData.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-363
+.agents/skills/render/scripts/viewer/common/stepModule.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-426
+.agents/skills/render/scripts/viewer/components/workbench/UrdfFileSheet.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-817
+.agents/skills/render/scripts/viewer/lib/colorScheme.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-87
+.agents/skills/render/scripts/viewer/components/workbench/CadWorkspaceAssemblyInspectPill.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-47
+.agents/skills/render/scripts/viewer/lib/urdf/kinematics.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-549
+.agents/skills/render/scripts/viewer/common/headlessRenderEntry.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-486
+.agents/skills/render/scripts/viewer/components/ui/collapsible.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/sdf/references/builder-helpers.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-136
+scripts/video/lib/build-segments.mjs
+  s_77acb618031a06::t_b88d9c3fc0eeef 1-167
+.agents/skills/cad/references/positioning.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-242
+.agents/skills/cad/scripts/render/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/components/explorer/hooks/useExplorerRuntime.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-593
+scripts/video/lib/preflight.mjs
+  s_77acb618031a06::t_2454562a412d98 1-59
+.claude/skills/sdf
+  ai_agent 1
+.agents/skills/cad/scripts/common/tests/test_assembly_flatten.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-173
+.agents/skills/render/scripts/viewer/lib/render/threeMfMeshData.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-130
+.agents/skills/render/scripts/viewer/lib/selectors/runtime.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-507
+.agents/skills/render/scripts/viewer/lib/urdf/parseSdf.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-890
+.agents/skills/render/scripts/viewer/components/ui/slider.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-61
+.agents/skills/cad/scripts/dxf/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-60
+.claude/skills/sendcutsend
+  ai_agent 1
+.agents/skills/render/scripts/viewer/components/ui/dropdown-menu.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-219
+.agents/skills/render/scripts/viewer/common/topologyDisplayEdges.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-67
+.agents/skills/urdf/scripts/urdf/tests/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/cad/scripts/common/cad_ref_syntax.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-145
+.agents/skills/render/scripts/moveit2_server/conda-common.sh
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-53
+.agents/skills/render/scripts/viewer/components/ui/skeleton.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-15
+.claude/skills/srdf
+  ai_agent 1
+.agents/skills/render/scripts/viewer/lib/workbench/sidebar.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-952
+.agents/skills/render/scripts/viewer/components/ui/toggle.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-43
+.agents/skills/cad/scripts/inspect/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/cad/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-107
+.claude/agents/performance-seo-engineer.md
+  ai_agent 1-401
+.agents/skills/cad/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/cad/scripts/common/inspect_imports.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-11
+.agents/skills/sendcutsend/references/official-sources.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-44
+.agents/skills/render/scripts/viewer/app/globals.css
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-308
+.agents/skills/cad/scripts/common/generation.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1615
+scripts/video/text/onboarding-overlay.txt
+  s_77acb618031a06::t_c0981c0fa6d3b9 1
+.agents/skills/srdf/scripts/srdf/tests/test_source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-56
+.agents/skills/stitch-design-taste/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-184
+skills-lock.json
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 16-21,27-86,88-93,123-128
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-9,22-26,87,94-122,129-137
+  s_7f249c6cf2a0e8::t_b89c6149ea01a6 10-15
+"vault/80 · Sessions/2026-05-26-video-director-summary.md"
+  s_77acb618031a06::t_72af325297c1d4 1-149
+.claude/AUTO-MODE.md
+  s_77acb618031a06::t_ff7fd253d5f259 1-100
+.agents/skills/srdf/references/end-effectors.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-73
+.agents/skills/srdf/references/disabled-collisions.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-55
+.agents/skills/render/scripts/viewer/components/ui/textarea.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-20
+.agents/skills/sendcutsend/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadWorkspaceSelection.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-103
+.agents/skills/cad/scripts/inspect/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-77
+.agents/skills/render/scripts/moveit2_server/moveit2_server/server.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-108
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadWorkspaceSelectors.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-99
+.agents/skills/cad/scripts/common/validators.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-123
+.agents/skills/sdf/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-98
+.agents/skills/render/scripts/viewer/lib/dom.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-6
+.agents/skills/render/scripts/viewer/postcss.config.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-5
+.agents/skills/render/scripts/viewer/lib/workbench/persistence.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-919
+.agents/skills/render/scripts/viewer/components/ui/color-picker.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-465
+.agents/skills/srdf/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/cad/scripts/render/browser/render_entry.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-564
+.agents/skills/design-taste-frontend-v1/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-226
+.agents/skills/sdf/references/smoke-tests.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-98
+.agents/skills/sdf/scripts/sdf/validation.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-846
+.agents/skills/sendcutsend/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-126
+.agents/skills/render/scripts/viewer/lib/urdf/moveit2ServerClient.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-217
+.agents/skills/cad/scripts/common/assembly_composition.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1245
+.agents/skills/cad/scripts/dxf/render_payload.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-360
+.claude/skills/design-taste-frontend-v1
+  ai_agent 1
+.agents/skills/urdf/references/gen-urdf.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-46
+.agents/skills/sendcutsend/references/report-template.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-42
+.agents/skills/render/scripts/viewer/components/workbench/hooks/useCadWorkspaceSession.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-217
+.agents/skills/render/scripts/viewer/lib/perspective.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-71
+scripts/checks/link-integrity/issues.md
+  s_7f249c6cf2a0e8::t_edf30705407772 9,13
+  s_7f249c6cf2a0e8::t_8faf9e38111317 3-8,10-11,14-46,48-53
+  s_7f249c6cf2a0e8::t_a07a5530d46989 12,47,57
+.agents/skills/srdf/scripts/srdf/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-247
+.agents/skills/sdf/scripts/sdf/findings.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-61
+.agents/skills/render/scripts/viewer/lib/explorerConfig.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-22
+.agents/skills/render/scripts/viewer/components/ui/toggle-group.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-62
+"vault/80 · Sessions/2026-05-26-link-integrity-verifier.md"
+  s_7f249c6cf2a0e8::t_9b67de1b9c370d 1-122
+.agents/skills/render/scripts/viewer/lib/workbench/selectors.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-19
+.agents/skills/render/scripts/viewer/lib/workbench/sidebar.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-383
+.agents/skills/cad/requirements.txt
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-5
+.agents/skills/render/scripts/viewer/lib/urdf/parseUrdf.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-364
+.agents/skills/render/scripts/viewer/lib/step/stepTree.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-98
+.agents/skills/image-to-code/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-1228
+.agents/skills/cad/scripts/render/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/render/scripts/viewer/lib/renderAssetClient.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-219
+apps/app/app/live/[sessionId]/page.tsx
+  s_f5e75d90735734::t_a21d907e3d46d7 199,201
+.agents/skills/render/scripts/viewer/components/workbench/FileExplorerSidebar.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-342
+.agents/skills/cad/references/parameters.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-125
+.agents/skills/sdf/scripts/sdf/tests/test_validation.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-338
+.agents/skills/cad/scripts/common/tests/test_assembly_export.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-319
+.agents/skills/render/scripts/moveit2_server/tests/test_moveit_py_adapter.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-167
+.agents/skills/urdf/references/frame-semantics.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-105
+.agents/skills/cad/references/supported-exports.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-78
+.agents/skills/render/scripts/viewer/lib/explorer/constants.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-6
+.agents/skills/cad/scripts/inspect/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-17
+.agents/skills/cad/references/build123d-modeling.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-165
+.agents/skills/render/scripts/viewer/lib/urdf/motion.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-161
+.agents/skills/render/scripts/viewer/components/workbench/ExplorerAlertCommand.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-65
+.agents/skills/render/scripts/moveit2_server/moveit2_server/context.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-904
+.agents/skills/cad/scripts/common/assembly_export.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-821
+.claude/skills/stitch-design-taste
+  ai_agent 1
+scripts/video/output/captions.srt
+  ai_agent 1-31
+.agents/skills/render/scripts/viewer/lib/assembly/meshData.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-398
+.agents/skills/sdf/scripts/sdf/tests/test_source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-294
+.claude/skills/design-taste-frontend
+  ai_agent 1
+.claude/settings.json
+  s_7f249c6cf2a0e8::t_5d1adf89c2f9cf 87
+scripts/video/output/concat.txt
+  s_7f249c6cf2a0e8::t_c02ca5d7c94e92 1-9
+.agents/skills/render/scripts/viewer/lib/explorer/sceneScale.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-77
+.agents/skills/step-parts/references/step-parts-api.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-74
+.agents/skills/cad/references/step-generation.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-101
+.agents/skills/render/scripts/viewer/lib/selectors/runtime.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-126
+.agents/skills/cad/scripts/common/selector_types.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-18
+.agents/skills/cad/scripts/common/tests/test_threemf.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-413
+.agents/skills/render/scripts/viewer/common/renderOptions.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-133
+.agents/skills/sdf/references/gen-sdf.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-55
+.agents/skills/render/scripts/viewer/components/explorer/hooks/useExplorerDrawingOverlay.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-263
+.agents/skills/sdf/references/frame-semantics.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-87
+.agents/skills/render/scripts/viewer/common/render.html
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-29
+.agents/skills/belt/SKILL.md
+  s_7f249c6cf2a0e8::t_b89c6149ea01a6 1-88
+scripts/video/text/url.txt
+  s_77acb618031a06::t_0becd6878b018a 1
+.agents/skills/cad/scripts/common/step_scene.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1821
+.agents/skills/render/scripts/viewer/lib/perspective.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-124
+.claude/skills/urdf
+  ai_agent 1
+.agents/skills/render/scripts/viewer/common/renderEdges.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-173
+.agents/skills/render/scripts/viewer/lib/cadDirectoryScanner.test.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-334
+DEPLOY-VERCEL.md
+  s_f5e75d90735734::t_26d1261a40c8ae 1-130
+.agents/skills/cad/scripts/common/stl.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-33
+.claude/agents/deployment-engineer.md
+  s_7f249c6cf2a0e8::t_e58efe07c33e6d 1-302
+.claude/skills/industrial-brutalist-ui
+  ai_agent 1
+scripts/video/output/plan.json
+  ai_agent 1-87
+.agents/skills/srdf/references/gen-srdf.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-34
+apps/app/.gitignore
+  s_f5e75d90735734::t_d5c67c7843ecb0 1
+.claude/skills/brandkit
+  ai_agent 1
+.agents/skills/cad/scripts/common/assembly_flatten.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-249
+.agents/skills/render/scripts/viewer/components/explorer/ViewPlaneControl.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-301
+.agents/skills/sdf/scripts/sdf/source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-309
+.agents/skills/cad/scripts/common/tests/test_glb.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-381
+.agents/skills/render/scripts/viewer/components/ui/switch.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-29
+.agents/skills/srdf/references/generator-contract.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-126
+.agents/skills/render/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-150
+.agents/skills/render/scripts/moveit2_server/moveit2_server/dispatcher.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-29
+.agents/skills/render/scripts/viewer/components/workbench/CadWorkspaceTopBar.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-659
+.agents/skills/urdf/agents/openai.yaml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-4
+.agents/skills/cad/scripts/common/glb_topology.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-278
+.agents/skills/urdf/scripts/urdf/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-16
+.agents/skills/cad/scripts/inspect/inspect_refs/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-580
+.agents/skills/cad/scripts/common/tests/test_generation.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-2075
+.claude/skills/belt
+  ai_agent 1
+.agents/skills/cad/scripts/common/cli_logging.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-58
+.agents/skills/urdf/references/design-ledger.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-110
+.agents/skills/render/scripts/viewer/components.json
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-22
+.agents/skills/sdf/scripts/sdf/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-282
+.agents/skills/cad/scripts/render/tests/test_render.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1364
+.agents/skills/stitch-design-taste/DESIGN.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-121
+.agents/skills/urdf/scripts/urdf/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/common/renderEdges.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-137
+.claude/skills/image-to-code
+  ai_agent 1
+.claude/skills/gpt-taste
+  ai_agent 1
+.agents/skills/sdf/references/design-ledger.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-115
+scripts/video/render.mjs
+  s_77acb618031a06::t_1cc2b643d32854 1-214
+.agents/skills/render/scripts/viewer/lib/render/stlMeshData.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-85
+.agents/skills/render/scripts/viewer/components/ui/tooltip.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-51
+.claude/skills/render
+  ai_agent 1
+scripts/video/lib/build-audio.mjs
+  s_77acb618031a06::t_9929e12b71342b 1-78
+.agents/skills/cad/scripts/common/glb.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-869
+.agents/skills/cad/scripts/dxf/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-27
+.claude/agents/video-director.md
+  ai_agent 1-158
+.agents/skills/render/scripts/viewer/components/ui/tabs.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-64
+.agents/skills/urdf/LICENSE
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/sdf/references/examples.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-148
+scripts/video/compose.sh
+  s_77acb618031a06::t_aa0d36613f6d52 1-80
+.agents/skills/render/scripts/viewer/lib/urdf/motion.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-135
+.agents/skills/render/scripts/viewer/common/stepSidecars.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-43
+.agents/skills/render/scripts/viewer/lib/themeSettings.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/render/scripts/viewer/components/DxfExplorer.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-376
+.agents/skills/render/scripts/viewer/lib/urdf/parseSrdf.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-155
+.agents/skills/render/scripts/moveit2_server/tests/test_protocol.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-129
+.agents/skills/urdf/references/generator-contract.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-105
+scripts/video/text/line1.txt
+  s_77acb618031a06::t_e280b3016fdc59 1
+.agents/skills/sdf/LICENSE
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/srdf/references/srdf-workflow.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-77
+.agents/skills/render/scripts/moveit2_server/moveit2_server/moveit_py.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-589
+.agents/skills/design-taste-frontend/SKILL.md
+  s_7f249c6cf2a0e8::t_c816f7d123dc63 1-1206
+.agents/skills/render/scripts/moveit2_server/environment.yml
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-14
+.agents/skills/render/scripts/snapshot/__main__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-18
+.claude/skills/high-end-visual-design
+  ai_agent 1
+.agents/skills/sdf/scripts/sdf/cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-357
+.agents/skills/render/scripts/viewer/snapshot/snapshot.test.mjs
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-655
+.agents/skills/sdf/references/sdf-workflow.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-80
+.agents/skills/srdf/scripts/srdf/source.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-270
+scripts/toggle-auto-mode.sh
+  s_77acb618031a06::t_ff7fd253d5f259 1-27
+.agents/skills/srdf/LICENSE
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-21
+.agents/skills/render/scripts/moveit2_server/run-moveit2-server.sh
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-20
+.agents/skills/render/scripts/viewer/common/cadScene.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-191
+.agents/skills/cad/scripts/common/glb_mesh_payload.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-333
+packages/motion/src/bloom.ts
+  s_f5e75d90735734::t_9c2415121fd034 65
+  s_f5e75d90735734::t_b3b947ab31d3bd 51-54,57
+.agents/skills/render/scripts/moveit2_server/moveit2_server/protocol.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-222
+.agents/skills/render/scripts/viewer/index.html
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-22
+.agents/skills/render/scripts/viewer/.gitignore
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-25
+scripts/video/voiceover.mjs
+  s_77acb618031a06::t_b26986e49052e5 1-12,15-46,52-53,57,68-69,72-75,82,94,100-109
+  s_77acb618031a06::t_55fa5b31c937f7 13-14
+  s_77acb618031a06::t_fa1bb0bbed708e 47-51
+  s_77acb618031a06::t_6c6277e2f0ede5 54-56,58-67
+  s_77acb618031a06::t_7df4577a7a689a 70-71,76-81,83-93,95-99
+.agents/skills/sendcutsend/references/generated/.gitignore
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-2
+.agents/skills/render/scripts/viewer/components/ui/sidebar.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-690
+.agents/skills/render/scripts/viewer/lib/urdf/moveit2ServerClient.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-227
+.agents/skills/render/scripts/viewer/lib/step/stepModule.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.agents/skills/urdf/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-60
+.agents/skills/render/scripts/viewer/components/ui/input.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-24
+.agents/skills/cad/scripts/step/tests/test_cli.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-127
+.agents/skills/render/scripts/viewer/README.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-152
+scripts/video/script.md
+  s_77acb618031a06::t_349332d68e35c7 1-90
+.agents/skills/srdf/scripts/srdf/__init__.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1
+.claude/skills/cad
+  ai_agent 1
+.agents/skills/render/scripts/viewer/lib/explorer/webglSupport.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-40
+scripts/video/text/wordmark.txt
+  s_77acb618031a06::t_d697a9ea1e5235 1
+.agents/skills/sdf/references/llm-guardrails.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-115
+.agents/skills/render/scripts/viewer/lib/urdf/parseSdf.test.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-464
+.agents/skills/step-parts/SKILL.md
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-59
+.agents/skills/cad/scripts/common/threemf.py
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-539
+.agents/skills/render/scripts/viewer/components/ui/breadcrumb.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-117
+.agents/skills/render/scripts/viewer/common/cadScene.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-1568
+.agents/skills/render/scripts/viewer/components/ui/select.jsx
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-175
+.agents/skills/render/scripts/viewer/lib/workbench/constants.js
+  s_7f249c6cf2a0e8::t_9d1cf64915a1a2 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "461a2f909e06c6b4be334358aa6cad938136f62d",
+  "prompts": {},
+  "sessions": {
+    "s_2b4ab8a08c3509": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c70dcc99-9633-481e-99fa-837cc003de0d",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    },
+    "s_77acb618031a06": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71c40f73-4663-4ea0-91a9-e21cb23cc198",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    },
+    "s_7f249c6cf2a0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16451edd-8a33-4627-a3f7-d6bbe4734cd1",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    },
+    "s_f5e75d90735734": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fe519259-0337-4ef7-8a89-ad714d1b3e9d",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    }
+  }
+}
