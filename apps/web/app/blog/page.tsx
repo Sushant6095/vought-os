@@ -44,6 +44,12 @@ export function generateMetadata(): Metadata {
         'Engineering, customer stories, and voice-AI essays from the team building Vought.',
       url: 'https://vought.com/blog',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Vought Blog · Notes from the conversation.',
+      description: 'Engineering, customer stories, and voice-AI essays from the team building Vought. One essay a month.',
     },
   };
 }
@@ -102,7 +108,7 @@ const FEATURED_POST: Post = {
   date: 'May 22, 2026',
   readingMinutes: 12,
   gradient:
-    'linear-gradient(135deg, #1F1A0F 0%, #F5A524 55%, #0A0A0B 100%)',
+    'linear-gradient(135deg, #0c1230 0%, #3358ff 55%, #0A0A0B 100%)',
 };
 
 const POSTS: Post[] = [
@@ -128,7 +134,7 @@ const POSTS: Post[] = [
     date: 'May 14, 2026',
     readingMinutes: 9,
     gradient:
-      'linear-gradient(135deg, #131316 0%, #2A2418 45%, #F5A524 100%)',
+      'linear-gradient(135deg, #131316 0%, #2A2418 45%, #3358ff 100%)',
   },
   {
     slug: 'real-time-diarization-single-mic',
@@ -152,7 +158,7 @@ const POSTS: Post[] = [
     date: 'May 4, 2026',
     readingMinutes: 8,
     gradient:
-      'linear-gradient(145deg, #1F1A0F 0%, #F5A524 40%, #131316 100%)',
+      'linear-gradient(145deg, #0c1230 0%, #3358ff 40%, #131316 100%)',
   },
   {
     slug: 'brand-voice-rules-ai-powered',
@@ -164,7 +170,7 @@ const POSTS: Post[] = [
     date: 'Apr 28, 2026',
     readingMinutes: 6,
     gradient:
-      'linear-gradient(135deg, #FAF8F3 0%, #F5A524 50%, #1F1A0F 100%)',
+      'linear-gradient(135deg, #FAF8F3 0%, #3358ff 50%, #0c1230 100%)',
   },
   {
     slug: 'whisper-bloom-motion-design',
@@ -177,7 +183,7 @@ const POSTS: Post[] = [
     date: 'Apr 21, 2026',
     readingMinutes: 10,
     gradient:
-      'linear-gradient(135deg, #0A0A0B 0%, #1F1A0F 60%, #F5A524 100%)',
+      'linear-gradient(135deg, #0A0A0B 0%, #0c1230 60%, #3358ff 100%)',
   },
 ];
 
@@ -521,11 +527,12 @@ function RSSNote() {
 // ---------------------------------------------------------------------------
 
 interface BlogPageProps {
-  searchParams?: { cat?: string };
+  searchParams?: Promise<{ cat?: string }>;
 }
 
-export default function BlogIndexPage({ searchParams }: BlogPageProps) {
-  const requested = searchParams?.cat?.toLowerCase();
+export default async function BlogIndexPage({ searchParams }: BlogPageProps) {
+  const resolvedParams = await searchParams;
+  const requested = resolvedParams?.cat?.toLowerCase();
   const activeSlug =
     requested && CATEGORIES.some((c) => c.slug === requested)
       ? requested
@@ -539,8 +546,21 @@ export default function BlogIndexPage({ searchParams }: BlogPageProps) {
   const activeLabel =
     CATEGORIES.find((c) => c.slug === activeSlug)?.label ?? 'All';
 
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Vought Blog · Notes from the conversation.',
+    url: 'https://vought.com/blog',
+    description: 'Engineering, customer stories, and voice-AI essays from the team building Vought.',
+    publisher: { '@type': 'Organization', name: 'Vought', url: 'https://vought.com' },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
       <BlogHero />
       <CategoryRow active={activeSlug} />
       {isAll && <FeaturedPostCard post={FEATURED_POST} />}

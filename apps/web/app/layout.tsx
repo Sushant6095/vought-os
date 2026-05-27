@@ -12,7 +12,7 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google';
 import { NavPill } from '@/components/nav/NavPill';
 import { Footer } from '@/components/marketing/Footer';
 import { MarketingRoot } from '@/components/ui/MarketingRoot';
@@ -29,6 +29,15 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
+  display: 'swap',
+});
+
+// Editorial high-contrast serif for display headlines (Observe-style).
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-editorial',
   display: 'swap',
 });
 
@@ -66,28 +75,38 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const ORGANIZATION_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Vought',
+  url: 'https://vought.com',
+  logo: 'https://vought.com/logo.png',
+  description: 'Real-time voice intelligence for live conversations. Whispers in your own cloned voice. Sub-second latency on ElevenLabs Speech Engine.',
+  sameAs: [
+    'https://twitter.com/voughtai',
+    'https://linkedin.com/company/vought',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    url: 'https://vought.com/contact',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}
     >
-      <body className="grid-texture">
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+        />
         <MarketingRoot>
-          {/* Ambient orbs · Blueprint §6 */}
-          <div
-            aria-hidden
-            className="orb orb-amber"
-            style={{ width: 800, height: 800, top: -200, right: -200 }}
-          />
-          <div
-            aria-hidden
-            className="orb orb-amber"
-            style={{ width: 600, height: 600, top: 600, left: -200, opacity: 0.6 }}
-          />
-
           <NavPill />
           <main>{children}</main>
           <Footer />

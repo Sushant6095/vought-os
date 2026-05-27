@@ -76,7 +76,8 @@ const preset: Partial<Config> = {
         mono: [...fontFamily.mono],
       },
 
-      fontSize,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      fontSize: fontSize as any,
 
       spacing,
 

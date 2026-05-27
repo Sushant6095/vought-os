@@ -19,12 +19,12 @@ const NODES: Node[] = [
   { label: 'Mic', icon: <Mic size={20} className="text-white" />, emphasis: false },
   {
     label: 'ElevenLabs STT',
-    icon: <Waves size={20} color="#F5A524" />,
+    icon: <Waves size={20} color="#3358ff" />,
     emphasis: true,
   },
   { label: 'Echo Engine', icon: <Brain size={20} color="#FFFFFF" />, emphasis: false },
-  { label: 'LLM', icon: <Doc size={20} color="#F5A524" />, emphasis: true },
-  { label: 'ElevenLabs TTS', icon: <Bars size={20} color="#F5A524" />, emphasis: true },
+  { label: 'LLM', icon: <Doc size={20} color="#3358ff" />, emphasis: true },
+  { label: 'ElevenLabs TTS', icon: <Bars size={20} color="#3358ff" />, emphasis: true },
 ];
 
 interface LatencyStage {
@@ -149,7 +149,7 @@ function NodeAndWire({
             y1="1"
             x2="60"
             y2="1"
-            stroke="#F5A524"
+            stroke="#3358ff"
             strokeWidth={1.5}
             className="wire-active"
             style={{ animationDelay: `${wireDelayMs}ms` }}

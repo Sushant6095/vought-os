@@ -37,7 +37,7 @@ export const Section = forwardRef<HTMLElement, SectionProps>(function Section(
         paddingBlock: padY,
         ...style,
       }}
-      {...rest}
+      {...(rest as Record<string, unknown>)}
     >
       {children}
     </Tag>

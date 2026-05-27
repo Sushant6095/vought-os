@@ -61,6 +61,12 @@ export function generateMetadata(): Metadata {
         'Real-time whisper coaching for sales, support, and negotiation. In your own cloned voice, under one second.',
       url: 'https://vought.com/copilot',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Vought Copilot · The whisper that closes.',
+      description: 'Real-time whisper coaching for sales, support, and negotiation. In your own cloned voice, under one second.',
     },
   };
 }
@@ -108,9 +114,30 @@ const COPILOT_PAGE_STYLES = `
   }
 `;
 
+const COPILOT_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Vought Copilot',
+  description: 'Real-time whisper coaching for revenue teams. In your own cloned voice. Sub-second latency.',
+  url: 'https://vought.com/copilot',
+  brand: { '@type': 'Brand', name: 'Vought' },
+  offers: {
+    '@type': 'Offer',
+    price: '99',
+    priceCurrency: 'USD',
+    priceSpecification: { '@type': 'UnitPriceSpecification', priceType: 'https://schema.org/SRP', unitText: 'seat/month' },
+    url: 'https://vought.com/pricing',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
 export default function CopilotPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(COPILOT_SCHEMA) }}
+      />
       <style>{bloomCss}</style>
       <style>{COPILOT_PAGE_STYLES}</style>
       <CopilotHero />
@@ -177,7 +204,7 @@ function CopilotHero() {
                   <ArrowRight size={14} className="text-marketing-ink" />
                 </Link>
                 <Link
-                  href="/tour"
+                  href="/demo"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20">
@@ -303,21 +330,21 @@ function CopilotLivePreview() {
 }
 
 const WAVE_BARS: { height: number; amber: string }[] = [
-  { height: 30, amber: 'rgba(245,165,36,0.6)' },
-  { height: 60, amber: 'rgba(245,165,36,0.8)' },
-  { height: 90, amber: 'rgba(245,165,36,1)' },
-  { height: 70, amber: 'rgba(245,165,36,1)' },
-  { height: 100, amber: 'rgba(245,165,36,1)' },
-  { height: 60, amber: 'rgba(245,165,36,1)' },
-  { height: 80, amber: 'rgba(245,165,36,0.8)' },
-  { height: 50, amber: 'rgba(245,165,36,0.6)' },
-  { height: 40, amber: 'rgba(245,165,36,0.4)' },
-  { height: 30, amber: 'rgba(245,165,36,0.3)' },
-  { height: 55, amber: 'rgba(245,165,36,0.5)' },
-  { height: 75, amber: 'rgba(245,165,36,0.7)' },
-  { height: 90, amber: 'rgba(245,165,36,1)' },
-  { height: 65, amber: 'rgba(245,165,36,0.8)' },
-  { height: 45, amber: 'rgba(245,165,36,0.6)' },
+  { height: 30, amber: 'rgba(51, 88, 255,0.6)' },
+  { height: 60, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 90, amber: 'rgba(51, 88, 255,1)' },
+  { height: 70, amber: 'rgba(51, 88, 255,1)' },
+  { height: 100, amber: 'rgba(51, 88, 255,1)' },
+  { height: 60, amber: 'rgba(51, 88, 255,1)' },
+  { height: 80, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 50, amber: 'rgba(51, 88, 255,0.6)' },
+  { height: 40, amber: 'rgba(51, 88, 255,0.4)' },
+  { height: 30, amber: 'rgba(51, 88, 255,0.3)' },
+  { height: 55, amber: 'rgba(51, 88, 255,0.5)' },
+  { height: 75, amber: 'rgba(51, 88, 255,0.7)' },
+  { height: 90, amber: 'rgba(51, 88, 255,1)' },
+  { height: 65, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 45, amber: 'rgba(51, 88, 255,0.6)' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -622,7 +649,7 @@ function MiniDiarization() {
               className="w-1 rounded"
               style={{
                 height: `${h}%`,
-                background: 'rgba(245, 165, 36, 0.35)',
+                background: 'rgba(51, 88, 255, 0.35)',
               }}
             />
           ))}
@@ -760,7 +787,7 @@ function VoiceCloneCard() {
                 animationDelay: `${i * 60}ms`,
                 background:
                   i < 28
-                    ? 'rgba(245,165,36,0.9)'
+                    ? 'rgba(51, 88, 255,0.9)'
                     : 'rgba(255,255,255,0.12)',
               }}
             />
@@ -862,7 +889,7 @@ function PlaybookRag() {
                       className="flex items-center gap-2 rounded-md bg-elevated-dark px-3 py-2"
                       style={{
                         borderLeft:
-                          i === 2 ? '2px solid #F5A524' : '2px solid rgba(255,255,255,0.05)',
+                          i === 2 ? '2px solid #3358ff' : '2px solid rgba(255,255,255,0.05)',
                       }}
                     >
                       <span className="mono text-[10px] text-white/30">

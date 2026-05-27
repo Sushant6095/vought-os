@@ -39,16 +39,22 @@ import {
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'Security · Built for the conversations that can’t leak.',
+    title: "Security · Built for the conversations that can't leak.",
     description:
       'Vought is ephemeral by default. Nothing is stored unless you opt in. Read our data handling philosophy, sub-processors, data residency options, and certification status.',
     alternates: { canonical: 'https://vought.com/security' },
     openGraph: {
-      title: 'Security · Built for the conversations that can’t leak.',
+      title: 'Security · Built for the conversations that cannot leak.',
       description:
         'Ephemeral by default. Sub-processor list, data residency in US, EU, and India, founder-signed data handling statement.',
       url: 'https://vought.com/security',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Vought Security · Built for the conversations that cannot leak.',
+      description: 'Ephemeral by default. Zero audio retention. SOC 2 Type II in progress. US, EU, and India data residency.',
     },
   };
 }
@@ -72,7 +78,7 @@ function SecurityHero() {
           className="reveal display-3xl mb-7 max-w-4xl text-white"
           style={{ transitionDelay: '80ms' }}
         >
-          Built for the conversations<br />that can’t leak.
+          Built for the conversations<br />that can't leak.
         </h1>
         <p
           className="reveal max-w-2xl text-xl leading-relaxed text-white/60"
@@ -154,7 +160,7 @@ function ExecutiveStatement() {
             conversation ends. This is not a feature flag. It is the default.
           </p>
           <p>
-            Audio leaves the operator’s device, transits a TLS 1.3 tunnel
+            Audio leaves the operator's device, transits a TLS 1.3 tunnel
             to ElevenLabs for transcription, and arrives at our Echo Engine
             already as text. The Echo Engine holds the live session in memory
             for the duration of the call and discards it at session close.
@@ -350,7 +356,7 @@ const LEGS: DataLeg[] = [
   },
   {
     label: 'ElevenLabs STT',
-    icon: <Waves size={20} color="#F5A524" />,
+    icon: <Waves size={20} color="#3358ff" />,
     emphasis: true,
     retention: 'Transit only',
     retentionDetail:
@@ -368,7 +374,7 @@ const LEGS: DataLeg[] = [
   },
   {
     label: 'LLM provider',
-    icon: <Doc size={20} color="#F5A524" />,
+    icon: <Doc size={20} color="#3358ff" />,
     emphasis: true,
     retention: 'Inference only',
     retentionDetail:
@@ -377,7 +383,7 @@ const LEGS: DataLeg[] = [
   },
   {
     label: 'ElevenLabs TTS',
-    icon: <Bars size={20} color="#F5A524" />,
+    icon: <Bars size={20} color="#3358ff" />,
     emphasis: true,
     retention: 'Transit only',
     retentionDetail:
@@ -501,7 +507,7 @@ function LegNode({
             y1="1"
             x2="60"
             y2="1"
-            stroke="#F5A524"
+            stroke="#3358ff"
             strokeWidth={1.5}
             className="wire-active"
             style={{ animationDelay: `${wireDelayMs}ms` }}
@@ -758,14 +764,14 @@ const CONTACTS: Contact[] = [
     eyebrow: 'Bug bounty',
     title: 'Disclose with HackerOne',
     body: 'Public program. Payouts range from · $100 for accepted low-severity reports to · $5,000 for critical authentication or data-exposure findings. Safe-harbor language matches the HackerOne Vulnerability Disclosure Guidelines.',
-    cta: { label: 'Open the program', href: 'https://hackerone.com/vought' },
+    cta: { label: 'Email security disclosures', href: 'mailto:security@vought.com' },
     delayMs: 80,
   },
   {
     eyebrow: 'Trust center',
     title: 'Live documents portal',
     body: 'SOC 2 report (under NDA), penetration test summary, sub-processor change log, status page, and the data processing addendum. Self-serve, no sales gate.',
-    cta: { label: 'Open trust center', href: 'https://trust.vought.com' },
+    cta: { label: 'Request access', href: '/contact' },
     delayMs: 240,
   },
 ];
@@ -887,10 +893,10 @@ function SecurityCTA() {
             style={{ transitionDelay: '80ms' }}
           >
             <Link
-              href="/security/vought-security-one-pager.pdf"
+              href="/contact"
               className="pill-cta inline-flex items-center gap-2 rounded-full bg-accent-amber px-7 py-4 text-sm font-bold text-marketing-ink hover:opacity-90"
             >
-              Download one-pager
+              Request one-pager
               <ArrowRight size={14} className="text-marketing-ink" />
             </Link>
             <Link

@@ -42,7 +42,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
         paddingInline: padX,
         ...style,
       }}
-      {...rest}
+      {...(rest as Record<string, unknown>)}
     >
       {children}
     </Tag>

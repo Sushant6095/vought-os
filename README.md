@@ -64,6 +64,63 @@ vought/
 └── scripts/                        ← build + bootstrap scripts
 ```
 
+## Run it locally
+
+Monorepo is **pnpm + Turborepo**. Node 20+, pnpm 9.
+
+```bash
+pnpm install
+```
+
+### Surfaces & ports
+
+| Surface | Command | Port |
+|---|---|---|
+| Marketing site (`apps/web`) | `pnpm --filter=web dev` | http://localhost:3000 |
+| Product app (`apps/app`) | `pnpm --filter=app dev` | http://localhost:3002 |
+| Echo Engine (`services/echo-engine`) | `pnpm --filter=echo-engine dev` | http://localhost:3001 |
+| Diarization sidecar (`services/diarization-sidecar`) | `uvicorn main:app --port 8000` | http://localhost:8000 |
+
+The **marketing site runs with no keys**. The **live voice loop** needs the steps below.
+
+### Live voice loop (the product)
+
+1. **Env** — fill `services/echo-engine/.env` and `apps/app/.env.local`:
+   - `ELEVENLABS_API_KEY` (required) — elevenlabs.io → API keys
+   - `OPENAI_API_KEY` **or** `ANTHROPIC_API_KEY` (one required) — generates the whisper
+2. **Public tunnel** — ElevenLabs must reach the engine:
+   ```bash
+   ngrok http 3001
+   # paste the wss form into echo-engine/.env: PUBLIC_WS_URL=wss://<id>.ngrok-free.app/ws
+   ```
+3. **Mint the Speech Engine** (needs the key + PUBLIC_WS_URL above):
+   ```bash
+   pnpm --filter=echo-engine create-engine
+   # set SPEECH_ENGINE_ID=seng_… in BOTH env files
+   ```
+4. **Boot** the engine + app:
+   ```bash
+   pnpm --filter=echo-engine dev      # :3001
+   pnpm --filter=app dev              # :3002
+   ```
+5. Open **http://localhost:3002/onboarding/voice** to clone your voice, then the live screen.
+
+### Optional infra
+
+- **Memory + playbook RAG** — `docker compose up -d` (Redis + Postgres/pgvector), then uncomment `REDIS_URL` + `DATABASE_URL` in `echo-engine/.env`. Without them the engine uses an in-memory fallback and disables RAG.
+- **Real diarization** — the diart sidecar needs **Python 3.11** + `HF_TOKEN` (Hugging Face, accept the pyannote licence). Without it the engine degrades to "always whisper" (no speaker gating).
+
+## API reference
+
+The full developer reference lives at **`/docs`** on the marketing site (`apps/web/app/docs`) — Sessions, streaming events, voice cloning, and speaker diarization, all on the ElevenLabs Speech Engine. The whisper loop:
+
+```
+mic → ElevenLabs STT (end-of-turn) → diarization → Echo Engine
+    → streaming LLM → ElevenLabs TTS (Flash v2, cloned voice) → earbud
+```
+
+Median end-to-end latency target: **· 412ms**.
+
 ## The multi-agent swarm
 
 Vought is built by a curated fleet of Claude Code subagents, each owning a specific surface. The agents live in `.claude/agents/` and are invoked via the Task tool or by the orchestrator command `/vought-spawn-wave`.

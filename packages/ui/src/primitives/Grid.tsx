@@ -37,7 +37,7 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(
         rowGap: rowGap ?? gutter,
         ...style,
       }}
-      {...rest}
+      {...(rest as Record<string, unknown>)}
     >
       {children}
     </Tag>
@@ -65,7 +65,7 @@ export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(function GridI
         gridColumn: start ? `${start} / span ${span}` : `span ${span} / span ${span}`,
         ...style,
       }}
-      {...rest}
+      {...(rest as Record<string, unknown>)}
     >
       {children}
     </Tag>

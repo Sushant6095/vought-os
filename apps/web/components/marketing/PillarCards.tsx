@@ -99,7 +99,7 @@ function PillarCard({ pillar }: { pillar: Pillar }) {
         transitionDelay: `${pillar.delayMs}ms`,
         ...(isFlagship && {
           background:
-            'linear-gradient(to bottom, #1F1A0F 0%, #131316 100%)',
+            'linear-gradient(to bottom, #0c1230 0%, #131316 100%)',
         }),
       }}
     >

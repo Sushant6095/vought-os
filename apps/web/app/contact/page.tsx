@@ -33,6 +33,12 @@ export function generateMetadata(): Metadata {
         'Book a 20-minute demo, email sales, or email support. 24-hour response promise.',
       url: 'https://vought.com/contact',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Contact Vought',
+      description: 'Book a 20-minute demo, email sales, or email support. 24-hour response promise.',
     },
   };
 }
@@ -90,9 +96,30 @@ const CARDS: ContactCard[] = [
   },
 ];
 
+const CONTACT_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Vought',
+  url: 'https://vought.com/contact',
+  description: 'Book a 20-minute demo, email sales, or email support. Vought responds to every message within 24 hours.',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Vought',
+    url: 'https://vought.com',
+    contactPoint: [
+      { '@type': 'ContactPoint', contactType: 'sales', url: 'https://vought.com/contact' },
+      { '@type': 'ContactPoint', contactType: 'customer support', email: 'support@vought.com' },
+    ],
+  },
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_SCHEMA) }}
+      />
       <ContactHero />
       <ContactCards />
       <OfficeBlock />
@@ -153,7 +180,7 @@ function ContactOptionCard({ card }: { card: ContactCard }) {
         transitionDelay: `${card.delayMs}ms`,
         ...(isFlagship && {
           background:
-            'linear-gradient(to bottom, #1F1A0F 0%, #131316 100%)',
+            'linear-gradient(to bottom, #0c1230 0%, #131316 100%)',
         }),
       }}
     >

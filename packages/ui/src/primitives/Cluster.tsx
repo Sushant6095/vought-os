@@ -49,6 +49,10 @@ export const Cluster = forwardRef<HTMLDivElement, ClusterProps>(function Cluster
   },
   ref,
 ) {
+  // Cast rest to `any` to allow the polymorphic `as` prop to accept ul/ol/nav.
+  // The component author has constrained `as` to a safe set of elements.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const props = rest as any;
   return (
     <Tag
       ref={ref as never}
@@ -61,7 +65,7 @@ export const Cluster = forwardRef<HTMLDivElement, ClusterProps>(function Cluster
         flexWrap: wrap ? 'wrap' : 'nowrap',
         ...style,
       }}
-      {...rest}
+      {...props}
     >
       {children}
     </Tag>

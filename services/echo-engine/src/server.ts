@@ -55,7 +55,11 @@ const MAX_TOKENS = Number(process.env.LLM_MAX_TOKENS ?? 200);
 const TEMPERATURE = Number(process.env.LLM_TEMPERATURE ?? 0.7);
 
 const elevenlabs = new ElevenLabsClient({ apiKey: mustGet("ELEVENLABS_API_KEY") });
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  // Optional OpenAI-compatible base URL (Cerebras, Groq, OpenRouter, …).
+  baseURL: process.env.OPENAI_BASE_URL || undefined,
+});
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // ─── Speaker gate (diart sidecar subscription) ───────────────────────────

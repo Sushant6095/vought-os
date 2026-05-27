@@ -4,9 +4,9 @@
   "private": true,
   "description": "Vought application (app.vought.com) — the live call screen and dashboard.",
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3002",
     "build": "next build",
-    "start": "next start --port 3001",
+    "start": "next start --port 3002",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },

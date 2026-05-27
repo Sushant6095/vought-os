@@ -10,8 +10,9 @@
 
 'use client';
 
-import { useBreathTimer } from '@vought/motion';
 import { useReveal } from '@/lib/use-reveal';
+import { useSplitHeadings } from '@/lib/use-split-headings';
+import { SmoothScroll } from '@/components/fx/SmoothScroll';
 import type { ReactNode } from 'react';
 
 interface MarketingRootProps {
@@ -19,7 +20,12 @@ interface MarketingRootProps {
 }
 
 export function MarketingRoot({ children }: MarketingRootProps) {
-  useBreathTimer();
   useReveal();
-  return <>{children}</>;
+  useSplitHeadings();
+  return (
+    <>
+      <SmoothScroll />
+      {children}
+    </>
+  );
 }

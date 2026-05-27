@@ -38,6 +38,12 @@ export function generateMetadata(): Metadata {
         'Named case studies from the revenue teams scaling fastest on Vought.',
       url: 'https://vought.com/customers',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Vought Customers · Built for conversations that move revenue.',
+      description: 'Named case studies. $1.4M incremental pipeline. 73% suggestion acceptance. First ROI in twelve days.',
     },
   };
 }

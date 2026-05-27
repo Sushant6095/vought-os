@@ -62,7 +62,7 @@ const engine = await elevenlabs.speechEngine.create({
   },
   privacy: {
     recordVoice: false,
-    retentionDays: 0,
+    retentionDays: -1, // must be -1 when zeroRetentionMode is on (ElevenLabs validation)
     deleteTranscriptAndPii: true,
     deleteAudio: true,
     zeroRetentionMode: true,

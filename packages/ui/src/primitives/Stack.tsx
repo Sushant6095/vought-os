@@ -38,7 +38,7 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(function Stack(
         alignItems: ALIGN_MAP[align],
         ...style,
       }}
-      {...rest}
+      {...(rest as Record<string, unknown>)}
     >
       {children}
     </Tag>

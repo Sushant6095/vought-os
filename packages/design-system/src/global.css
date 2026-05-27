@@ -24,9 +24,9 @@
   font-weight: 400 800;
   font-style: normal;
   font-display: swap;
-  src:
-    local('Söhne'),
-    url('/fonts/sohne/Söhne-Variable.woff2') format('woff2');
+  /* Local-only: the .woff2 isn't bundled (Söhne is paid). Inter is the
+     working fallback. Dropping the url() avoids a 404 on every page. */
+  src: local('Söhne');
 }
 
 @font-face {
@@ -34,9 +34,7 @@
   font-weight: 400 800;
   font-style: italic;
   font-display: swap;
-  src:
-    local('Söhne Italic'),
-    url('/fonts/sohne/Söhne-Variable-Italic.woff2') format('woff2');
+  src: local('Söhne Italic');
 }
 
 /* ─── Root tokens (CSS custom properties) ──────────────────── */

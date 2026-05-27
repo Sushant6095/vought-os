@@ -1,0 +1,26 @@
+# Local datastores for the Echo Engine.
+# Optional for the first live loop (engine falls back to in-memory + RAG off).
+# Start Docker Desktop, then:  docker compose up -d
+# Then uncomment REDIS_URL + DATABASE_URL in services/echo-engine/.env.
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    restart: unless-stopped
+
+  postgres:
+    image: pgvector/pgvector:pg15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: echo
+    ports:
+      - '5432:5432'
+    volumes:
+      - echo_pg:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    restart: unless-stopped
+
+volumes:
+  echo_pg:

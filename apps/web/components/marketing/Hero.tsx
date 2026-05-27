@@ -62,7 +62,7 @@ export function Hero() {
                   <ArrowRight size={14} className="text-marketing-ink" />
                 </Link>
                 <Link
-                  href="/tour"
+                  href="/demo"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20">

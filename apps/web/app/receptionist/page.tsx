@@ -63,6 +63,12 @@ export function generateMetadata(): Metadata {
         'Autonomous AI phone agent for SMBs. Books appointments, qualifies leads, escalates urgents. $0.20/min.',
       url: 'https://vought.com/receptionist',
       type: 'website',
+      siteName: 'Vought',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Vought Receptionist · Answer every call. Even at 2am.',
+      description: 'Autonomous AI phone agent for SMBs. Books appointments, qualifies leads, escalates urgents. $0.20/min.',
     },
   };
 }
@@ -80,7 +86,7 @@ const RECEPTIONIST_PAGE_STYLES = `
     position: absolute;
     inset: 0;
     border-radius: 9999px;
-    border: 1px solid rgba(245, 165, 36, 0.5);
+    border: 1px solid rgba(51, 88, 255, 0.5);
     animation: vought-ring-out var(--motion-wave) var(--easing-breath) infinite;
   }
   .ring-pulse::after {
@@ -100,7 +106,7 @@ const RECEPTIONIST_PAGE_STYLES = `
       background-color var(--motion-quick) var(--easing-quick);
   }
   .industry-card:hover {
-    border-color: rgba(245, 165, 36, 0.4);
+    border-color: rgba(51, 88, 255, 0.4);
   }
   .integration-chip {
     transition:
@@ -108,14 +114,45 @@ const RECEPTIONIST_PAGE_STYLES = `
       color var(--motion-quick) var(--easing-quick);
   }
   .integration-chip:hover {
-    border-color: rgba(245, 165, 36, 0.4);
+    border-color: rgba(51, 88, 255, 0.4);
     color: rgba(255, 255, 255, 0.95);
   }
 `;
 
+const RECEPTIONIST_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Vought Receptionist',
+  description: 'Autonomous AI for inbound calls. Books appointments, answers FAQs, escalates urgents — under one second, in a voice callers mistake for human.',
+  url: 'https://vought.com/receptionist',
+  brand: { '@type': 'Brand', name: 'Vought' },
+  offers: [
+    {
+      '@type': 'Offer',
+      price: '0.20',
+      priceCurrency: 'USD',
+      priceSpecification: { '@type': 'UnitPriceSpecification', priceType: 'https://schema.org/SRP', unitText: 'minute' },
+      url: 'https://vought.com/pricing',
+      availability: 'https://schema.org/InStock',
+    },
+    {
+      '@type': 'Offer',
+      price: '99',
+      priceCurrency: 'USD',
+      priceSpecification: { '@type': 'UnitPriceSpecification', priceType: 'https://schema.org/SRP', unitText: 'month', unitCode: 'MON', description: 'Minimum monthly commitment' },
+      url: 'https://vought.com/pricing',
+      availability: 'https://schema.org/InStock',
+    },
+  ],
+};
+
 export default function ReceptionistPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(RECEPTIONIST_SCHEMA) }}
+      />
       <style>{bloomCss}</style>
       <style>{RECEPTIONIST_PAGE_STYLES}</style>
       <ReceptionistHero />
@@ -353,21 +390,21 @@ function TranscriptLine({
 }
 
 const WAVE_BARS: { height: number; amber: string }[] = [
-  { height: 30, amber: 'rgba(245,165,36,0.6)' },
-  { height: 60, amber: 'rgba(245,165,36,0.8)' },
-  { height: 90, amber: 'rgba(245,165,36,1)' },
-  { height: 70, amber: 'rgba(245,165,36,1)' },
-  { height: 100, amber: 'rgba(245,165,36,1)' },
-  { height: 60, amber: 'rgba(245,165,36,1)' },
-  { height: 80, amber: 'rgba(245,165,36,0.8)' },
-  { height: 50, amber: 'rgba(245,165,36,0.6)' },
-  { height: 40, amber: 'rgba(245,165,36,0.4)' },
-  { height: 30, amber: 'rgba(245,165,36,0.3)' },
-  { height: 55, amber: 'rgba(245,165,36,0.5)' },
-  { height: 75, amber: 'rgba(245,165,36,0.7)' },
-  { height: 90, amber: 'rgba(245,165,36,1)' },
-  { height: 65, amber: 'rgba(245,165,36,0.8)' },
-  { height: 45, amber: 'rgba(245,165,36,0.6)' },
+  { height: 30, amber: 'rgba(51, 88, 255,0.6)' },
+  { height: 60, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 90, amber: 'rgba(51, 88, 255,1)' },
+  { height: 70, amber: 'rgba(51, 88, 255,1)' },
+  { height: 100, amber: 'rgba(51, 88, 255,1)' },
+  { height: 60, amber: 'rgba(51, 88, 255,1)' },
+  { height: 80, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 50, amber: 'rgba(51, 88, 255,0.6)' },
+  { height: 40, amber: 'rgba(51, 88, 255,0.4)' },
+  { height: 30, amber: 'rgba(51, 88, 255,0.3)' },
+  { height: 55, amber: 'rgba(51, 88, 255,0.5)' },
+  { height: 75, amber: 'rgba(51, 88, 255,0.7)' },
+  { height: 90, amber: 'rgba(51, 88, 255,1)' },
+  { height: 65, amber: 'rgba(51, 88, 255,0.8)' },
+  { height: 45, amber: 'rgba(51, 88, 255,0.6)' },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
@@ -509,7 +546,7 @@ function LivePhoneCallDemo() {
             <div className="mb-8 rounded-2xl border border-accent-amber/30 bg-surface-dark p-7"
               style={{
                 background:
-                  'linear-gradient(to bottom, #1F1A0F 0%, #131316 100%)',
+                  'linear-gradient(to bottom, #0c1230 0%, #131316 100%)',
               }}
             >
               <div className="label-tiny mb-3 text-white/40">Demo line · US</div>
@@ -752,7 +789,7 @@ function NumberPickerIllustration() {
             className="flex items-center justify-between rounded-md border bg-elevated-dark px-3 py-2"
             style={{
               borderColor:
-                i === 1 ? 'rgba(245,165,36,0.4)' : 'rgba(255,255,255,0.05)',
+                i === 1 ? 'rgba(51, 88, 255,0.4)' : 'rgba(255,255,255,0.05)',
             }}
           >
             <span
@@ -1032,7 +1069,7 @@ function ReceptionistPricing() {
               className="relative h-full overflow-hidden rounded-2xl border border-accent-amber/30 p-10"
               style={{
                 background:
-                  'linear-gradient(to bottom, #1F1A0F 0%, #131316 100%)',
+                  'linear-gradient(to bottom, #0c1230 0%, #131316 100%)',
               }}
             >
               <div className="absolute right-6 top-6 inline-flex items-center rounded-full bg-accent-amber px-3 py-0.5 text-[9px] font-black uppercase tracking-wider text-marketing-ink">

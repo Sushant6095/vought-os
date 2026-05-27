@@ -47,6 +47,8 @@ import { StatePill } from './_components/StatePill';
 import { SuggestionCard } from './_components/SuggestionCard';
 import { WordStreamTranscript } from './_components/WordStreamTranscript';
 import { SpeakerTimeline } from './_components/SpeakerTimeline';
+import { VoiceWaveform } from './_components/VoiceWaveform';
+import { ReplyPipeline } from './_components/ReplyPipeline';
 import { ConfidenceIndicator } from './_components/ConfidenceIndicator';
 import {
   DealContextPanel,
@@ -112,6 +114,10 @@ export default function LiveCallPage(props: LivePageProps) {
   const processorRef = useRef<ScriptProcessorNode | null>(null);
   const sessionStartRef = useRef<number>(0);
   const thinkingStartRef = useRef<number>(0);
+  /** Guards the auto-start effect against StrictMode's double-invocation. */
+  const sessionStartedRef = useRef<boolean>(false);
+  /** Deferred-teardown handle so a StrictMode remount can cancel cleanup. */
+  const teardownTimerRef = useRef<number | null>(null);
   /** Timer that flips pill back to listening after a whisper completes. */
   const whisperReturnTimerRef = useRef<number | null>(null);
 
@@ -421,23 +427,111 @@ export default function LiveCallPage(props: LivePageProps) {
     router.push('/');
   }, [conversation, resetSession, router]);
 
+  // ── Demo seed (capture / screenshot only) ──────────────────
+  // Gated to `?demo=1` AND development. Seeds the store with a
+  // realistic whispering state so the hero bloom, word stream,
+  // speaker timeline, and latency callsign render deterministically
+  // for the demo-video capture pipeline — without a live mic or
+  // backend. This drives the REAL components through their REAL
+  // animations; only the input event is synthetic. Production
+  // builds never reach this branch.
+  const demoMode = searchParams.demo === '1';
+  useEffect(() => {
+    if (!demoMode || process.env.NODE_ENV === 'production') return;
+
+    const store = useRealtimeSession;
+    // Expose for programmatic capture drivers (Playwright).
+    (window as unknown as { __voughtLive?: typeof store }).__voughtLive = store;
+
+    const t0 = window.setTimeout(() => {
+      store.getState().setSession('demo-session', personaParam);
+      store.getState().setOutputDevice('headphones');
+      store.getState().setEnrollmentReady(true);
+      store.getState().setAgentState('listening');
+      const now = Date.now();
+      store.getState().upsertSegment({
+        id: 'seg-other-1',
+        tStart: now - 9000,
+        tEnd: now - 5400,
+        isSelf: false,
+      });
+      store.getState().upsertSegment({
+        id: 'seg-self-1',
+        tStart: now - 5200,
+        tEnd: now - 3800,
+        isSelf: true,
+      });
+      store.getState().upsertSegment({
+        id: 'seg-other-2',
+        tStart: now - 3600,
+        tEnd: now - 600,
+        isSelf: false,
+      });
+      store
+        .getState()
+        .setLastOtherUtterance(
+          'We already pay for Salesforce — not sure we need another system.',
+        );
+    }, 600);
+
+    const t1 = window.setTimeout(() => {
+      store.getState().setAgentState('thinking');
+    }, 2200);
+
+    const t2 = window.setTimeout(() => {
+      store.getState().setLastLatencyMs(412);
+      store.getState().addSuggestion({
+        id: 'demo-suggestion-1',
+        text: 'Totally hear you on stack fatigue. What do your reps actually spend their day doing inside Salesforce?',
+        followUp: 'If they say logging — that is exactly the gap we close.',
+      });
+      store.getState().setAgentState('whispering');
+    }, 3000);
+
+    return () => {
+      window.clearTimeout(t0);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [demoMode]);
+
   // ── Auto-start on mount ─────────────────────────────────────
+  // React 18 StrictMode runs effects mount→unmount→remount in dev. A naive
+  // start-on-mount / end-on-cleanup would open the ElevenLabs socket and tear
+  // it down mid-connect ("Websocket got closed during a (re)connection
+  // attempt"). We start exactly once and defer teardown a tick so the
+  // StrictMode remount can cancel it; a real unmount has no remount, so the
+  // session ends cleanly.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    void startSession();
+    if (demoMode && process.env.NODE_ENV !== 'production') return; // demo seeds the store; skip live session
+
+    if (teardownTimerRef.current !== null) {
+      clearTimeout(teardownTimerRef.current);
+      teardownTimerRef.current = null;
+    }
+    if (!sessionStartedRef.current) {
+      sessionStartedRef.current = true;
+      void startSession();
+    }
+
     return () => {
-      // Cleanup on unmount — fire-and-forget.
-      void (async () => {
-        try {
-          await conversation.endSession();
-        } catch {
-          // ignore
-        }
-      })();
-      diarizationWsRef.current?.close();
-      processorRef.current?.disconnect();
-      audioContextRef.current?.close().catch(() => undefined);
-      audioStreamRef.current?.getTracks().forEach((t) => t.stop());
+      teardownTimerRef.current = window.setTimeout(() => {
+        sessionStartedRef.current = false;
+        teardownTimerRef.current = null;
+        void (async () => {
+          try {
+            await conversation.endSession();
+          } catch {
+            // ignore
+          }
+        })();
+        diarizationWsRef.current?.close();
+        processorRef.current?.disconnect();
+        audioContextRef.current?.close().catch(() => undefined);
+        audioStreamRef.current?.getTracks().forEach((t) => t.stop());
+      }, 60);
     };
   }, []);
 
@@ -579,6 +673,9 @@ export default function LiveCallPage(props: LivePageProps) {
             <SessionClock startMs={sessionStartRef.current} />
           </header>
 
+          {/* Live voice chart — real mic spectrum. */}
+          <VoiceWaveform />
+
           {/* The "they just said" panel. Word stream pulls in only
               when there's actual content. */}
           <WordStreamTranscript text={lastOtherUtterance} />
@@ -620,6 +717,9 @@ export default function LiveCallPage(props: LivePageProps) {
 
           {/* Speaker timeline — visible proof diarization works. */}
           <SpeakerTimeline segments={segments} />
+
+          {/* Reply pipeline graph — how the whisper is produced + latency. */}
+          <ReplyPipeline />
 
           {/* End session — secondary CTA. */}
           <button

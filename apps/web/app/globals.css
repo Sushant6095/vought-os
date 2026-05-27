@@ -20,6 +20,284 @@ body {
   overflow-x: hidden;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   OBSERVE-STYLE DESIGN LAYER  (landing rebuild · 2026-05-27)
+   Pure-black canvas, editorial serif display, lime accent,
+   bento-grid surfaces, mega-menu nav. Overrides the amber/Inter
+   marketing defaults for the cloned landing direction.
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  /* Premium black / white / electric-blue system (Finch-inspired). */
+  --ob-blue: #3358ff;
+  --ob-blue-soft: #5b7cff;
+  --ob-blue-dim: #2645d8;
+  /* `--ob-lime` kept as the accent alias so existing references stay valid;
+     repointed to electric blue. */
+  --ob-lime: var(--ob-blue);
+  --ob-lime-dim: var(--ob-blue-dim);
+  --ob-ink: #06070b;
+  --ob-paper: #f6f7fb;
+  --ob-black: #000000;
+  --ob-card: #0c0e14;
+  --ob-card-2: #101320;
+  --ob-card-3: #141826;
+  --ob-line: rgba(255, 255, 255, 0.08);
+  --ob-line-soft: rgba(255, 255, 255, 0.05);
+  --ob-text-dim: rgba(255, 255, 255, 0.58);
+  --ob-text-faint: rgba(255, 255, 255, 0.4);
+  --scroll-progress: 0;
+}
+
+/* Pure-black marketing canvas (no breath shift on the clone). */
+body {
+  background: #000 !important;
+  color: #fff;
+}
+
+/* Editorial high-contrast serif for display headings. */
+.ob-serif {
+  font-family: var(--font-editorial), Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+}
+.ob-h1 {
+  font-size: clamp(48px, 7.2vw, 104px);
+}
+.ob-h2 {
+  font-size: clamp(34px, 4.6vw, 64px);
+}
+.ob-h3 {
+  font-size: clamp(26px, 3vw, 40px);
+}
+.ob-accent {
+  color: var(--ob-lime);
+}
+
+/* Mono micro-labels (eyebrows, pills). */
+.ob-eyebrow {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ob-text-faint);
+}
+
+/* Bento surface. */
+.ob-card {
+  background: var(--ob-card);
+  border: 1px solid var(--ob-line);
+  border-radius: 28px;
+  transition:
+    border-color var(--motion-quick, 150ms) ease-out,
+    background-color var(--motion-quick, 150ms) ease-out,
+    transform var(--motion-standard, 240ms) cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ob-card-hover:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: var(--ob-card-2);
+  transform: translateY(-4px);
+}
+
+/* Nav pill + mega menu. */
+.ob-nav {
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--ob-line);
+}
+.ob-mega {
+  background: rgba(14, 14, 16, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--ob-line);
+}
+.ob-mega-card {
+  border: 1px solid var(--ob-line-soft);
+  border-radius: 16px;
+  transition:
+    border-color 150ms ease-out,
+    background-color 150ms ease-out;
+}
+.ob-mega-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--ob-card-2);
+}
+
+/* Pills / buttons. */
+.ob-btn-lime {
+  background: var(--ob-blue);
+  color: #fff;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(51, 88, 255, 0.35);
+  transition:
+    transform 80ms ease-out,
+    background-color 150ms ease-out,
+    box-shadow 200ms ease-out;
+}
+.ob-btn-lime:hover {
+  background: #4668ff;
+  box-shadow: 0 10px 40px rgba(51, 88, 255, 0.5);
+}
+.ob-btn-lime:active {
+  transform: scale(0.97);
+}
+.ob-btn-white {
+  background: #fff;
+  color: #0a0a0a;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition:
+    transform 80ms ease-out,
+    opacity 150ms ease-out;
+}
+.ob-btn-white:hover {
+  opacity: 0.9;
+}
+.ob-btn-white:active {
+  transform: scale(0.97);
+}
+.ob-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-radius: 9999px;
+  transition: border-color 150ms ease-out, background-color 150ms ease-out;
+}
+.ob-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Wavy black hero backdrop — layered gradients approximating the
+   Observe 3D ribbon render. Pure CSS, no images. */
+.ob-hero-bg {
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(255, 255, 255, 0.06) 0%, transparent 55%),
+    radial-gradient(80% 60% at 12% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    radial-gradient(90% 70% at 88% 70%, rgba(222, 249, 77, 0.05) 0%, transparent 60%),
+    repeating-linear-gradient(
+      102deg,
+      rgba(255, 255, 255, 0.018) 0px,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    #000;
+}
+
+/* Waveform bars (product mockups). */
+@keyframes ob-wave {
+  0%, 100% { transform: scaleY(0.35); }
+  50% { transform: scaleY(1); }
+}
+.ob-wave-bar {
+  transform-origin: center;
+  animation: ob-wave 1200ms ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ob-wave-bar { animation: none; transform: scaleY(0.7); }
+}
+
+/* Marquee for the logo strip. */
+@keyframes ob-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ob-marquee {
+  animation: ob-marquee 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ob-marquee { animation: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAGICAL MOTION LAYER  (Lenis smooth scroll · custom cursor ·
+   split-text reveals · scroll-driven 3D + colour shift)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Lenis smooth scroll. */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Scroll-driven background colour layer (ink → electric blue → ink).
+   The component sets backgroundColor each frame; this is the canvas. */
+#scroll-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: var(--ob-ink);
+  pointer-events: none;
+  transition: background-color 120ms linear;
+}
+#scroll-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(51, 88, 255, 0.16), transparent 70%);
+  opacity: calc(var(--scroll-progress) * 1.2);
+}
+
+/* ─── Integration constellation (dynamic, Cresta-style) ─────── */
+@keyframes int-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes int-draw { to { stroke-dashoffset: 0; } }
+@keyframes int-flow { to { stroke-dashoffset: -1; } }
+@keyframes int-ring {
+  0% { transform: scale(0.55); opacity: 0.55; }
+  100% { transform: scale(2.3); opacity: 0; }
+}
+.int-tile {
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--int-d, 0ms);
+}
+.int-stage.live .int-tile { opacity: 1; transform: scale(1); }
+.int-floater { animation: int-float var(--int-dur, 6s) ease-in-out infinite; animation-delay: var(--int-d, 0ms); }
+.int-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease-out, border-color 0.25s ease-out;
+}
+.int-card:hover { transform: translateY(-4px) scale(1.05); }
+.int-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.int-stage.live .int-line { animation: int-draw 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: var(--int-d, 0ms); }
+.int-pulse { stroke-dasharray: 0.10 0.90; stroke-dashoffset: 0; opacity: 0; }
+.int-stage.live .int-pulse { animation: int-flow 2.6s linear infinite; opacity: 1; animation-delay: var(--int-d, 0ms); }
+.int-ring { animation: int-ring 3.4s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .int-tile { opacity: 1; transform: none; }
+  .int-line { stroke-dashoffset: 0; }
+  .int-pulse, .int-floater, .int-ring { animation: none; opacity: 0; }
+}
+
+/* Split-text reveal — each character/word starts hidden, JS reveals
+   with a per-index stagger by toggling `.in` on the wrapper. */
+.split [data-sc] {
+  display: inline-block;
+  transform: translateY(0.9em) rotate(2deg);
+  opacity: 0;
+  transition:
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--sc-i, 0) * 22ms);
+}
+.split.in [data-sc] {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .split [data-sc] { transform: none; opacity: 1; transition: none; }
+}
+
 /* ─── Display typography clamps · Blueprint §7.1 ────────────── */
 /* Tokens lock the upper bound; clamp() drives the responsive curve. */
 .display-3xl {
@@ -81,7 +359,7 @@ body {
 .orb-amber {
   background: radial-gradient(
     circle,
-    rgba(245, 165, 36, 0.16) 0%,
+    rgba(51, 88, 255, 0.16) 0%,
     transparent 70%
   );
 }
@@ -152,10 +430,10 @@ body {
 @keyframes vought-pulse-amber {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(245, 165, 36, 0.5);
+    box-shadow: 0 0 0 0 rgba(51, 88, 255, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(245, 165, 36, 0);
+    box-shadow: 0 0 0 6px rgba(51, 88, 255, 0);
   }
 }
 /*
@@ -246,4 +524,26 @@ body {
   .reveal.in {
     opacity: 1;
   }
+}
+
+/* ─── Brand logo · chrome "V" emblem ──────────────────────────────
+ * Original faceted metal mark (hexagonal chrome ring + folded "V").
+ * Static silver gradients carry the brushed-metal sheen; hover lifts
+ * and brightens the badge on the standard tier (240ms). */
+.vought-logo-badge {
+  display: block;
+  transition:
+    filter var(--motion-standard, 240ms) ease-out,
+    transform var(--motion-standard, 240ms) cubic-bezier(0.16, 1, 0.3, 1);
+}
+.vought-logo:hover .vought-logo-badge,
+.vought-logo:focus-visible .vought-logo-badge {
+  filter: brightness(1.1) drop-shadow(0 1px 4px rgba(255, 255, 255, 0.22));
+  transform: translateY(-0.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vought-logo-badge { transition: none; }
+  .vought-logo:hover .vought-logo-badge,
+  .vought-logo:focus-visible .vought-logo-badge { transform: none; }
 }

@@ -5,6 +5,7 @@
 
 'use client';
 
+import React from 'react';
 import { useCountUp } from '@/lib/use-count-up';
 
 interface CountUpProps {
@@ -17,5 +18,5 @@ interface CountUpProps {
 
 export function CountUp({ target, prefix, suffix, className, decimals }: CountUpProps) {
   const ref = useCountUp({ target, prefix, suffix, decimals });
-  return <span ref={ref} className={`mono ${className ?? ''}`.trim()} />;
+  return <span ref={ref as React.RefObject<HTMLSpanElement>} className={`mono ${className ?? ''}`.trim()} />;
 }

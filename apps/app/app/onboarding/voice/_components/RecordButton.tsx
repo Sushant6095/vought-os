@@ -14,7 +14,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { EASING, MOTION } from '@vought/motion';
+import { MOTION } from '@vought/motion';
 
 // Framer Motion takes seconds; @vought/motion exports CSS-friendly ms strings.
 const BREATH_SECONDS = parseInt(MOTION.breath, 10) / 1000;
@@ -63,7 +63,8 @@ export function RecordButton({ state, disabled, onClick }: RecordButtonProps) {
             transition={{
               duration: BREATH_SECONDS,
               repeat: Infinity,
-              ease: EASING.breath as unknown as string,
+              // Framer needs a numeric cubic-bezier array, not the CSS string.
+              ease: [0.45, 0.05, 0.55, 0.95],
             }}
           />
         </>
