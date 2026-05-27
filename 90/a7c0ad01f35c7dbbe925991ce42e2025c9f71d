@@ -1,0 +1,204 @@
+apps/web/app/about/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_d03673981826d5 3,24-25,30-36,38-44,49,51-54
+  s_2b4ab8a08c3509::t_43f1dafdb15c36 1-2,4-23,26-29,37,45-48,50,55-60
+apps/web/components/brand/Logo.tsx
+  s_77acb618031a06::t_55563ca3e97e03 1-2,4,6-11,13,16,45-50,52-56,58,60-100
+  s_77acb618031a06::t_6e7ebe22caa8de 3,5,12,14-15,17-44,51,57,59,101-102
+packages/ui/src/primitives/Stack.tsx
+  s_2b4ab8a08c3509::t_e1dcd69b0e9a7e 41
+apps/web/components/marketing/HeroCanvas.tsx
+  s_7f249c6cf2a0e8::t_1c8a35cd821915 1-135
+apps/web/components/fx/SmoothScroll.tsx
+  s_2b4ab8a08c3509::t_2618430868d9e5 76-77
+  s_2b4ab8a08c3509::t_e421db5046114d 57-58
+  s_7f249c6cf2a0e8::t_2ad60567f3628b 46-50,53
+  s_7f249c6cf2a0e8::t_34381a9151b440 61-64
+  s_7f249c6cf2a0e8::t_c0ad7f03f37819 75,78-81
+  s_7f249c6cf2a0e8::t_59cf1d91e1b2d0 1-45,51-52,54-56,59-60,65-74,82-100
+apps/app/app/robots.ts
+  s_2b4ab8a08c3509::t_491c34f1643f7d 1-7
+apps/web/app/page.tsx
+  s_2b4ab8a08c3509::t_ae2158e9d624d0 30
+apps/web/app/icon.svg
+  s_77acb618031a06::t_28f72417984a0f 2,25-26,39
+  s_77acb618031a06::t_a16854d6623168 1,3-24,27-38
+apps/web/components/fx/EngineCore3DLazy.tsx
+  s_2b4ab8a08c3509::t_c8ca0ca4dbbd6c 1-29
+apps/web/app/contact/page.tsx
+  s_2b4ab8a08c3509::t_affbb96d193689 37
+  s_2b4ab8a08c3509::t_827a988bf94be8 115
+apps/web/lib/use-reveal.ts
+  s_7f249c6cf2a0e8::t_5d1adf89c2f9cf 29,31,34-36,39-43
+apps/app/app/live/[sessionId]/_components/ReplyPipeline.tsx
+  s_7f249c6cf2a0e8::t_53444093a9eaab 1-131
+apps/web/components/fx/IntegrationsFlow.tsx
+  s_7f249c6cf2a0e8::t_d4e82b8c81bc7d 1-3,5,12-13,23,44-45,47,55,63,77-78,90,95-97,170-172
+  s_7f249c6cf2a0e8::t_281a92271f9636 4,14,35-38,43,46,64-66,79-89,92-94,98,100-104,112-116,147-148,151-152,154-155,158,161-169
+  s_7f249c6cf2a0e8::t_d7624bdfb44a89 6-11,15-22,24-34,39-42,48-54,56-62,67-76,91,99,105-111,117-146,149-150,153,156-157,159-160
+packages/ui/src/primitives/Section.tsx
+  s_2b4ab8a08c3509::t_e1dcd69b0e9a7e 40
+apps/web/app/security/page.tsx
+  s_2b4ab8a08c3509::t_14f4c3d85266e8 53
+apps/web/app/blog/rss.xml/route.ts
+  s_7f249c6cf2a0e8::t_2ddb3dbf9ebc33 1-47
+apps/web/app/docs/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_4f70e33b61cf00 1-23,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_2fadcb2e371995 24,30-36,38-44,49,51-54
+apps/web/app/about/page.tsx
+  s_7f249c6cf2a0e8::t_1644606c4d289c 144
+  s_7f249c6cf2a0e8::t_5d1adf89c2f9cf 128,201,204,215
+  s_2b4ab8a08c3509::t_34659d81009da8 12-14
+apps/web/app/copilot/page.tsx
+  s_2b4ab8a08c3509::t_d27eef01df5038 133
+  s_2b4ab8a08c3509::t_075619b8cb91e8 65
+services/echo-engine/src/server.ts
+  s_7f249c6cf2a0e8::t_5d1adf89c2f9cf 58,62
+apps/web/app/globals.css
+  s_77acb618031a06::t_293c0ce7dcedfd 549
+scripts/checks/link-integrity/crawler.mjs
+  s_7f249c6cf2a0e8::t_07cd9685f1a34c 1-235
+apps/web/components/ui/MarketingRoot.tsx
+  s_7f249c6cf2a0e8::t_5d1adf89c2f9cf 26-29
+apps/web/app/robots.ts
+  s_2b4ab8a08c3509::t_c4373103d97402 1-15
+apps/web/components/docs/ApiReferenceLazy.tsx
+  s_2b4ab8a08c3509::t_3e6cf2ba28a1c3 1-24
+apps/app/app/live/[sessionId]/page.tsx
+  s_7f249c6cf2a0e8::t_aaa1ce885f229a 723
+  s_7f249c6cf2a0e8::t_c95ced5a794973 117-120
+  s_7f249c6cf2a0e8::t_c0bc7049222988 500-505,508-518,520-534
+apps/app/app/live/[sessionId]/_components/VoiceWaveform.tsx
+  s_7f249c6cf2a0e8::t_de2d7c0ccc39d4 1-133
+docker-compose.yml
+  s_7f249c6cf2a0e8::t_f6fbb0d588b509 1-26
+apps/web/components/fx/SplitText.tsx
+  s_7f249c6cf2a0e8::t_10c03e42f93b7d 1-53
+apps/web/app/docs/page.tsx
+  s_2b4ab8a08c3509::t_9750bbd2bb1e7f 22-27
+  s_7f249c6cf2a0e8::t_15ca21b25a80ca 1,5-7,10-12,14,16-17,20-21,28-34,40,53-56
+  s_2b4ab8a08c3509::t_23ee2a9129c5e9 8-9
+  s_7f249c6cf2a0e8::t_a73cb3c41cf688 2-4,13,15,18-19,35-39,41-52
+apps/web/app/pricing/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_38e05dff42052c 24,30-36,38-41,46,48-51
+  s_2b4ab8a08c3509::t_aafd2df2b10a60 1-23,25-29,37,42-45,47,52-57
+packages/design-system/tailwind.config.ts
+  s_2b4ab8a08c3509::t_345433a18483a4 79-80
+packages/ui/src/primitives/Container.tsx
+  s_2b4ab8a08c3509::t_e1dcd69b0e9a7e 45
+packages/ui/src/primitives/Grid.tsx
+  s_2b4ab8a08c3509::t_e1dcd69b0e9a7e 40,68
+apps/web/app/security/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_fb7574e2d41e82 1-23,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_fdcafdb955eaa9 24,30-36,38-44,49,51-54
+apps/web/app/platform/page.tsx
+  s_7f249c6cf2a0e8::t_d37189b630d5b6 182
+  s_7f249c6cf2a0e8::t_ea26a8535b8395 1-19,26-181,183-188
+  s_2b4ab8a08c3509::t_70585c1e4f14da 20-25
+apps/web/app/demo/DemoRedirect.tsx
+  s_7f249c6cf2a0e8::t_c3a0082f9ced76 1-21
+apps/web/components/fx/SpeechEnginePipeline.tsx
+  s_7f249c6cf2a0e8::t_db18b8ace805a8 4,6-10,13,15-25,27-34,37-44,47-48,63,65-66,69,76,78-81,85,94-100,104,106-171
+  s_7f249c6cf2a0e8::t_0260f7a3114e29 1-3,11-12,14,26,35-36,45-46,93,101-103,172-174
+  s_7f249c6cf2a0e8::t_0032e1b5ac48c4 5,49-62,64,67-68,70-75,77,82-84,86-92,105
+apps/web/components/docs/ApiReference.tsx
+  s_7f249c6cf2a0e8::t_f2b21d4c67f84e 1-3,5,9-12,16-35,37-61,63-65,68-94,100-122,124,126-149,153-156,161-172,176-191,193,201-206,208-214,216-218,226-233,236-238,285-289,291,295-297,299-301,311-318,320-348,351,360,364-369,371,374,383-384,389,392,395-396,398-406,409-412
+  s_7f249c6cf2a0e8::t_97341769d3a4d8 387
+  s_7f249c6cf2a0e8::t_f649327431a7f2 4,6-8,14-15,36,62,66-67,95-99,123,125,150-152,157-160,173-175,192,194-200,207,215,219-225,234-235,239-284,290,292-294,298,302-310,319,349-350,352-359,361-363,370,372-373,375-382,385-386,388,390-391,393-394,397,407-408
+  s_7f249c6cf2a0e8::t_b4c49a06e1dd51 13
+apps/web/components/fx/Hero3D.tsx
+  s_7f249c6cf2a0e8::t_1676d4a70d25e4 1-169
+apps/web/app/blog/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_e542d06558bf2e 1-23,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_8fb280837e2a46 24,30-36,38-44,49,51-54
+apps/web/app/demo/page.tsx
+  s_7f249c6cf2a0e8::t_fbc023e0963158 1-3,5,10-11,20-22,54
+  s_7f249c6cf2a0e8::t_6b43e23b4841dc 13
+  s_7f249c6cf2a0e8::t_fa45db566d2bf8 45-51
+  s_2b4ab8a08c3509::t_9e825aaa967262 12,16,18-19
+  s_7f249c6cf2a0e8::t_e35b85ac431391 4,6-9,14-15,17,23-44,52-53
+apps/web/app/receptionist/page.tsx
+  s_2b4ab8a08c3509::t_cc3b3d5b3b3d0a 67
+  s_2b4ab8a08c3509::t_bf5129b8cfef8a 148
+apps/web/components/fx/EngineCore3D.tsx
+  s_7f249c6cf2a0e8::t_b18fe431c486b4 1-139
+apps/web/app/contact/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_4406c1a5c88a47 1-23,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_0069c101750074 24,30-36,38-44,49,51-54
+apps/web/app/receptionist/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_417f538e8f3531 1-22,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_9d481d4d9aab16 23-24,30-36,38-44,49,51-54
+apps/web/components/fx/SpeechEnginePipelineLazy.tsx
+  s_2b4ab8a08c3509::t_0d67cc788db8e4 1-29
+apps/web/components/fx/CustomCursor.tsx
+  s_7f249c6cf2a0e8::t_14daa4a93002a6 1-64
+apps/web/app/sitemap.ts
+  s_2b4ab8a08c3509::t_b0f41bfceb7ade 1-30
+packages/ui/src/primitives/Cluster.tsx
+  s_2b4ab8a08c3509::t_b2b20ed369e778 52-55,68
+apps/web/app/copilot/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_08065a3a708fdf 1-22,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_3e50e3a70db106 23-24,30-36,38-44,49,51-54
+apps/web/app/pricing/page.tsx
+  s_2b4ab8a08c3509::t_09b8f9ebc2de31 15-16,19-24
+  s_2b4ab8a08c3509::t_7a40b4b6c133d6 85-94,98-101
+  s_7f249c6cf2a0e8::t_44e03ee7049639 1-14,17-18,25-84,95-97,102-237
+apps/web/app/twitter-image.tsx
+  s_2b4ab8a08c3509::t_957dbc63c8242b 24-25,27,31-37,39-45,50,52-55
+  s_2b4ab8a08c3509::t_766502984fdd42 1-23,26,28-30,38,46-49,51,56-61
+scripts/deploy/preflight.sh
+  s_7f249c6cf2a0e8::t_e58efe07c33e6d 1-58
+apps/web/next.config.mjs
+  s_7f249c6cf2a0e8::t_d868d25c6e79a2 5-7
+apps/web/app/customers/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_a9c52fd62d5260 1-25,27-41,49,57-60,62,67-72
+  s_2b4ab8a08c3509::t_aadc8a84f7e5c0 26,42-48,50-56,61,63-66
+apps/web/app/blog/page.tsx
+  s_2b4ab8a08c3509::t_55233d1e6e3d40 557
+  s_2b4ab8a08c3509::t_d0f5926d5972a5 48
+apps/web/lib/use-split-headings.ts
+  s_7f249c6cf2a0e8::t_8cf615b5870465 1-96
+apps/web/components/fx/IntegrationsFlowLazy.tsx
+  s_2b4ab8a08c3509::t_007ef09d04b999 1-32
+apps/web/app/customers/[slug]/page.tsx
+  s_2b4ab8a08c3509::t_c3ed9c3f58144a 192-201,204-207
+  s_2b4ab8a08c3509::t_f56499e3758749 164-166,171-183,187-189
+  s_7f249c6cf2a0e8::t_f600e68c1a3a8b 1-163,167-170,184-186,190-191,202-203,208-266
+apps/web/app/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_d4465a7889674a 1-23,26,28-30,38,46-49,51,54,56-61
+  s_2b4ab8a08c3509::t_7703e6f176e6df 24-25,27,31-37,39-45,50,52-53,55
+apps/web/app/platform/opengraph-image.tsx
+  s_2b4ab8a08c3509::t_c6bfd5be73c71d 1-23,25-29,37,45-48,50,55-60
+  s_2b4ab8a08c3509::t_cec547a62ff1a4 24,30-36,38-44,49,51-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "90a7c0ad01f35c7dbbe925991ce42e2025c9f71d",
+  "prompts": {},
+  "sessions": {
+    "s_2b4ab8a08c3509": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c70dcc99-9633-481e-99fa-837cc003de0d",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    },
+    "s_77acb618031a06": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "71c40f73-4663-4ea0-91a9-e21cb23cc198",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    },
+    "s_7f249c6cf2a0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16451edd-8a33-4627-a3f7-d6bbe4734cd1",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    }
+  }
+}
