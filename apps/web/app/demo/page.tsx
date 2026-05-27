@@ -18,8 +18,16 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Prefer the configured app origin. If it's unset we must NOT fall back to
+// localhost in production (that strands real visitors), so production defaults
+// to the known app deployment; only local dev points at localhost.
+const PROD_APP_URL = 'https://vought-os-app.vercel.app';
+const DEV_APP_URL = 'http://localhost:3002';
+
 export default function DemoPage() {
-  const app = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
+  const app =
+    process.env.NEXT_PUBLIC_APP_URL ||
+    (process.env.NODE_ENV === 'production' ? PROD_APP_URL : DEV_APP_URL);
   const target = `${app}/onboarding/voice`;
 
   return (
