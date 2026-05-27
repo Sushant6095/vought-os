@@ -196,9 +196,9 @@ export default function LiveCallPage(props: LivePageProps) {
         }, estimatedDurationMs);
       }
     },
-    onError: (err: Error) => {
+    onError: (message: string, context?: unknown) => {
       // eslint-disable-next-line no-console
-      console.error('[live] speech engine error', err);
+      console.error('[live] speech engine error', message, context);
     },
   });
 

@@ -1,0 +1,87 @@
+{
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "total": 88.5,
+  "voTotalSpoken": 35.34,
+  "segments": [
+    {
+      "id": "type1",
+      "type": "canvas",
+      "voStart": 0,
+      "seconds": 2.62
+    },
+    {
+      "id": "type2",
+      "type": "canvas",
+      "voStart": 0,
+      "seconds": 3.51
+    },
+    {
+      "id": "live-bloom",
+      "type": "video",
+      "src": "live-bloom.webm",
+      "seconds": 9.68
+    },
+    {
+      "id": "live-teams",
+      "type": "video",
+      "src": "live-teams.webm",
+      "seconds": 6.1
+    },
+    {
+      "id": "onboarding-voice",
+      "type": "video",
+      "src": "onboarding-voice.webm",
+      "seconds": 5.83
+    },
+    {
+      "id": "customers-hero",
+      "type": "video",
+      "src": "customers-hero.webm",
+      "seconds": 4.88
+    },
+    {
+      "id": "customers-story",
+      "type": "video",
+      "src": "customers-story.webm",
+      "seconds": 5.78
+    },
+    {
+      "id": "numbers",
+      "type": "canvas",
+      "seconds": 4.2
+    },
+    {
+      "id": "outro",
+      "type": "canvas",
+      "seconds": 45.9
+    }
+  ],
+  "voSequence": [
+    {
+      "start": 0.2,
+      "dur": 4.92263
+    },
+    {
+      "start": 5.47,
+      "dur": 8.080544
+    },
+    {
+      "start": 13.9,
+      "dur": 4.504671
+    },
+    {
+      "start": 18.75,
+      "dur": 4.226032
+    },
+    {
+      "start": 23.33,
+      "dur": 9.055782
+    },
+    {
+      "start": 32.74,
+      "dur": 2.600635
+    }
+  ]
+}

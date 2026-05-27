@@ -1,0 +1,31 @@
+1
+00:00:00,200 --> 00:00:05,120
+Every important conversation
+happens once. You don't get to rehearse.
+
+2
+00:00:05,470 --> 00:00:13,550
+Vought listens to your live conversation —
+separating every speaker, understanding the moment,
+whispering the next line into your ear.
+
+3
+00:00:13,900 --> 00:00:18,400
+In under four hundred milliseconds.
+Built on the ElevenLabs Speech Engine.
+
+4
+00:00:18,750 --> 00:00:22,980
+Thirty seconds of recording.
+The voice you hear in your ear is yours.
+
+5
+00:00:23,330 --> 00:00:32,390
+TripleByte closed $1.4M more last quarter.
+Suggestion acceptance tripled.
+The conversation goes the way it was always supposed to.
+
+6
+00:00:32,740 --> 00:00:35,340
+Vought. Intelligence for live conversations.
+

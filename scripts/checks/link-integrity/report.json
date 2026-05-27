@@ -1,0 +1,3179 @@
+{
+  "ranAt": "2026-05-27T14:48:20.026Z",
+  "results": [
+    {
+      "target": "web",
+      "base": "http://localhost:3000",
+      "pages": [
+        {
+          "url": "http://localhost:3000/",
+          "status": 200,
+          "title": "Vought · Intelligence for live conversations.",
+          "h1": "Intelligence That Handles The Conversation Live",
+          "bodyTextLength": 152101,
+          "internalLinkCount": 30,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Watch it work"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "See pricing"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers",
+          "status": 200,
+          "title": "Customers · Built for the conversations that move revenue. · Vought",
+          "h1": "Built for the conversationsthat move revenue.",
+          "bodyTextLength": 117906,
+          "internalLinkCount": 41,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers/acme",
+              "text": "acme/Cybersecurity →"
+            },
+            {
+              "href": "http://localhost:3000/customers/parallel",
+              "text": "PARALLELB2B fintech →"
+            },
+            {
+              "href": "http://localhost:3000/customers/cobalt",
+              "text": "Cobalt.Healthcare ops →"
+            },
+            {
+              "href": "http://localhost:3000/customers/northwind",
+              "text": "▲ NorthwindReal estate →"
+            },
+            {
+              "href": "http://localhost:3000/customers/triplebyte",
+              "text": "{tripleByte}Developer hiring →"
+            },
+            {
+              "href": "http://localhost:3000/customers/runway",
+              "text": "runwaySeries B sales →"
+            },
+            {
+              "href": "http://localhost:3000/customers/triplebyte",
+              "text": "Read the story"
+            },
+            {
+              "href": "http://localhost:3000/customers/triplebyte",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/customers/acme",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/customers/parallel",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/customers/cobalt",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/customers/northwind",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/customers/runway",
+              "text": "Read story"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Book your demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Talk to sales"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/docs",
+          "status": 200,
+          "title": "API reference · Vought voice API on ElevenLabs Speech Engine · Vought",
+          "h1": "The Vought voice API",
+          "bodyTextLength": 50054,
+          "internalLinkCount": 27,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "▶ Try it"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/about",
+          "status": 200,
+          "title": "The engine room · Vought × ElevenLabs Speech Engine · Vought",
+          "h1": "The engine room",
+          "bodyTextLength": 82559,
+          "internalLinkCount": 28,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Read the platform"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/contact",
+          "status": 200,
+          "title": "Contact · Vought · Vought",
+          "h1": "How can we help?",
+          "bodyTextLength": 77092,
+          "internalLinkCount": 28,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Book a demo"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "/security"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/copilot",
+          "status": 200,
+          "title": "Vought Copilot · The whisper that closes. · Vought",
+          "h1": "The whisperthat closes.",
+          "bodyTextLength": 240003,
+          "internalLinkCount": 31,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Book a demo"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Watch a 90-second tour"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Clone your voice on a demo"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Book a demo"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "See full pricing"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/pricing",
+          "status": 200,
+          "title": "Pricing · Transparent, no conversation rationing · Vought",
+          "h1": "Transparent pricing. No conversation rationing.",
+          "bodyTextLength": 151381,
+          "internalLinkCount": 31,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Start trial"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Book a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Talk to sales"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Book a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Talk to sales"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/receptionist",
+          "status": 200,
+          "title": "Vought Receptionist · Answer every call. Even at 2am. · Vought",
+          "h1": "Answer every call.Even at 2am.",
+          "bodyTextLength": 271694,
+          "internalLinkCount": 27,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers/lakeshore-dental",
+              "text": "Read the story"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "/api/receptionist/signup",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/platform",
+          "status": 200,
+          "title": "Platform · The engine behind every Vought conversation · Vought",
+          "h1": "The engine behind every conversation",
+          "bodyTextLength": 84481,
+          "internalLinkCount": 30,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Talk to the platform team"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "See it in a call"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Read the docs"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Talk to the platform team"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog",
+          "status": 200,
+          "title": "Blog · Notes from the conversation. · Vought",
+          "h1": "Notes from the conversation.",
+          "bodyTextLength": 96642,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "All"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=engineering",
+              "text": "Engineering"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=customer-stories",
+              "text": "Customer stories"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=voice-ai",
+              "text": "Voice AI"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=company",
+              "text": "Company"
+            },
+            {
+              "href": "http://localhost:3000/blog/rss.xml",
+              "text": "Subscribe via RSS"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "#",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/security",
+          "status": 200,
+          "title": "Security · Built for the conversations that can't leak. · Vought",
+          "h1": "Built for the conversationsthat can't leak.",
+          "bodyTextLength": 158542,
+          "internalLinkCount": 28,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Request access"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Request one-pager"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/acme",
+          "status": 200,
+          "title": "acme/ · Onboarding every new rep to top-closer instincts · Vought · Vought",
+          "h1": "Onboarding every new rep to top-closer instincts",
+          "bodyTextLength": 57639,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/parallel",
+          "status": 200,
+          "title": "PARALLEL · Compliance lines, never missed · Vought · Vought",
+          "h1": "Compliance lines, never missed",
+          "bodyTextLength": 57661,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/cobalt",
+          "status": 200,
+          "title": "Cobalt. · De-escalation, in real time · Vought · Vought",
+          "h1": "De-escalation, in real time",
+          "bodyTextLength": 57565,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/northwind",
+          "status": 200,
+          "title": "▲ Northwind · Every inbound lead, answered live · Vought · Vought",
+          "h1": "Every inbound lead, answered live",
+          "bodyTextLength": 57483,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/triplebyte",
+          "status": 200,
+          "title": "{tripleByte} · Whispers that close the technical sell · Vought · Vought",
+          "h1": "Whispers that close the technical sell",
+          "bodyTextLength": 58926,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/runway",
+          "status": 200,
+          "title": "runway · A whole sales motion, in one earbud · Vought · Vought",
+          "h1": "A whole sales motion, in one earbud",
+          "bodyTextLength": 57261,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/demo",
+          "status": 200,
+          "title": "Vought",
+          "h1": "Read this aloud,for thirty seconds.",
+          "bodyTextLength": 14839,
+          "internalLinkCount": 0,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/customers/lakeshore-dental",
+          "status": 200,
+          "title": "Lakeshore Dental · Answering every call, even at 2am · Vought · Vought",
+          "h1": "Answering every call, even at 2am",
+          "bodyTextLength": 57794,
+          "internalLinkCount": 29,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "← All customers"
+            },
+            {
+              "href": "http://localhost:3000/demo",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "More stories"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog?cat=engineering",
+          "status": 200,
+          "title": "Blog · Notes from the conversation. · Vought",
+          "h1": "Notes from the conversation.",
+          "bodyTextLength": 71170,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "All"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=engineering",
+              "text": "Engineering"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=customer-stories",
+              "text": "Customer stories"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=voice-ai",
+              "text": "Voice AI"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=company",
+              "text": "Company"
+            },
+            {
+              "href": "http://localhost:3000/blog/rss.xml",
+              "text": "Subscribe via RSS"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "#",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog?cat=customer-stories",
+          "status": 200,
+          "title": "Blog · Notes from the conversation. · Vought",
+          "h1": "Notes from the conversation.",
+          "bodyTextLength": 65880,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "All"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=engineering",
+              "text": "Engineering"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=customer-stories",
+              "text": "Customer stories"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=voice-ai",
+              "text": "Voice AI"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=company",
+              "text": "Company"
+            },
+            {
+              "href": "http://localhost:3000/blog/rss.xml",
+              "text": "Subscribe via RSS"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "#",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog?cat=voice-ai",
+          "status": 200,
+          "title": "Blog · Notes from the conversation. · Vought",
+          "h1": "Notes from the conversation.",
+          "bodyTextLength": 70550,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "All"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=engineering",
+              "text": "Engineering"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=customer-stories",
+              "text": "Customer stories"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=voice-ai",
+              "text": "Voice AI"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=company",
+              "text": "Company"
+            },
+            {
+              "href": "http://localhost:3000/blog/rss.xml",
+              "text": "Subscribe via RSS"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "#",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog?cat=company",
+          "status": 200,
+          "title": "Blog · Notes from the conversation. · Vought",
+          "h1": "Notes from the conversation.",
+          "bodyTextLength": 70508,
+          "internalLinkCount": 32,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 1,
+          "internalLinks": [
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/docs",
+              "text": "Developers"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Get a demo"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "All"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=engineering",
+              "text": "Engineering"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=customer-stories",
+              "text": "Customer stories"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=voice-ai",
+              "text": "Voice AI"
+            },
+            {
+              "href": "http://localhost:3000/blog?cat=company",
+              "text": "Company"
+            },
+            {
+              "href": "http://localhost:3000/blog/rss.xml",
+              "text": "Subscribe via RSS"
+            },
+            {
+              "href": "http://localhost:3000/",
+              "text": "VOUGHT"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Copilot"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Receptionist"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Platform"
+            },
+            {
+              "href": "http://localhost:3000/pricing",
+              "text": "Pricing"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Sales & Revenue"
+            },
+            {
+              "href": "http://localhost:3000/copilot",
+              "text": "Customer Support"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Healthcare"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Legal"
+            },
+            {
+              "href": "http://localhost:3000/receptionist",
+              "text": "Real Estate"
+            },
+            {
+              "href": "http://localhost:3000/blog",
+              "text": "Blog"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            },
+            {
+              "href": "http://localhost:3000/platform",
+              "text": "Docs"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Engine"
+            },
+            {
+              "href": "http://localhost:3000/contact",
+              "text": "Contact"
+            },
+            {
+              "href": "http://localhost:3000/about",
+              "text": "Careers"
+            },
+            {
+              "href": "http://localhost:3000/customers",
+              "text": "Customers"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Privacy"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Terms"
+            },
+            {
+              "href": "http://localhost:3000/security",
+              "text": "Security"
+            }
+          ],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [
+            {
+              "action": "#",
+              "method": "post"
+            }
+          ],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        },
+        {
+          "url": "http://localhost:3000/blog/rss.xml",
+          "status": 200,
+          "title": "",
+          "h1": "",
+          "bodyTextLength": 2012,
+          "internalLinkCount": 0,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        }
+      ],
+      "externalLinks": [],
+      "errors": []
+    },
+    {
+      "target": "app",
+      "base": "http://localhost:3002",
+      "pages": [
+        {
+          "url": "http://localhost:3002/",
+          "status": 200,
+          "title": "Vought",
+          "h1": "What kind ofconversation?",
+          "bodyTextLength": 12145,
+          "internalLinkCount": 0,
+          "externalLinkCount": 0,
+          "ctaCount": 0,
+          "formCount": 0,
+          "internalLinks": [],
+          "externalLinks": [],
+          "ctas": [],
+          "forms": [],
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedRequests": []
+        }
+      ],
+      "externalLinks": [],
+      "errors": []
+    }
+  ]
+}

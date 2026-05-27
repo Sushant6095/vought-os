@@ -48,10 +48,13 @@ export const bloomVariants = {
     transition: {
       duration: BLOOM_DURATION_MS / 1000,
       times: [0, 0.7, 1],
-      ease: [0.16, 1, 0.3, 1],
+      // 4-tuple cast: Framer Motion's `Easing` type is a bezier 4-tuple, not
+      // a readonly literal array. `as const` froze this into a readonly tuple
+      // that fails to satisfy the `variants` prop type under `next build`.
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     },
   },
-} as const;
+};
 
 /**
  * Same overshoot expressed as a transition spec for Framer Motion's
@@ -59,5 +62,5 @@ export const bloomVariants = {
  */
 export const bloomTransition = {
   duration: BLOOM_DURATION_MS / 1000,
-  ease: [0.16, 1, 0.3, 1] as const,
+  ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
 };

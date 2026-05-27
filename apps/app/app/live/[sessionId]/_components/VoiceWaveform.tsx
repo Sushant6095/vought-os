@@ -42,7 +42,9 @@ export function VoiceWaveform() {
     let stream: MediaStream | null = null;
     let audioCtx: AudioContext | null = null;
     let analyser: AnalyserNode | null = null;
-    let data: Uint8Array | null = null;
+    // TS 5.7: bare `Uint8Array` defaults to `Uint8Array<ArrayBufferLike>`, but
+    // AnalyserNode.getByteFrequencyData() requires `Uint8Array<ArrayBuffer>`.
+    let data: Uint8Array<ArrayBuffer> | null = null;
 
     const resize = () => {
       const p = canvas.parentElement;

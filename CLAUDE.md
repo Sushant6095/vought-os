@@ -119,3 +119,20 @@ Everything else is V2 and lives only in `BLUEPRINT.md` for now. When implementin
 ---
 
 *Updated by: bootstrap script. Last verified: hackathon Day 1.*
+
+---
+
+## Auto mode (multi-agent unattended execution)
+
+This repo is configured for full auto mode — agents spawned via Task inherit a permissive permission set so the swarm runs without prompting on common operations.
+
+See `.claude/AUTO-MODE.md` for the complete trust model, allow/deny lists, and how to revert.
+
+**Short version:**
+- Reads, writes, edits within the project: auto-approved
+- Standard CLIs (npm, pnpm, vercel, railway, ffmpeg, playwright, git): auto-approved
+- `.env` files and `~/.ssh/`, `~/.aws/`: hard-denied (agents cannot read or write)
+- `sudo`, `rm -rf /`, `curl | sh`, `git push --force`, destructive db ops: hard-denied
+- Deploy commands (`vercel --prod`, `railway up`): auto-approved — agents can deploy if you're logged in
+
+**Hackathon mode:** leave auto mode on, commit between waves.
