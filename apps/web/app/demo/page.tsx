@@ -21,7 +21,12 @@ export const metadata: Metadata = {
 // Prefer the configured app origin. If it's unset we must NOT fall back to
 // localhost in production (that strands real visitors), so production defaults
 // to the known app deployment; only local dev points at localhost.
-const PROD_APP_URL = 'https://vought-os-app.vercel.app';
+//
+// vought-os-app2 is the working app project — it has ELEVENLABS_API_KEY and
+// SPEECH_ENGINE_ID set, so the live call actually authenticates. vought-os-app
+// (the prettier name) has no env vars and is effectively a UI shell, so do not
+// fall back to it.
+const PROD_APP_URL = 'https://vought-os-app2.vercel.app';
 const DEV_APP_URL = 'http://localhost:3002';
 
 export default function DemoPage() {
