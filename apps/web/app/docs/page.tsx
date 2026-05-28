@@ -35,8 +35,8 @@ export default function DocsPage() {
       <div className="mx-auto max-w-[1320px] px-6 pb-28 pt-36">
         <header className="mb-12 border-b border-white/8 pb-8">
           <div className="mb-3 flex items-center gap-2">
-            <span className="rounded-md px-2 py-1 text-[10px] font-bold tracking-[0.12em] text-white" style={{ background: 'var(--ob-blue)' }}>API v1</span>
-            <span className="text-xs text-white/40">stable · base URL https://api.vought.com</span>
+            <span className="rounded-md px-2 py-1 text-[10px] font-bold tracking-[0.12em] text-white" style={{ background: 'var(--ob-blue)' }}>Reference</span>
+            <span className="text-xs text-white/40">3 surfaces · Vought app · ElevenLabs SDK · diart sidecar</span>
           </div>
           <h1 className="ob-serif mb-4 text-[clamp(40px,5vw,68px)] leading-[1.02] text-white">
             The Vought <span className="ob-accent italic">voice API</span>
