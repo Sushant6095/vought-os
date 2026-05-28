@@ -217,11 +217,12 @@ function ElevenLabsFeature() {
           well under a second on the first try.
         </p>
 
-        <Grid cols={{ base: 1, md: 2 }} gap="lg" className="mt-16">
+        <Grid columns={12} gutter={32} className="mt-16">
           {advantages.map((a, i) => (
             <GridItem
               key={a.headline}
-              className="reveal"
+              span={12}
+              className="reveal md:!col-span-6"
               style={{ transitionDelay: `${80 + i * 60}ms` }}
             >
               <article className="rounded-2xl border border-hairline-dark/60 bg-elevated-dark p-8">
@@ -314,11 +315,12 @@ function CoPartners() {
           production.
         </h2>
 
-        <Grid cols={{ base: 1, md: 2 }} gap="lg" className="mt-16">
+        <Grid columns={12} gutter={32} className="mt-16">
           {partners.map((p, i) => (
             <GridItem
               key={p.name}
-              className="reveal"
+              span={12}
+              className="reveal md:!col-span-6"
               style={{ transitionDelay: `${80 + i * 80}ms` }}
             >
               <article className="flex h-full flex-col rounded-2xl border border-hairline-dark/60 bg-elevated-dark p-8">
@@ -385,9 +387,13 @@ function ArchitectureBlock() {
           Frameworks, services, and where each Dockerfile lives.
         </h2>
 
-        <Grid cols={{ base: 1, lg: 2 }} gap="lg" className="mt-16">
+        <Grid columns={12} gutter={32} className="mt-16">
           {/* Frameworks list */}
-          <GridItem className="reveal" style={{ transitionDelay: '120ms' }}>
+          <GridItem
+            span={12}
+            className="reveal lg:!col-span-6"
+            style={{ transitionDelay: '120ms' }}
+          >
             <div className="rounded-2xl border border-hairline-dark/60 bg-elevated-dark p-8">
               <div className="label-small mb-6 text-text-muted-dark">
                 Frameworks
@@ -411,7 +417,11 @@ function ArchitectureBlock() {
           </GridItem>
 
           {/* Service tree */}
-          <GridItem className="reveal" style={{ transitionDelay: '200ms' }}>
+          <GridItem
+            span={12}
+            className="reveal lg:!col-span-6"
+            style={{ transitionDelay: '200ms' }}
+          >
             <div className="rounded-2xl border border-hairline-dark/60 bg-surface-dark p-8">
               <div className="label-small mb-6 text-text-muted-dark">
                 Repo · vought-os
