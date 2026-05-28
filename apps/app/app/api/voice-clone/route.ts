@@ -36,13 +36,58 @@ const CLONE_TIMEOUT_MS = 30_000;
 // sample-rate recordings without enabling abuse.
 const MAX_AUDIO_BYTES = 4 * 1024 * 1024;
 
+// Rachel — a universally available ElevenLabs stock voice. Free-tier API keys
+// can't use Instant Voice Cloning, but every plan can render TTS in stock
+// voices. We use this as a graceful fallback so the live call still works
+// without the user's own clone (they lose the "wow" of their own voice, not
+// the demo). Override via FALLBACK_VOICE_ID if you'd rather pick a different
+// stock voice.
+const STOCK_VOICE_ID = process.env.FALLBACK_VOICE_ID ?? '21m00Tcm4TlvDq8ikWAM';
+
 interface CloneSuccess {
   voiceId: string;
   requiresVerification: boolean;
+  /** True when we fell back to a stock voice (e.g. free-tier API key). */
+  fellBackToStock?: boolean;
+  /** Short reason surfaced to the UI so it can explain the degraded state. */
+  fallbackReason?: string;
 }
 
 interface CloneFailure {
   error: string;
+}
+
+/**
+ * Detect ElevenLabs errors that are plan-tier or quota blocks (rather than a
+ * real failure). On these, falling back to a stock voice is the right move so
+ * the demo flow doesn't dead-end. We match on the documented error shapes plus
+ * a couple of well-known HTTP statuses.
+ */
+function isPlanTierBlock(status: number, raw: string): { blocked: boolean; reason?: string } {
+  if (status === 401) {
+    return { blocked: true, reason: 'API key not authorized for cloning.' };
+  }
+  if (status === 402) {
+    return { blocked: true, reason: 'Plan does not include voice cloning.' };
+  }
+  try {
+    const j = JSON.parse(raw) as { detail?: { code?: string; status?: string; message?: string } };
+    const code = j?.detail?.code ?? j?.detail?.status ?? '';
+    if (
+      code === 'paid_plan_required' ||
+      code === 'can_not_use_instant_voice_cloning' ||
+      code === 'voice_limit_reached' ||
+      code === 'quota_exceeded'
+    ) {
+      return { blocked: true, reason: j?.detail?.message ?? 'Plan tier blocks cloning.' };
+    }
+    if (j?.detail?.message && /subscription|plan|upgrade|paid/i.test(j.detail.message)) {
+      return { blocked: true, reason: j.detail.message };
+    }
+  } catch {
+    // Non-JSON body — fall through.
+  }
+  return { blocked: false };
 }
 
 function apiKey(): string {
@@ -138,6 +183,20 @@ export async function POST(req: Request): Promise<NextResponse<CloneSuccess | Cl
 
     if (!res.ok) {
       const text = await res.text();
+      const block = isPlanTierBlock(res.status, text);
+      if (block.blocked) {
+        // Graceful fallback: the operator's API key can't clone (free tier,
+        // quota, or a tighter scope), so we proceed with a stock voice. The
+        // UI surfaces the reason but the demo still completes.
+        void trySetEngineDefaultVoice(STOCK_VOICE_ID);
+        return NextResponse.json({
+          voiceId: STOCK_VOICE_ID,
+          requiresVerification: false,
+          fellBackToStock: true,
+          fallbackReason: block.reason,
+        });
+      }
+      // Anything else is a real failure — surface it.
       return NextResponse.json(
         { error: `ElevenLabs clone failed: ${res.status} ${text}` },
         { status: 502 },

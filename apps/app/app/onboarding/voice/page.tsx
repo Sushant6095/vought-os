@@ -118,13 +118,30 @@ export default function OnboardingVoicePage() {
         throw new Error(body.error ?? `Clone failed (${res.status})`);
       }
 
-      const { voiceId: vid } = (await res.json()) as { voiceId: string };
-      setVoiceId(vid);
+      const payload = (await res.json()) as {
+        voiceId: string;
+        fellBackToStock?: boolean;
+        fallbackReason?: string;
+      };
+      setVoiceId(payload.voiceId);
 
       // Stash on the client so the settings page can read it. Production
       // moves this server-side; for hackathon scope localStorage is fine.
+      // We also stash the fallback flag so the live screen can render a
+      // small "sample voice" pill if the operator's plan tier blocked the
+      // real clone (free-tier ElevenLabs keys can't use Instant Voice
+      // Cloning — the API surfaces paid_plan_required).
       try {
-        window.localStorage.setItem('vought.voiceId', vid);
+        window.localStorage.setItem('vought.voiceId', payload.voiceId);
+        if (payload.fellBackToStock) {
+          window.localStorage.setItem('vought.voiceFallback', '1');
+          if (payload.fallbackReason) {
+            window.localStorage.setItem('vought.voiceFallbackReason', payload.fallbackReason);
+          }
+        } else {
+          window.localStorage.removeItem('vought.voiceFallback');
+          window.localStorage.removeItem('vought.voiceFallbackReason');
+        }
       } catch {
         // ignore — non-fatal
       }
