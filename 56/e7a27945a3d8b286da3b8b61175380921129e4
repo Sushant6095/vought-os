@@ -1,0 +1,28 @@
+apps/web/components/nav/NavPill.tsx
+  s_7f249c6cf2a0e8::t_3f55c80a9777c5 36-43
+apps/web/app/solutions/page.tsx
+  s_7f249c6cf2a0e8::t_4c34164792c923 1-94
+apps/web/app/sitemap.ts
+  s_7f249c6cf2a0e8::t_e1331dc397ea2a 2
+  s_7f249c6cf2a0e8::t_09a0dfd5b92a2f 22-27
+apps/web/app/solutions/[slug]/page.tsx
+  s_7f249c6cf2a0e8::t_d6b1b97cfcba76 1-427
+apps/web/app/solutions/_data/industries.ts
+  s_7f249c6cf2a0e8::t_c0e6404398644a 1-294
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "56e7a27945a3d8b286da3b8b61175380921129e4",
+  "prompts": {},
+  "sessions": {
+    "s_7f249c6cf2a0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16451edd-8a33-4627-a3f7-d6bbe4734cd1",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "sushant-vyapar <sushant.jain@vyapar.com>"
+    }
+  }
+}
