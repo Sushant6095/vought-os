@@ -19,6 +19,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Container, Grid, GridItem } from '@vought/ui';
 import { ArrowRight, Check } from '@/components/ui/Icon';
+import { CollabFlow } from '@/components/fx/CollabFlow';
 
 const REPO_URL = 'https://github.com/Sushant6095/vought-os';
 
@@ -46,54 +47,51 @@ export function generateMetadata(): Metadata {
 }
 
 // ---------------------------------------------------------------------------
-// Inline brand SVGs · kept small and on-tone instead of importing logo blobs.
-// Each is a single optimized path and inherits currentColor.
+// Brand marks · official paths from `simple-icons` (https://simpleicons.org),
+// inlined so the logos ship as a single character span with no extra request
+// and inherit `currentColor` for theme-aware tinting. Paths verified against
+// simple-icons v16.21.0 — replace by re-extracting `siBrand.path` if the
+// brand refreshes upstream.
 // ---------------------------------------------------------------------------
 
-function GitHubMark({ size = 18 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M12 0.5C5.65 0.5 0.5 5.65 0.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.1c-3.2.69-3.87-1.36-3.87-1.36-.52-1.32-1.28-1.67-1.28-1.67-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.04 11.04 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.13v3.16c0 .3.21.67.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5Z" />
-    </svg>
-  );
+const SI = {
+  github:
+    'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12',
+  elevenlabs: 'M4.6035 0v24h4.9317V0zm9.8613 0v24h4.9317V0z',
+  vercel: 'm12 1.608 12 20.784H0Z',
+  render:
+    'M18.263.007c-3.121-.147-5.744 2.109-6.192 5.082-.018.138-.045.272-.067.405-.696 3.703-3.936 6.507-7.827 6.507-1.388 0-2.691-.356-3.825-.979a.2024.2024 0 0 0-.302.178V24H12v-8.999c0-1.656 1.338-3 2.987-3h2.988c3.382 0 6.103-2.817 5.97-6.244-.12-3.084-2.61-5.603-5.682-5.75',
+};
+
+interface MarkProps {
+  size?: number;
+  label?: string;
 }
 
-function ElevenLabsMark({ size = 20 }: { size?: number }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-    >
-      <rect x="4" y="4" width="6" height="16" rx="1.2" />
-      <rect x="14" y="4" width="6" height="16" rx="1.2" />
-    </svg>
-  );
+function makeMark(d: string, defaultLabel: string) {
+  const Mark = function Mark({ size = 18, label }: MarkProps) {
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        role={label ? 'img' : undefined}
+        aria-label={label ?? undefined}
+        aria-hidden={label ? undefined : true}
+      >
+        <title>{label ?? defaultLabel}</title>
+        <path d={d} />
+      </svg>
+    );
+  };
+  return Mark;
 }
 
-function VercelMark({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12 2 L23 21 H1 Z" />
-    </svg>
-  );
-}
-
-function RenderMark({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-    </svg>
-  );
-}
+const GitHubMark = makeMark(SI.github, 'GitHub');
+const ElevenLabsMark = makeMark(SI.elevenlabs, 'ElevenLabs');
+const VercelMark = makeMark(SI.vercel, 'Vercel');
+const RenderMark = makeMark(SI.render, 'Render');
 
 // ---------------------------------------------------------------------------
 // 1. Hero
@@ -197,27 +195,71 @@ function ElevenLabsFeature() {
           <span>Lead partner</span>
         </div>
 
+        {/* Big bold ElevenLabs treatment — the wordmark stands alongside the
+            section header so the brand is the first thing the reader sees. */}
+        <div
+          className="reveal mb-6 flex items-center gap-4 text-text-primary-dark"
+          style={{ transitionDelay: '40ms' }}
+        >
+          <ElevenLabsMark size={36} label="ElevenLabs" />
+          <span className="text-2xl font-semibold tracking-tight">
+            ElevenLabs
+          </span>
+        </div>
+
         <h2
           id="elevenlabs-heading"
-          className="reveal display-2 max-w-[20ch] text-text-primary-dark"
+          className="reveal display-2 max-w-[22ch] text-text-primary-dark"
           style={{ transitionDelay: '80ms' }}
         >
-          ElevenLabs Speech Engine is the floor we build on.
+          The pioneer that made the rest of the loop possible.
         </h2>
 
         <p
           className="reveal mt-6 max-w-[64ch] text-lg text-text-secondary-dark"
           style={{ transitionDelay: '160ms' }}
         >
-          We tried the obvious alternative: a Whisper transcription service, a
-          frontier LLM, and a separate TTS vendor stitched together. End-to-end
-          latency landed near two seconds. Voices drifted. Interrupting the AI
-          mid-sentence required custom plumbing. ElevenLabs Speech Engine
-          replaced all three with a single primitive, and the loop dropped to
-          well under a second on the first try.
+          ElevenLabs didn&rsquo;t just ship better TTS. They moved the entire
+          field — voice quality past the uncanny valley, voice cloning from
+          seconds of audio instead of hours, and now Speech Engine: the first
+          primitive that puts STT, TTS, and turn detection on one socket. Every
+          voice product built after them inherits the floor they raised.
         </p>
 
-        <Grid columns={12} gutter={32} className="mt-16">
+        <p
+          className="reveal mt-5 max-w-[64ch] text-lg text-text-secondary-dark"
+          style={{ transitionDelay: '200ms' }}
+        >
+          We tried the obvious alternative — a Whisper transcription service, a
+          frontier LLM, and a separate TTS vendor stitched together. End-to-end
+          latency landed near two seconds. Voices drifted. Interrupting the AI
+          mid-sentence required custom plumbing. Speech Engine collapsed all
+          three into a single primitive and the loop dropped to well under a
+          second on the first try.
+        </p>
+
+        {/* The collab diagram — Vought components on the outside, the
+            ElevenLabs Speech Engine in the middle, edges showing the live
+            data flow. This is the page's visual centerpiece. */}
+        <div
+          className="reveal mt-16"
+          style={{ transitionDelay: '240ms' }}
+        >
+          <div className="label-small mb-4 flex items-center gap-2 text-text-muted-dark">
+            <span>Vought</span>
+            <span className="text-text-muted-dark/60">×</span>
+            <ElevenLabsMark size={11} label="ElevenLabs" />
+            <span>ElevenLabs · the live loop</span>
+          </div>
+          <CollabFlow />
+          <p className="mt-4 max-w-[64ch] text-sm text-text-muted-dark">
+            Animated edges are live audio and streaming LLM tokens. Static
+            edges are control signals. The diagram is faithful — these are the
+            exact services and the exact direction of flow in production.
+          </p>
+        </div>
+
+        <Grid columns={12} gutter={32} className="mt-20">
           {advantages.map((a, i) => (
             <GridItem
               key={a.headline}
