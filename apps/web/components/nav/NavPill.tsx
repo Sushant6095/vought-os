@@ -100,7 +100,7 @@ export function NavPill() {
               onClose={scheduleClose}
             />
             <NavLink href="/customers" onFocus={() => setOpen(null)}>
-              Customers
+              Partners
             </NavLink>
             <NavLink href="/docs" onFocus={() => setOpen(null)}>
               Developers
