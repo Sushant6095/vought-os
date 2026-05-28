@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { INDUSTRY_SLUGS } from './solutions/_data/industries';
 
 const BASE = 'https://vought.com';
 
@@ -18,6 +19,12 @@ const ROUTES: Array<{
   { path: '/contact', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/blog', changeFrequency: 'weekly', priority: 0.8 },
   { path: '/docs', changeFrequency: 'monthly', priority: 0.6 },
+  { path: '/solutions', changeFrequency: 'monthly', priority: 0.8 },
+  ...INDUSTRY_SLUGS.map((slug) => ({
+    path: `/solutions/${slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  })),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -33,14 +33,14 @@ const PRODUCTS: { title: string; blurb: string; href: string }[] = [
 ];
 
 const SOLUTIONS: { title: string; href: string }[] = [
-  { title: 'Sales & Revenue', href: '/copilot' },
-  { title: 'Customer Support', href: '/copilot' },
-  { title: 'Healthcare', href: '/receptionist' },
-  { title: 'Legal', href: '/receptionist' },
-  { title: 'Real Estate', href: '/receptionist' },
-  { title: 'Financial Services', href: '/copilot' },
-  { title: 'Home Services', href: '/receptionist' },
-  { title: 'Customer Stories', href: '/customers' },
+  { title: 'Sales & Revenue', href: '/solutions/sales' },
+  { title: 'Customer Support', href: '/solutions/customer-support' },
+  { title: 'Healthcare', href: '/solutions/healthcare' },
+  { title: 'Legal', href: '/solutions/legal' },
+  { title: 'Real Estate', href: '/solutions/real-estate' },
+  { title: 'Financial Services', href: '/solutions/financial-services' },
+  { title: 'Home Services', href: '/solutions/home-services' },
+  { title: 'All solutions', href: '/solutions' },
 ];
 
 export function NavPill() {
